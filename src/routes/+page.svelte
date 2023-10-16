@@ -84,7 +84,6 @@
 			$factor: 6;
 			position: absolute;
 			content: '';
-			transform: translateX(-100% * 5 / $factor);
 			display: block;
 			width: calc(100% * $factor);
 			height: 100%;
@@ -159,6 +158,37 @@
 
 			background-size: $flatten_szs;
 			background-repeat: no-repeat;
+			animation: 1s step-end infinite both sparks;
+
+			@mixin move_to($frame) {
+				transform: translateX(calc(-100% * $frame / $factor));
+			}
+
+			@keyframes sparks {
+				from,
+				to {
+					@include move_to(6);
+				}
+
+				50% {
+					@include move_to(0);
+				}
+				58.3% {
+					@include move_to(1);
+				}
+				66.7% {
+					@include move_to(2);
+				}
+				75% {
+					@include move_to(3);
+				}
+				83.3% {
+					@include move_to(4);
+				}
+				91.7% {
+					@include move_to(5);
+				}
+			}
 		}
 	}
 </style>
