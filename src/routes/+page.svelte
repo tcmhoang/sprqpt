@@ -38,6 +38,7 @@
 		}
 		@return $res;
 	}
+
 	.scene {
 		width: 100%;
 		aspect-ratio: 3/1;
@@ -71,52 +72,53 @@
 	.starfield {
 		height: 100%;
 		width: 100%;
-		position: relative;
 	}
 
 	.star {
+		position: absolute;
 		height: calc($unit * 2);
 		aspect-ratio: 1;
-		position: absolute;
-		overflow: visible;
+		overflow: hidden;
 
 		&::after {
-			$factor: 7;
+			$factor: 6;
+			position: absolute;
 			content: '';
-			overflow: visible;
+			transform: translateX(-100% * 5 / $factor);
 			display: block;
 			width: calc(100% * $factor);
 			height: 100%;
+
 			// 1st: 1, 2nd: 4, 3rd: 4, 4th: 5, 5th: 8, 6th: 4 => tot : 26
 			$totsprites: 26;
 			$sprites: ();
 			@for $_ from 1 through $totsprites {
 				$sprites: append($sprites, _genColoredTile($text), comma);
 			}
-			background-image: $sprites;
-			@function factor_position($e, $x, $y) {
-				@return calc(100% / $factor * $e + $x / $factor) $y;
-			}
 
+			background-image: $sprites;
+
+			@function factor_position($e, $x, $y) {
+				@return calc(100% / $factor * ($e - 1) + $x / $factor) $y;
+			}
 			$poss: (
 				((40%, 50%)),
 				((30%, 50%), (50%, 50%), (40%, 40%), (40%, 60%)),
-				((20%, 50%), (57%, 50%), (40%, 30%), (40%, 68%)),
+				((20%, 50%), (60%, 50%), (40%, 30%), (40%, 70%)),
 				((50%, 50%), (25%, 50%), (75%, 50%), (50%, 25%), (50%, 75%)),
 				(
-					(0%, 50%),
-					(100%, 50%),
-					(50%, 0%),
-					(50%, 100%),
-					(15%, 15%),
-					(85%, 85%),
-					(85%, 15%),
-					(15%, 85%)
+					(10%, 50%),
+					(90%, 50%),
+					(50%, 10%),
+					(50%, 90%),
+					(25%, 25%),
+					(75%, 75%),
+					(75%, 25%),
+					(25%, 75%)
 				),
-				((0%, 50%), (100%, 50%), (50%, 0%), (50%, 100%))
+				((10%, 50%), (90%, 50%), (50%, 10%), (50%, 90%))
 			);
 			$transformed_poss: ();
-
 			@for $i from 1 through length($poss) {
 				// fix for weird bug :))
 				@if $i == 1 {
@@ -138,7 +140,8 @@
 			}
 
 			background-position: $transformed_poss;
-			$w: calc(10% / 7);
+
+			$w: calc(10% / $factor);
 			$dw: calc($w * 2);
 			$szs: (
 				(#{$w} 10%),
