@@ -3,13 +3,17 @@
 	.rainbow
 	.starfield
 		.star
-
+	.cat 
+		svg
+			use(xlink:href="nyan.svg#cat")
 </template>
 
 <style lang="scss">
 	$colors: ($red, $peach, $yellow, $green, $sky, $mauve);
 	$ncolor: length($colors);
 	$unit: calc(100% / $ncolor);
+	$padding: 40%;
+	$height: calc(100% - $padding);
 
 	@function _colorTransTiles($color) {
 		@return (_gen2StopTile($color, transparent), _gen2StopTile(transparent, $color));
@@ -44,16 +48,14 @@
 		aspect-ratio: 3/1;
 		position: relative;
 		margin: 0;
-		background-color: red;
 	}
 
 	.rainbow {
-		$padding: 20%;
 		position: absolute;
 		left: 0;
 		right: 50%;
 		top: calc($padding / 2);
-		height: 100% - $padding;
+		height: $height;
 
 		&::after {
 			content: '';
@@ -70,6 +72,7 @@
 	}
 
 	.starfield {
+		position: absolute;
 		height: 100%;
 		width: 100%;
 	}
@@ -190,5 +193,12 @@
 				}
 			}
 		}
+	}
+
+	.cat {
+		position: absolute;
+		top: calc($padding / 2);
+		left: calc(50% - $unit);
+		height: $height;
 	}
 </style>
