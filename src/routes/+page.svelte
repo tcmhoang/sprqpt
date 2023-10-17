@@ -1,11 +1,14 @@
+<script>
+	import Nyan from './Nyan.svelte';
+</script>
+
 <template lang="pug">
 .scene
 	.rainbow
 	.starfield
 		.star
-	.cat 
-		svg
-			use(xlink:href="nyan.svg#cat")
+	.cat
+		Nyan
 </template>
 
 <style lang="scss">
@@ -200,5 +203,6 @@
 		top: calc($padding / 2);
 		left: calc(50% - $unit);
 		height: $height;
+		aspect-ratio: 5/3;
 	}
 </style>
