@@ -13,8 +13,8 @@
 </div>
 
 <style lang="scss">
-	$colors: ($red, $peach, $yellow, $green, $sky, $mauve);
-	$star_color: $text;
+	$colors: (var(--red), var(--peach), var(--yellow), var(--green), var(--sky), var(--mauve));
+	$star_color: var(--text);
 
 	$padding: 40%;
 	$height: calc(100% - $padding);
@@ -23,7 +23,6 @@
 	$unit: calc(100% / $ncolor);
 
 	.scene {
-		--speed: var(--speed, 0.5);
 		width: 100%;
 		aspect-ratio: 3/1;
 		position: relative;

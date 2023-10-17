@@ -1,20 +1,11 @@
 import adapter from '@sveltejs/adapter-auto';
-import sveltePreprocess from 'svelte-preprocess';
-import autoprefixer from 'autoprefixer';
+import { vitePreprocess } from '@sveltejs/kit/vite';
 
 const config = {
 	kit: {
 		adapter: adapter()
 	},
-	preprocess: sveltePreprocess({
-		sourceMap: true,
-		postcss: {
-			plugins: [autoprefixer()]
-		},
-		scss: {
-			prependData: `@import 'src/styles/variables.scss';`
-		}
-	})
+	preprocess: vitePreprocess()
 };
 
 export default config;
