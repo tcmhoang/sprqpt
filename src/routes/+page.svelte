@@ -1,19 +1,24 @@
 <script>
-	import { spring } from 'svelte/motion';
 	import Nyan from './Nyan.svelte';
 	import { onMount } from 'svelte';
 
-	let cat;
+	let container;
 
-	let coords;
+	let w, h;
+
+	const pter_action = (e) => {
+		container.style.setProperty('--x', e.clientX / w);
+
+		container.style.setProperty('--y', e.clientY / h);
+	};
 
 	onMount(() => {
-		const init_coord = cat.getBoundingClientRect();
-		coords = spring({ init_coord.x, init_coord.y});
+		w = container.clientWidth;
+		h = container.clientHeight;
 	});
 </script>
 
-<div class="scene">
+<div class="scene" bind:this={container} on:pointermove={pter_action}>
 	<div class="rainbow" />
 	<div class="starfield">
 		<!-- eslint-disable-next-line no-unused-vars -->
@@ -21,7 +26,7 @@
 			<div class="star" />
 		{/each}
 	</div>
-	<div class="cat" style="--cat-accelerate:var(--speed)" bind:this={cat}>
+	<div class="cat" style="--cat-accelerate:var(--speed)">
 		<Nyan />
 	</div>
 </div>
