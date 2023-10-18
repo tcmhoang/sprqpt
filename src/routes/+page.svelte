@@ -1,13 +1,27 @@
 <script>
+	import { spring } from 'svelte/motion';
 	import Nyan from './Nyan.svelte';
+	import { onMount } from 'svelte';
+
+	let cat;
+
+	let coords;
+
+	onMount(() => {
+		const init_coord = cat.getBoundingClientRect();
+		coords = spring({ init_coord.x, init_coord.y});
+	});
 </script>
 
 <div class="scene">
 	<div class="rainbow" />
 	<div class="starfield">
-		<div class="star" />
+		<!-- eslint-disable-next-line no-unused-vars -->
+		{#each Array(12) as _}
+			<div class="star" />
+		{/each}
 	</div>
-	<div class="cat" style="--cat-accelerate:var(--speed)">
+	<div class="cat" style="--cat-accelerate:var(--speed)" bind:this={cat}>
 		<Nyan />
 	</div>
 </div>
@@ -18,13 +32,14 @@
 
 	$cat_height: 50%;
 	$ncolor: length($colors);
-
 	.scene {
+		background: radial-gradient(var(--blue), var(--crust));
 		width: 100%;
 		aspect-ratio: 3/1;
 		position: relative;
 		margin: 0;
-		--x: 0.7;
+		overflow: hidden;
+		--x: 0.5;
 		--y: 0.5;
 		--speed: calc(1 - var(--x));
 	}
@@ -101,6 +116,46 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
+
+		$star_trails: (
+			(66%, 80%),
+			(70%, 54%),
+			(4%, 31%),
+			(49%, 20%),
+			(35%, 30%),
+			(48%, 29%),
+			(22%, 70%),
+			(56%, 67%),
+			(49%, 20%),
+			(9%, 92%),
+			(44%, 28%),
+			(6%, 25%)
+		);
+
+		@for $i from 1 through 12 {
+			$star_trail: nth($star_trails, $i);
+			.star:nth-child(#{$i}) {
+				left: calc(nth($star_trail, 1) + 30%);
+				top: nth($star_trail, 2);
+				animation: calc(var(--speed) * 0.5 * 2 * 1.3s)
+					ease-in-out
+					calc(1s / $i)
+					infinite
+					whoosh;
+				&::after {
+					animation-delay: calc(1s / $i);
+				}
+			}
+		}
+
+		@keyframes whoosh {
+			from {
+				transform: translate(0);
+			}
+			to {
+				transform: translateX(-350%);
+			}
+		}
 	}
 
 	.star {
@@ -192,7 +247,10 @@
 
 			background-size: $flatten_szs;
 			background-repeat: no-repeat;
-			animation: calc(var(--speed, 0.5) * 2 * 1s) step-end infinite spark;
+			animation-duration: calc(var(--speed, 0.5) * 2 * 1s);
+			animation-timing-function: step-end;
+			animation-iteration-count: infinite;
+			animation-name: spark;
 
 			@mixin move_to($frame) {
 				transform: translateX(calc(-100% * $frame / $factor));
