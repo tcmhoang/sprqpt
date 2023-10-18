@@ -16,17 +16,16 @@
 	$colors: (var(--red), var(--peach), var(--yellow), var(--green), var(--sky), var(--mauve));
 	$star_color: var(--text);
 
-	$padding: 40%;
-	$height: calc(100% - $padding);
+	$cat_height: 50%;
 	$ncolor: length($colors);
-
-	$unit: calc(100% / $ncolor);
 
 	.scene {
 		width: 100%;
 		aspect-ratio: 3/1;
 		position: relative;
 		margin: 0;
+		--x: 0.5;
+		--y: 0.5;
 	}
 
 	.rainbow {
@@ -59,22 +58,17 @@
 
 		position: absolute;
 		left: 0;
-		right: 50%;
-		top: calc($padding / 2);
-		height: $height;
+		right: clamp(20vw, calc(100% - var(--x) * 100%), 80vw);
+		top: calc(var(--y) * 50%);
+		height: $cat_height;
 
-		&::after {
-			content: '';
-			position: inherit;
-			left: 0;
-			right: $unit;
-			top: 0;
-			bottom: 0;
-			background-image: render_rainbow();
-			background-position: render_positions(calc($unit/2));
-			background-size: calc($unit * 3) $unit;
-			background-repeat: repeat-x;
-		}
+		$height_unit: calc(100% / $ncolor);
+		$width_unit: clamp(10vw, calc($height_unit * 6 * var(--x)), 20vw);
+
+		background-image: render_rainbow();
+		background-position: render_positions(calc($height_unit/2));
+		background-size: $width_unit $height_unit;
+		background-repeat: repeat-x;
 	}
 
 	.starfield {
@@ -85,7 +79,7 @@
 
 	.star {
 		position: absolute;
-		height: calc($unit * 2);
+		height: calc(100% / $ncolor * 2);
 		aspect-ratio: 1;
 		overflow: hidden;
 
@@ -195,9 +189,9 @@
 
 	.cat {
 		position: absolute;
-		top: calc($padding / 2);
-		left: calc(50% - $unit);
-		height: $height;
+		top: calc(var(--y) * 50%);
+		left: clamp(10vw, calc(var(--x) * 100% - 10%), 70vw);
+		height: $cat_height;
 		aspect-ratio: 5/3;
 	}
 </style>

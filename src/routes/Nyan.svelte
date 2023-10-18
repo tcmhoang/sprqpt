@@ -298,7 +298,8 @@
 				</g>
 				<g id="g3996">
 					<path
-						d="m 1,12 -1,0 0,-2 1,0 0,-1 2,0 0,1 1,0 0,1 2,0 0,4 -2,0 0,-1 -2,0 0,-1 -1,0 z" transform="translate(0,1032.3622)"
+						d="m 1,12 -1,0 0,-2 1,0 0,-1 2,0 0,1 1,0 0,1 2,0 0,4 -2,0 0,-1 -2,0 0,-1 -1,0 z"
+						transform="translate(0,1032.3622)"
 						id="path3992"
 						style="fill:var(--cat-shape);stroke:none"
 					/>
@@ -934,7 +935,7 @@
 		--cat-cheeck: hsl(0, 100%, 80%);
 		--cat-shape: hsl(0, 0%, 0%);
 		--cat-nose: var(--cat-shape);
-		--_unit: calc(var(--cat-accelerate, 0.5) * 150);
+		--_unit: calc(var(--cat-accelerate, 0.5) * 200);
 
 		opacity: 0;
 
@@ -954,7 +955,7 @@
 			opacity: 1;
 		}
 
-		20% {
+		#{calc(100%/6)} {
 			opacity: 0;
 		}
 	}
