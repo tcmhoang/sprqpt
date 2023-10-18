@@ -7,7 +7,7 @@
 	<div class="starfield">
 		<div class="star" />
 	</div>
-	<div class="cat">
+	<div class="cat" style="--cat-accelerate:var(--speed)">
 		<Nyan />
 	</div>
 </div>
@@ -24,8 +24,9 @@
 		aspect-ratio: 3/1;
 		position: relative;
 		margin: 0;
-		--x: 0.5;
+		--x: 0.7;
 		--y: 0.5;
+		--speed: calc(1 - var(--x));
 	}
 
 	.rainbow {
@@ -57,18 +58,43 @@
 		}
 
 		position: absolute;
+		height: calc($cat_height - 5%);
 		left: 0;
 		right: clamp(20vw, calc(100% - var(--x) * 100%), 80vw);
-		top: calc(var(--y) * 50%);
-		height: $cat_height;
+		top: calc(var(--y) * 50% + 2.5%);
+		overflow: hidden;
+		&::after {
+			display: block;
+			position: inherit;
+			content: '';
 
-		$height_unit: calc(100% / $ncolor);
-		$width_unit: clamp(10vw, calc($height_unit * 6 * var(--x)), 20vw);
+			right: 0;
+			bottom: 0;
 
-		background-image: render_rainbow();
-		background-position: render_positions(calc($height_unit/2));
-		background-size: $width_unit $height_unit;
-		background-repeat: repeat-x;
+			$height_unit: calc(100% / $ncolor);
+			$width_unit: clamp(10vw, calc($height_unit * 6 * var(--x)), 20vw);
+			height: 100%;
+			width: 200%;
+
+			background-image: render_rainbow();
+			background-position: render_positions(calc($height_unit/2));
+			background-size: $width_unit $height_unit;
+			background-repeat: repeat-x;
+
+			animation: calc(var(--speed, 0.5) * 2 * 300ms) step-end infinite rainbow;
+
+			@keyframes rainbow {
+				from,
+				to {
+					transform: translateX(
+						clamp(5vw, calc(var(--x) * 50%), 30vw)
+					);
+				}
+				50% {
+					transform: translateX(0);
+				}
+			}
+		}
 	}
 
 	.starfield {
