@@ -1,32 +1,41 @@
 <script>
+	import { spring } from 'svelte/motion';
 	import Nyan from './Nyan.svelte';
 	import { onMount } from 'svelte';
+	const coords = spring(
+		{ x: 0.5, y: 0.5 },
+		{
+			stiffness: 0.1,
+			damping: 0.2
+		}
+	);
 
 	/** @type HTMLElement */
 	let container;
 
-	let /** @type number*/
-		w,
-		/** @type number*/
-		h;
-
 	/** @function
-	 * @param {PointerEvent} e event fires by pointer
-	 * @returns {void}
+	 * @param {PointerEvent} e event fires when moving the pointer
+	 * @returns {Promise<void>}
 	 */
-	const pter_action = (e) => {
-		container.style.setProperty('--x', e.clientX / w + '');
 
-		container.style.setProperty('--y', e.clientY / h + '');
-	};
+	const pointerHandler = (e) =>
+		coords.set({
+			x: e.clientX / container.clientWidth,
+			y: e.clientY / container.clientHeight
+		});
 
 	onMount(() => {
-		w = container.clientWidth;
-		h = container.clientHeight;
+		container.addEventListener('pointermove', pointerHandler);
+		return () => container.removeEventListener('pointermove', pointerHandler);
 	});
 </script>
 
-<div class="scene" bind:this={container} on:pointermove={pter_action}>
+<div
+	class="scene"
+	bind:this={container}
+	style="--x: {$coords.x}; --y: {$coords.y};"
+	on:pointerleave={() => coords.set({ x: 0.5, y: 0.5 })}
+>
 	<div class="rainbow" />
 	<div class="starfield">
 		<!-- eslint-disable-next-line no-unused-vars -->
