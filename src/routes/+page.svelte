@@ -2,14 +2,22 @@
 	import Nyan from './Nyan.svelte';
 	import { onMount } from 'svelte';
 
+	/** @type HTMLElement */
 	let container;
 
-	let w, h;
+	let /** @type number*/
+		w,
+		/** @type number*/
+		h;
 
+	/** @function
+	 * @param {PointerEvent} e event fires by pointer
+	 * @returns {void}
+	 */
 	const pter_action = (e) => {
-		container.style.setProperty('--x', e.clientX / w);
+		container.style.setProperty('--x', e.clientX / w + '');
 
-		container.style.setProperty('--y', e.clientY / h);
+		container.style.setProperty('--y', e.clientY / h + '');
 	};
 
 	onMount(() => {
