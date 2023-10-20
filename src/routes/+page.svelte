@@ -34,7 +34,7 @@
 	class="scene"
 	bind:this={container}
 	style="--x: {$coords.x}; --y: {$coords.y};"
-	on:pointerleave={() => coords.set({ x: 0.5, y: 0.5 })}
+	on:pointerleave={() => coords.update((t) => ({ x: t.x, y: 0.5 }))}
 >
 	<div class="rainbow" />
 	<div class="starfield">
@@ -54,10 +54,12 @@
 
 	$cat_height: 50%;
 	$ncolor: length($colors);
+	$ar: 3/1;
+	$sheight: calc(100vw / $ar);
 	.scene {
 		background: radial-gradient(var(--blue), var(--crust));
 		width: 100%;
-		aspect-ratio: 3/1;
+		aspect-ratio: $ar;
 		position: relative;
 		margin: 0;
 		overflow: hidden;
@@ -96,9 +98,19 @@
 
 		position: absolute;
 		height: calc($cat_height - 5%);
-		left: 0;
-		right: clamp(20vw, calc(100% - var(--x) * 100%), 80vw);
-		top: calc(var(--y) * 50% + 2.5%);
+		width: 90%;
+		right: 47%;
+		top: 28%;
+		transform: (
+			translate(
+				clamp(-40vw, calc(100vw * var(--x) - 50vw), 30vw),
+				clamp(
+					calc($sheight * -0.2),
+					calc($sheight * (var(--y) - 0.5)),
+					calc($sheight * 0.2)
+				)
+			)
+		);
 		overflow: hidden;
 		&::after {
 			display: block;
@@ -109,9 +121,9 @@
 			bottom: 0;
 
 			$height_unit: calc(100% / $ncolor);
-			$width_unit: clamp(10vw, calc($height_unit * 6 * var(--x)), 20vw);
+			$width_unit: clamp(10vw, calc($sheight / 2), 20vw);
 			height: 100%;
-			width: 200%;
+			width: calc(100% + 10vw);
 
 			background-image: render_rainbow();
 			background-position: render_positions(calc($height_unit/2));
@@ -123,9 +135,7 @@
 			@keyframes rainbow {
 				from,
 				to {
-					transform: translateX(
-						clamp(5vw, calc(var(--x) * 50%), 30vw)
-					);
+					transform: translateX(10vw);
 				}
 				50% {
 					transform: translateX(0);
@@ -295,8 +305,16 @@
 
 	.cat {
 		position: absolute;
-		top: calc(var(--y) * 50%);
-		left: clamp(10vw, calc(var(--x) * 100% - 10%), 70vw);
+		top: 25%;
+		left: 45%;
+		transform: translate(
+			clamp(-40vw, calc(100vw * var(--x) - 50vw), 30vw),
+			clamp(
+				calc($sheight * -0.2),
+				calc($sheight * (var(--y) - 0.5)),
+				calc($sheight * 0.2)
+			)
+		);
 		height: $cat_height;
 		aspect-ratio: 5/3;
 	}
