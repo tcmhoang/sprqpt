@@ -43,21 +43,21 @@
 			<div class="star" />
 		{/each}
 	</div>
-	<div class="cat" style="--cat-accelerate:var(--speed)">
+	<div class="cat">
 		<Nyan />
 	</div>
 </div>
 
 <style lang="scss">
 	$colors: (var(--red), var(--peach), var(--yellow), var(--green), var(--sky), var(--mauve));
-	$star_color: var(--text);
+	$star_color: var(--overlay);
 
 	$cat_height: 50%;
 	$ncolor: length($colors);
-	$ar: 3/1;
+	$ar: calc(3 / 1);
 	$sheight: calc(100vw / $ar);
 	.scene {
-		background: radial-gradient(var(--blue), var(--crust));
+		background: radial-gradient(var(--base), var(--crust));
 		width: 100%;
 		aspect-ratio: $ar;
 		position: relative;
@@ -304,6 +304,15 @@
 	}
 
 	.cat {
+		--cat-accelerate: var(--speed);
+		--cat-bread: var(--peach);
+		--cat-eyes: var(--crust);
+		--cat-tart: var(--flamingo);
+		--cat-topping: var(--pink);
+		--cat-fur: var(--surface);
+		--cat-cheeck: var(--rosewater);
+		--cat-shape: var(--text);
+
 		position: absolute;
 		top: 25%;
 		left: 45%;

@@ -927,14 +927,14 @@
 
 <style lang="scss">
 	.frame {
-		--cat-bread: hsl(30, 100%, 80%);
-		--cat-eyes: hsl(0, 0%, 100%);
-		--cat-tart: hsl(300, 100%, 80%);
-		--cat-topping: hsl(330, 100%, 60%);
-		--cat-fur: hsl(0, 0%, 60%);
-		--cat-cheeck: hsl(0, 100%, 80%);
-		--cat-shape: hsl(0, 0%, 0%);
-		--cat-nose: var(--cat-shape);
+		--cat-bread: var(var(--cat-bread), hsl(30, 100%, 80%));
+		--cat-eyes: var(var(--cat-eyes), hsl(0, 0%, 100%));
+		--cat-tart: var(var(--cat-tart), hsl(300, 100%, 80%));
+		--cat-topping: var(var(--cat-topping), hsl(330, 100%, 60%));
+		--cat-fur: var(var(--cat-fur), hsl(0, 0%, 60%));
+		--cat-cheeck: var(var(--cat-cheeck), hsl(0, 100%, 80%));
+		--cat-shape: var(var(--cat-shape), hsl(0, 0%, 0%));
+		--cat-nose: var(var(--cat-nose), var(--cat-shape));
 		--_unit: calc(var(--cat-accelerate, 0.5) * 200);
 
 		opacity: 0;
