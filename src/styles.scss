@@ -1,0 +1,130 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	position: relative;
+}
+:root {
+	--d-rosewater: hsl(10, 56%, 91%);
+	--d-flamingo: hsl(0, 59%, 88%);
+	--d-pink: hsl(316, 72%, 86%);
+	--d-mauve: hsl(267, 84%, 81%);
+	--d-red: hsl(343, 81%, 75%);
+	--d-maroon: hsl(350, 65%, 77%);
+	--d-peach: hsl(23, 92%, 75%);
+	--d-yellow: hsl(41, 86%, 83%);
+	--d-green: hsl(115, 54%, 76%);
+	--d-teal: hsl(170, 57%, 73%);
+	--d-sky: hsl(189, 71%, 73%);
+	--d-sapphire: hsl(199, 76%, 69%);
+	--d-blue: hsl(217, 92%, 76%);
+	--d-lavender: hsl(232, 97%, 85%);
+	--d-text: hsl(226, 64%, 88%);
+	--d-subtext: hsl(228, 24%, 72%);
+	--d-overlay: hsl(231, 11%, 47%);
+	--d-surface: hsl(237, 16%, 23%);
+	--d-base: hsl(240, 21%, 15%);
+	--d-crust: hsl(240, 23%, 9%);
+
+	--l-rosewater: hsl(11, 59%, 67%);
+	--l-flamingo: hsl(0, 60%, 67%);
+	--l-pink: hsl(316, 73%, 69%);
+	--l-mauve: hsl(266, 85%, 58%);
+	--l-red: hsl(347, 87%, 44%);
+	--l-maroon: hsl(355, 76%, 59%);
+	--l-peach: hsl(22, 99%, 52%);
+	--l-yellow: hsl(35, 77%, 49%);
+	--l-green: hsl(109, 58%, 40%);
+	--l-teal: hsl(183, 74%, 35%);
+	--l-sky: hsl(197, 97%, 46%);
+	--l-sapphire: hsl(189, 70%, 42%);
+	--l-blue: hsl(220, 91%, 54%);
+	--l-lavender: hsl(231, 87%, 72%);
+	--l-text: hsl(234, 16%, 35%);
+	--l-subtext: hsl(233, 10%, 47%);
+	--l-overlay: hsl(230, 12%, 49%);
+	--l-surface: hsl(228, 11%, 65%);
+	--l-base: hsl(220, 23%, 95%);
+	--l-crust: hsl(220, 21%, 89%);
+}
+
+html,
+[data-theme='light'] {
+	--rosewater: var(--l-rosewater);
+	--flamingo: var(--l-flamingo);
+	--pink: var(--l-pink);
+	--mauve: var(--l-mauve);
+	--red: var(--l-red);
+	--maroon: var(--l-maroon);
+	--peach: var(--l-peach);
+	--yellow: var(--l-yellow);
+	--green: var(--l-green);
+	--teal: var(--l-teal);
+	--sky: var(--l-sky);
+	--sapphire: var(--l-sapphire);
+	--blue: var(--l-blue);
+	--lavender: var(--l-lavender);
+	--text: var(--l-text);
+	--subtext: var(--l-subtext);
+	--overlay: var(--l-overlay);
+	--surface: var(--l-surface);
+	--base: var(--l-base);
+	--crust: var(--l-crust);
+
+	color-scheme: light;
+}
+
+@mixin dark_theme() {
+	--rosewater: var(--d-rosewater);
+	--flamingo: var(--d-flamingo);
+	--pink: var(--d-pink);
+	--mauve: var(--d-mauve);
+	--red: var(--d-red);
+	--maroon: var(--d-maroon);
+	--peach: var(--d-peach);
+	--yellow: var(--d-yellow);
+	--green: var(--d-green);
+	--teal: var(--d-teal);
+	--sky: var(--d-sky);
+	--sapphire: var(--d-sapphire);
+	--blue: var(--d-blue);
+	--lavender: var(--d-lavender);
+	--text: var(--d-text);
+	--subtext: var(--d-subtext);
+	--overlay: var(--d-overlay);
+	--surface: var(--d-surface);
+	--base: var(--d-base);
+	--crust: var(--d-crust);
+
+	color-scheme: dark;
+}
+
+[data-theme='dark'] {
+	@include dark_theme();
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		@include dark_theme();
+	}
+}
+
+html,
+body {
+	box-sizing: inherit;
+	position: inherit;
+	margin: 0;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html {
+	accent-color: var(--yellow);
+	background: var(--base);
+	color: var(--text);
+	text-rendering: optimizeSpeed;
+}
+
+body {
+	min-height: 100vh;
+}
