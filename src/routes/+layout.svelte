@@ -1,14 +1,16 @@
 <script>
 	import '../styles.scss';
+	import Nav from './Nav.svelte';
 	let hide_seek = false;
 </script>
 
 <svelte:body on:mouseenter={() => (hide_seek = true)} on:mouseleave={() => (hide_seek = false)} />
 
-<svg class="wm-cat" class:hide_seek>
+<svg class="wm-cat" class:hide_seek aria-hidden="true">
 	<use xlink:href="/icons/icon.svg#cat" />
 </svg>
 
+<Nav />
 <slot />
 
 <style>

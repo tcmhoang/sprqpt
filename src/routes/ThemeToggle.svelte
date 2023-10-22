@@ -1,0 +1,161 @@
+<script>
+	import { onMount } from 'svelte';
+
+	const themes = ['system', 'dark', 'light'];
+
+	let mounted = false;
+	let currTheme = 'system';
+	let aria_label = `Set theme to ${currTheme}`;
+	let dark = true;
+	let pref_dark = true;
+
+	/**@type MediaQueryList */
+	let mql_system_pref;
+
+	$: if (mounted) {
+		document.documentElement.dataset.theme = currTheme;
+		aria_label = `Set theme to ${
+			themes[(themes.indexOf(currTheme) + 1) % themes.length]
+		}`;
+		dark = !(currTheme == 'light') && pref_dark;
+	}
+
+	function toggle(/** @type Event*/ e) {
+		e.preventDefault();
+		currTheme = themes[(themes.indexOf(currTheme) + 1) % themes.length];
+		window.localStorage.setItem('theme', JSON.stringify(currTheme));
+	}
+
+	onMount(() => {
+		mounted = true;
+		currTheme =
+			'theme' in localStorage && JSON.parse(localStorage.theme)
+				? JSON.parse(localStorage.theme)
+				: currTheme;
+
+		mql_system_pref = window.matchMedia('(prefers-color-scheme: dark)');
+		pref_dark = mql_system_pref.matches;
+
+		mql_system_pref.onchange = (e) => {
+			pref_dark = e.matches;
+		};
+
+		return () => (mql_system_pref.onchange = null);
+	});
+</script>
+
+<button class="theme-toggle" title={aria_label} aria-label={aria_label} on:click={toggle}>
+	<svg
+		viewBox="0 0 24 24"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		class="icon"
+		class:dark
+	>
+		<g class="monitor">
+			<path
+				d="M7 21H17M6.2 17H17.8C18.9201 17 19.4802 17 19.908 16.782C20.2843 16.5903 20.5903 16.2843 20.782 15.908C21 15.4802 21 14.9201 21 13.8V6.2C21 5.0799 21 4.51984 20.782 4.09202C20.5903 3.71569 20.2843 3.40973 19.908 3.21799C19.4802 3 18.9201 3 17.8 3H6.2C5.0799 3 4.51984 3 4.09202 3.21799C3.71569 3.40973 3.40973 3.71569 3.21799 4.09202C3 4.51984 3 5.07989 3 6.2V13.8C3 14.9201 3 15.4802 3.21799 15.908C3.40973 16.2843 3.71569 16.5903 4.09202 16.782C4.51984 17 5.07989 17 6.2 17Z"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+			/>
+		</g>
+		<g class="toggler" transform="scale(0.75)">
+			<clipPath id="theme-toggle__classic__cutout">
+				<path d="M0-5h30a1 1 0 0 0 9 13v24H0Z" />
+			</clipPath>
+			<g clip-path="url(#theme-toggle__classic__cutout)">
+				<circle cx="16" cy="16" r="9.34" fill="currentColor" />
+				<g stroke="currentColor" stroke-width="1.5">
+					<path d="M16 5.5v-4" />
+					<path d="M16 30.5v-4" />
+					<path d="M1.5 16h4" />
+					<path d="M26.5 16h4" />
+					<path d="m23.4 8.6 2.8-2.8" />
+					<path d="m5.7 26.3 2.9-2.9" />
+					<path d="m5.8 5.8 2.8 2.8" />
+					<path d="m23.4 23.4 2.9 2.9" />
+				</g>
+			</g>
+		</g>
+	</svg>
+</button>
+
+<style lang="scss">
+	.monitor {
+		opacity: 0;
+		transition: opacity var(--duration, 200ms) ease-in;
+	}
+
+	:global([data-theme]) {
+		.toggler {
+			transform: scale(0.75) translate(0);
+		}
+	}
+
+	:global([data-theme='system']) {
+		.monitor {
+			opacity: 1;
+		}
+		.toggler {
+			transform: scale(0.35) translate(75%, 50%);
+		}
+	}
+
+	.theme-toggle {
+		all: unset;
+		cursor: pointer;
+		width: 10em;
+		height: 10em;
+	}
+
+	.icon {
+		.toggler {
+			transition: transform var(--duration, 300ms) ease-out;
+			* {
+				transform-origin: center;
+				transition-timing-function: cubic-bezier(0, 0, 0.05, 1.15);
+				transition-property: opacity, transform, d;
+				transition-duration: calc(var(--duration, 500ms));
+			}
+		}
+		.toggler g {
+			path {
+				transition-duration: calc(var(--duration, 500ms) * 0.8);
+				transition-delay: calc(var(--duration, 500ms) * 0.2);
+			}
+		}
+	}
+
+	.icon.dark {
+		.toggler g {
+			path {
+				transform: scale(0.5) rotate(45deg);
+				opacity: 0;
+				transition-delay: 0s;
+			}
+		}
+
+		.toggler circle {
+			transform: scale(0.75);
+		}
+
+		.toggler clipPath {
+			path {
+				d: path('M0 2h13a1 1 0 0010 10v14H0Z');
+				transition-delay: calc(var(--duration, 500ms) * 0.2);
+			}
+		}
+	}
+
+	@supports not (d: path('')) {
+		.icon.dark .toggler {
+			clipPath {
+				path {
+					transform: translate3d(-13px, 2px, 0);
+				}
+			}
+		}
+	}
+</style>
