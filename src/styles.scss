@@ -128,3 +128,8 @@ html {
 body {
 	min-height: 100vh;
 }
+
+.hidden {
+	display: none !important;
+	visibility: hidden;
+}
