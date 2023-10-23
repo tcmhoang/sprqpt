@@ -49,22 +49,35 @@
 </div>
 
 <style lang="scss">
-	$colors: (var(--red), var(--peach), var(--yellow), var(--green), var(--sky), var(--mauve));
-	$star_color: var(--overlay);
+	$red: #f00;
+	$orange: #f90;
+	$yellow: #ff0;
+	$green: #3f0;
+	$blue: #09f;
+	$purple: #63f;
+
+	$colors: (
+		var(--nyan-r, $red),
+		var(--nyan-o, $orange),
+		var(--nyan-y, $yellow),
+		var(--nyan-g, $green),
+		var(--nyan-b, $blue),
+		var(--nyan-p, $purple)
+	);
+
+	$star_color: var(--nyan-s, white);
 
 	$cat_height: 50%;
 	$ncolor: length($colors);
 	$ar: calc(3 / 1);
 	$sheight: calc(100vw / $ar);
 	.scene {
-		background: radial-gradient(var(--base), var(--crust));
+		background: radial-gradient(var(--nyan-bg-l, #005093), var(--nyan-bg-d, #002953));
 		width: 100%;
 		aspect-ratio: $ar;
 		position: relative;
 		margin: 0;
 		overflow: hidden;
-		--x: 0.5;
-		--y: 0.5;
 		--speed: calc(1 - var(--x));
 	}
 
@@ -304,14 +317,14 @@
 	}
 
 	.cat {
-		--cat-accelerate: var(--speed);
-		--cat-bread: var(--peach);
-		--cat-eyes: var(--crust);
-		--cat-tart: var(--flamingo);
-		--cat-topping: var(--pink);
-		--cat-fur: var(--surface);
-		--cat-cheeck: var(--rosewater);
-		--cat-shape: var(--text);
+		--c-accelerate: var(--speed);
+		--c-bread: var(--peach);
+		--c-eyes: var(--crust);
+		--c-tart: var(--flamingo);
+		--c-topping: var(--pink);
+		--c-fur: var(--surface);
+		--c-cheeck: var(--rosewater);
+		--c-shape: var(--text);
 
 		position: absolute;
 		top: 25%;
