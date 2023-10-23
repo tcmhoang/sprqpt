@@ -318,13 +318,6 @@
 
 	.cat {
 		--c-accelerate: var(--speed);
-		--c-bread: var(--peach);
-		--c-eyes: var(--crust);
-		--c-tart: var(--flamingo);
-		--c-topping: var(--pink);
-		--c-fur: var(--surface);
-		--c-cheeck: var(--rosewater);
-		--c-shape: var(--text);
 
 		position: absolute;
 		top: 25%;

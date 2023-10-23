@@ -1,11 +1,9 @@
 <script>
+	import { next_theme_state, theme } from '$lib/states/theme';
 	import { onMount } from 'svelte';
 
-	const themes = ['system', 'dark', 'light'];
-
 	let mounted = false;
-	let currTheme = 'system';
-	let aria_label = `Set theme to ${currTheme}`;
+	let aria_label = `Set theme to ${theme}`;
 	let dark = true;
 	let pref_dark = true;
 
@@ -13,25 +11,18 @@
 	let mql_system_pref;
 
 	$: if (mounted) {
-		document.documentElement.dataset.theme = currTheme;
-		aria_label = `Set theme to ${
-			themes[(themes.indexOf(currTheme) + 1) % themes.length]
-		}`;
-		dark = !(currTheme == 'light') && pref_dark;
+		aria_label = `Set theme to ${next_theme_state($theme)}`;
+		dark = !($theme == 'light') && pref_dark;
 	}
 
 	function toggle(/** @type Event*/ e) {
 		e.preventDefault();
-		currTheme = themes[(themes.indexOf(currTheme) + 1) % themes.length];
-		window.localStorage.setItem('theme', JSON.stringify(currTheme));
+		theme.next(localStorage, document);
 	}
 
 	onMount(() => {
 		mounted = true;
-		currTheme =
-			'theme' in localStorage && JSON.parse(localStorage.theme)
-				? JSON.parse(localStorage.theme)
-				: currTheme;
+		theme.init(localStorage, document);
 
 		mql_system_pref = window.matchMedia('(prefers-color-scheme: dark)');
 		pref_dark = mql_system_pref.matches;

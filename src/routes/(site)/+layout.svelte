@@ -1,5 +1,4 @@
 <script>
-	import '../styles.scss';
 	import Nav from './Nav.svelte';
 	let hide_seek = false;
 </script>
@@ -12,6 +11,17 @@
 
 <Nav />
 <slot />
+
+<div class="hidden" aria-hidden="true" itemtype="http://schema.org/Person">
+	<span itemprop="gender">Male</span>
+	<span itemprop="email">tcmhoang@outlook.com</span>
+	<span itemprop="givenName">Tuan</span>
+	<span itemprop="familyName">Hoang</span>
+	<span itemprop="name">Tuan Minh Hoang</span>
+	<span itemprop="additionalName">Conrad Hoang</span>
+	<span itemprop="jobTitle">Software Engineer</span>
+	<span itemprop="nationality">VN</span>
+</div>
 
 <style>
 	.wm-cat {
