@@ -21,7 +21,7 @@
 	--d-lavender: hsl(232, 97%, 85%);
 	--d-text: hsl(226, 64%, 88%);
 	--d-subtext: hsl(228, 24%, 72%);
-	--d-overlay: hsl(231, 11%, 47%);
+	--d-overlay: hsl(231, 11%, 47% / 70%);
 	--d-surface: hsl(237, 16%, 23%);
 	--d-base: hsl(240, 21%, 15%);
 	--d-crust: hsl(240, 23%, 9%);
@@ -42,10 +42,17 @@
 	--l-lavender: hsl(231, 87%, 72%);
 	--l-text: hsl(234, 16%, 35%);
 	--l-subtext: hsl(233, 10%, 47%);
-	--l-overlay: hsl(230, 12%, 49%);
+	--l-overlay: hsl(230, 12%, 49% / 70%);
 	--l-surface: hsl(228, 11%, 65%);
 	--l-base: hsl(220, 23%, 95%);
 	--l-crust: hsl(220, 21%, 89%);
+
+	--step-0: clamp(1rem, calc(0.9rem + 0.5vw), 1.25rem);
+	--step-1: clamp(1.2rem, calc(1rem + 0.6vw), 1.5rem);
+	--step-2: clamp(1.4rem, calc(1.2rem + 0.9vw), 1.9rem);
+	--step-3: clamp(1.7rem, calc(1.5rem + 1.2vw), 2.4rem);
+	--step-4: clamp(2rem, calc(1.7rem + 1.7vw), 3rem);
+	--step-5: clamp(2.5rem, calc(2rem + 2.3vw), 3.8rem);
 }
 
 html,
@@ -127,6 +134,39 @@ html {
 
 body {
 	min-height: 100vh;
+}
+
+h1 {
+	font-size: var(--step-5);
+	line-height: 1;
+}
+h2 {
+	font-size: var(--step-3);
+	line-height: 1;
+}
+h3 {
+	font-size: var(--step-2);
+}
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+::selection {
+	background: var(--brand-fill);
+	color: var(--overlay);
+}
+
+*:focus-visible {
+	outline-color: var(--brand-stroke);
 }
 
 .hidden {

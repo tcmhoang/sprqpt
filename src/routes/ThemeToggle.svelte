@@ -106,8 +106,8 @@
 	.theme-toggle {
 		all: unset;
 		cursor: pointer;
-		width: 10em;
-		height: 10em;
+		height: 100%;
+		aspect-ratio: 1;
 	}
 
 	.icon {
@@ -119,17 +119,17 @@
 				transition-property: opacity, transform, d;
 				transition-duration: calc(var(--duration, 500ms));
 			}
-		}
-		.toggler g {
-			path {
-				transition-duration: calc(var(--duration, 500ms) * 0.8);
-				transition-delay: calc(var(--duration, 500ms) * 0.2);
+			g {
+				path {
+					transition-duration: calc(var(--duration, 500ms) * 0.8);
+					transition-delay: calc(var(--duration, 500ms) * 0.2);
+				}
 			}
 		}
 	}
 
-	.icon.dark {
-		.toggler g {
+	.icon.dark .toggler {
+		g {
 			path {
 				transform: scale(0.5) rotate(45deg);
 				opacity: 0;
@@ -137,11 +137,11 @@
 			}
 		}
 
-		.toggler circle {
+		circle {
 			transform: scale(0.75);
 		}
 
-		.toggler clipPath {
+		clipPath {
 			path {
 				d: path('M0 2h13a1 1 0 0010 10v14H0Z');
 				transition-delay: calc(var(--duration, 500ms) * 0.2);
