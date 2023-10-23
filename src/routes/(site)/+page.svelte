@@ -1,5 +1,4 @@
 <script>
-	import { base } from '$app/paths';
 	import Banner from './Banner.svelte';
 
 	const nyan_css = {
@@ -11,7 +10,9 @@
 		--nyan-g: var(--d-green);
 		--nyan-b: var(--d-blue);
 		--nyan-p: var(--d-purple);
-		--nyan-s: var(--d-surface);
+		--nyan-s: var(--d-subtext);
+		--nyan-bg-l: var(--d-surface);
+		--nyan-bg-d: var(--d-crust);
 
 		--c-bread: var(--d-peach);
 		--c-eyes: var(--d-crust);
@@ -29,6 +30,8 @@
 		--nyan-b: var(--l-blue);
 		--nyan-p: var(--l-purple);
 		--nyan-s: var(--l-surface);
+		--nyan-bg-l: var(--l-surface);
+		--nyan-bg-d: var(--l-crust);
 
 		--c-bread: var(--l-peach);
 		--c-eyes: var(--l-crust);
@@ -41,8 +44,4 @@
 	};
 </script>
 
-<Banner
-	heroUrl={`${base}/demos/nyan-cat`}
-	heroAlt="Conrad's CSS Nyan Cat Demo"
-	heroCss={nyan_css}
-/>
+<Banner heroUrl={`/demos/nyan-cat`} heroAlt="Conrad's CSS Nyan Cat Demo" heroCss={nyan_css} />

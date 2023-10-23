@@ -1,6 +1,6 @@
 <script>
 	import { theme } from '$lib/states/theme';
-	import { onDestroy } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	/** @type string */
 	export let heroUrl;
@@ -17,39 +17,44 @@
 	/** @type {CssModifier | null } */
 	export let heroCss;
 
-	function onThemeChange(/** @type {string} */ css, /** @type HTMLElement */ iframe_elem) {
-		if (iframe_elem) iframe_elem.style.cssText = css;
-	}
+	/** @type HTMLIFrameElement */
+	let iframe;
 
-	function onIFrameLoad() {
-		const iframe = /** @type HTMLIFrameElement */ (document?.getElementById('banner'));
+	/** @type {function(): void} */
+	let unsubscribe = () => {};
+
+	onMount(() => {
 		const iframe_elem = iframe?.contentDocument?.querySelector('body');
 
-		onDestroy(
-			theme.subscribe((s) => {
-				if (iframe_elem) {
-					switch (s) {
-						case 'light':
-							return onThemeChange(
-								heroCss?.light ?? '',
-								iframe_elem
-							);
-						case 'dark':
-							return onThemeChange(
-								heroCss?.dark ?? '',
-								iframe_elem
-							);
-						case 'system':
-							return onThemeChange(
-								heroCss?.sys ?? '',
-								iframe_elem
-							);
-						default:
-							return;
-					}
+		unsubscribe = theme.subscribe((s) => {
+			if (iframe_elem) {
+				switch (s) {
+					case 'light':
+						return onThemeChange(
+							heroCss?.light ?? '',
+							iframe_elem
+						);
+					case 'dark':
+						return onThemeChange(
+							heroCss?.dark ?? '',
+							iframe_elem
+						);
+					case 'system':
+						return onThemeChange(
+							heroCss?.sys ?? '',
+							iframe_elem
+						);
+					default:
+						return;
 				}
-			})
-		);
+			}
+		});
+	});
+
+	onDestroy(unsubscribe);
+
+	function onThemeChange(/** @type {string} */ css, /** @type HTMLElement */ iframe_elem) {
+		if (iframe_elem) iframe_elem.style.cssText = css;
 	}
 </script>
 
@@ -64,12 +69,11 @@
 		/>
 	{:else}
 		<iframe
-			id="banner"
 			src={heroUrl}
 			frameborder="0"
 			title={heroAlt}
 			loading="lazy"
-			on:load={onIFrameLoad}
+			bind:this={iframe}
 		/>
 	{/if}
 </div>
@@ -78,7 +82,7 @@
 	.banner {
 		width: 100%;
 		aspect-ratio: 3/1;
-		background-color: var(--surface);
+		background-color: var(--base);
 	}
 	.banner > * {
 		width: 100%;
