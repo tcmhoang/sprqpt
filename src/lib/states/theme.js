@@ -1,4 +1,3 @@
-import { parse } from 'svelte/compiler';
 import { writable } from 'svelte/store';
 
 const themes = ['system', 'dark', 'light'];

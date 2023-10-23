@@ -943,7 +943,7 @@
 			&#frame#{$i} {
 				animation: calc(var(--_unit) * 6 * 1ms)
 					step-end
-					calc(var(--_unit) * ($i - 1) * 1ms)
+					calc(var(--_unit) * ($i - 1) * 1ms - 10ms)
 					infinite
 					sprint;
 			}
