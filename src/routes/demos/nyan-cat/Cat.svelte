@@ -935,7 +935,7 @@
 		--cat-cheeck: var(--c-cheeck, hsl(0, 100%, 80%));
 		--cat-shape: var(--c-shape, hsl(0, 0%, 0%));
 		--cat-nose: var(--c-nose, var(--cat-shape));
-		--_unit: calc(var(--c-accelerate, 0.5) * 150);
+		--_unit: calc(var(--c-accelerate, 0.5) * 120);
 
 		opacity: 0;
 
@@ -943,7 +943,7 @@
 			&#frame#{$i} {
 				animation: calc(var(--_unit) * 6 * 1ms)
 					step-end
-					calc(var(--_unit) * ($i - 1) * 1ms - 10ms)
+					calc(var(--_unit) * ($i - 1) * 1ms)
 					infinite
 					sprint;
 			}
