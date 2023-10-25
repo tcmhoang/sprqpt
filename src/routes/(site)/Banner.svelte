@@ -7,13 +7,6 @@
 	/** @type string */
 	export let heroAlt;
 
-	/** Contains Css variables to modify the current theme in the iframe
-	 * @typedef {Object} CssModifier
-	 * @property {string} sys - apply system css
-	 * @property {string} dark - apply system css
-	 * @property {string} light - apply system css
-	 */
-
 	/** @type {CssModifier | null } */
 	export let heroCss;
 
