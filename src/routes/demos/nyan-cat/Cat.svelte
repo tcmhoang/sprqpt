@@ -941,7 +941,7 @@
 
 		@for $i from 1 through 6 {
 			&#frame#{$i} {
-				animation: calc(var(--_unit) * 6 * 1ms)
+				animation: calc(var(--_unit) * 6ms)
 					step-end
 					calc(var(--_unit) * ($i - 1) * 1ms)
 					infinite
@@ -949,9 +949,12 @@
 			}
 		}
 	}
-
 	@keyframes sprint {
 		from {
+			opacity: 1;
+		}
+
+		#{calc(100%/6 - 100%/6000)} {
 			opacity: 1;
 		}
 
