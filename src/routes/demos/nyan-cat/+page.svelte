@@ -5,8 +5,8 @@
 	const coords = spring(
 		{ x: 0.5, y: 0.5 },
 		{
-			stiffness: 0.1,
-			damping: 0.2
+			stiffness: 0.05,
+			damping: 0.3
 		}
 	);
 
@@ -34,7 +34,7 @@
 	class="scene"
 	bind:this={container}
 	style="--x: {$coords.x}; --y: {$coords.y};"
-	on:pointerleave={() => coords.update((t) => ({ x: t.x, y: 0.5 }))}
+	on:pointerleave={() => coords.update((t) => ({ x: t.x > 0.5 ? 0.5 : t.x, y: 0.5 }))}
 >
 	<div class="rainbow" />
 	<div class="starfield">
