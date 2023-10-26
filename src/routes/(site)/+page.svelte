@@ -1,5 +1,6 @@
 <script>
 	import Banner from './Banner.svelte';
+	import Header from './Header.svelte';
 
 	const nyan_css = {
 		sys: '',
@@ -42,6 +43,12 @@
 		--c-shape: var(--l-text);
 		`
 	};
+
+	const bannerData = {
+		hero_url: '/demos/nyan-cat',
+		hero_alt: "Conrad's CSS Nyan Cat Demo",
+		hero_css: nyan_css
+	};
 </script>
 
-<Banner heroUrl={`/demos/nyan-cat`} heroAlt="Conrad's CSS Nyan Cat Demo" heroCss={nyan_css} />
+<Header {bannerData} />

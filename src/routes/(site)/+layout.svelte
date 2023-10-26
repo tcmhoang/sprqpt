@@ -1,6 +1,6 @@
 <script>
 	import Nav from './Nav.svelte';
-	import 'style.scss';
+	import './style.scss';
 	let hide_seek = false;
 </script>
 

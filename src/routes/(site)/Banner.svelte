@@ -71,14 +71,14 @@
 	{/if}
 </div>
 
-<style>
+<style lang="scss">
 	.banner {
 		width: 100%;
 		aspect-ratio: 3/1;
 		background-color: var(--base);
-	}
-	.banner > * {
-		width: 100%;
-		height: 100%;
+		& > * {
+			width: 100%;
+			height: 100%;
+		}
 	}
 </style>
