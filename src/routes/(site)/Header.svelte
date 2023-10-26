@@ -91,12 +91,22 @@
 				</svg>
 			</span>
 		</h1>
+
+		<span>Available September 25th Global</span>
+
+		<div class="summary">
+			<p>On the mission to spice up the web, pixel by pixel ✨</p>
+			<p>Software Engineer, Creative Developer, Troublemaker solver.</p>
+		</div>
+
+		<span>Links: </span>
 	</div>
 </header>
 
 <style lang="scss">
 	header {
 		max-width: var(--width);
+		border-radius: 10px;
 		margin: auto;
 	}
 
