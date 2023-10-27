@@ -11,3 +11,10 @@
  * @property {string} hero_alt - alt text
  * @property {CssModifier | null} hero_css - runtime injected css
  */
+
+/** Contains a personal information to render Header
+ * @typedef Deet
+ * @property {string} icon
+ * @property {string} text
+ * @property {string} title
+ */

@@ -3,6 +3,24 @@
 
 	/** @type BannerData */
 	export let bannerData;
+
+	const deets = [
+		{
+			title: 'Job',
+			text: 'Available',
+			icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xml:space="preserve" fill="currentColor"><g id="SVGRepo_iconCarrier"><style>.st0{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style><path class="st0" d="M28 21v4l-2 2H6l-2-2v-4"/><path class="st0" d="M16 24h0l-2-2v-3h4v3l-2 2z"/><path class="st0" d="M14 22H7c-2 0-4-2-4-4v-8l2-2h22l2 2v8c0 2-2 4-4 4h-7m2-14h-8V6l2-2h4l2 2v2zM7 28v-1m18 1v-1"/></g></svg>'
+		},
+		{
+			title: 'Birthday',
+			text: 'September 25th',
+			icon: '<svg fill="currentColor" height="200" width="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve"><path d="M482 463c-1-3-4-5-8-5h-22V305c13-15 22-35 22-56v-24c0-19-15-34-34-34h-52V92c0-5-4-8-9-8h-30c-4 0-8 3-8 8v99h-52V92c0-5-4-8-9-8h-30c-5 0-8 3-8 8v99h-52V92c0-5-4-8-9-8h-30c-5 0-8 3-8 8v36a8 8 0 0 0 16 0v-28h14v91h-14v-35a8 8 0 0 0-16 0v35H72c-19 0-34 15-34 34v23c0 21 8 41 22 56v154H38a8 8 0 0 0-7 14l10 11c14 19 36 29 60 29h310c24 0 46-10 60-29l10-11c2-3 2-6 1-9zM358 100h13v91h-13v-91zm-99 0h13v91h-13v-91zM55 248v-23c0-10 8-17 17-17h368c9 0 17 7 17 17v24c0 30-20 56-49 63l-13 1c-15 0-22-4-30-10-9-6-19-12-39-12s-31 6-40 12c-8 6-15 10-30 10s-22-4-30-10c-9-6-20-12-40-12a8 8 0 0 0 0 17c15 0 22 4 31 9 9 6 19 13 39 13s30-7 39-13c9-5 16-9 31-9s22 4 30 9c9 6 20 13 39 13l17-2c8-2 16-5 23-9v27H77v-29c9 6 20 13 40 13 19 0 30-7 39-13a8 8 0 1 0-9-14c-8 6-15 10-30 10s-23-4-31-10h-1a65 65 0 0 1-30-55zm314 174h66v36H77v-36h264a8 8 0 0 0 0-17H77v-42h358v42h-66a8 8 0 0 0 0 17zm42 73H101c-18 0-34-7-46-20h402a61 61 0 0 1-46 20zM189 20 172 2c-3-3-9-3-12 0l-17 18a33 33 0 0 0 0 46 33 33 0 0 0 46 0c13-13 13-34 0-46zm-12 34a16 16 0 0 1-22-22l11-12 11 12c7 6 7 16 0 22zm111-34L271 2c-3-3-8-3-12 0l-17 18a33 33 0 0 0 0 46 33 33 0 0 0 46 0c13-13 13-34 0-46zm-11 34a16 16 0 0 1-23-22l11-12 12 12c6 6 6 16 0 22zm111-34L370 2c-3-3-8-3-12 0l-17 18a33 33 0 0 0 0 46 33 33 0 0 0 47 0c12-13 12-34 0-46zm-12 34a16 16 0 0 1-23 0 16 16 0 0 1 0-22l11-12 12 12c6 6 6 16 0 22z"/></svg>'
+		},
+		{
+			title: 'Location',
+			text: 'Global',
+			icon: '<svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g data-name="Group 719"><path data-name="Path 1486" d="M13 26c-7 0-13-2-13-3 0-2 3-3 7-3l1 1-5 1c0 1 4 2 10 2l11-1c0-1-2-2-6-2l2-2c4 1 6 2 6 4 0 1-6 3-13 3Zm4-17a4 4 0 1 1-4-4 4 4 0 0 1 4 4Zm-6 0a2 2 0 1 0 2-2 2 2 0 0 0-2 2Zm3 12-1 1-1-1s-7-6-8-10l1-2 1 1c1 4 5 7 7 9 2-2 7-6 7-10s-3-7-7-7c-3 0-6 1-6 4L5 7V5a9 9 0 0 1 17 4c0 5-8 12-8 12Z"/></g></svg>'
+		}
+	];
 </script>
 
 <header>
@@ -92,7 +110,15 @@
 			</span>
 		</h1>
 
-		<span>Available September 25th Global</span>
+		<span class="status">
+			{#each deets as { icon, text, title }}
+				<span>
+					{@html icon}
+					<title>{title}</title>
+					<span>{text}</span>
+				</span>
+			{/each}
+		</span>
 
 		<div class="summary">
 			<p>On the mission to spice up the web, pixel by pixel ✨</p>
