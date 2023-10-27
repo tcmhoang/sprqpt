@@ -1,13 +1,12 @@
 <script>
 	import { base } from '$app/paths';
+	import CatIcon from '$lib/icons/CatIcon.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
 </script>
 
 <nav>
 	<a href="/" aria-label={base}>
-		<svg>
-			<use xlink:href="/icons/icon.svg#cat" />
-		</svg>
+		<CatIcon />
 	</a>
 
 	<ThemeToggle />
@@ -26,11 +25,17 @@
 		padding: 0.5em;
 		backdrop-filter: blur(7px);
 		height: 3rem;
+		z-index: 10;
 	}
 
 	a {
 		display: flex;
 		height: 100%;
 		aspect-ratio: 1;
+
+		&:hover {
+			background: var(--surface);
+			border-radius: 0.3rem;
+		}
 	}
 </style>

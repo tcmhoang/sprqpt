@@ -99,6 +99,11 @@
 		cursor: pointer;
 		height: 100%;
 		aspect-ratio: 1;
+
+		&:hover {
+			border-radius: 0.3rem;
+			background: var(--surface);
+		}
 	}
 
 	.icon {
