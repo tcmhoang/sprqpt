@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import Cat from './Cat.svelte';
 	const coords = spring(
-		{ x: 0.5, y: 0.5 },
+		{ x: 0.25, y: 0.5 },
 		{
 			stiffness: 0.05,
 			damping: 0.3

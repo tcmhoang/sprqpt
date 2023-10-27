@@ -1,8 +1,12 @@
 <script>
 	import BirthdayCakeIcon from '$lib/icons/BirthdayCakeIcon.svelte';
 	import BriefcaseIcon from '$lib/icons/BriefcaseIcon.svelte';
+	import GithubIcon from '$lib/icons/GithubIcon.svelte';
+	import KeybaseIcon from '$lib/icons/KeybaseIcon.svelte';
 	import PositionLocationIcon from '$lib/icons/PositionLocationIcon.svelte';
+	import Telegram from '$lib/icons/Telegram.svelte';
 	import VerifiedBadgeIcon from '$lib/icons/VerifiedBadgeIcon.svelte';
+	import Avatar from './Avatar.svelte';
 	import Banner from './Banner.svelte';
 	import EmailSender from './EmailSender.svelte';
 
@@ -11,19 +15,34 @@
 
 	const deets = [
 		{
-			title: 'Job',
 			text: 'Available',
 			icon: BriefcaseIcon
 		},
 		{
-			title: 'Birthday',
 			text: 'September 25th',
 			icon: BirthdayCakeIcon
 		},
 		{
-			title: 'Location',
 			text: 'Global',
 			icon: PositionLocationIcon
+		}
+	];
+
+	const links = [
+		{
+			label: 'Github',
+			link: 'github.com/tcmhoang',
+			icon: GithubIcon
+		},
+		{
+			label: 'Keybase',
+			link: 'keybase.io/tcmhoang',
+			icon: KeybaseIcon
+		},
+		{
+			label: 'Telegram',
+			link: 't.me/tcmhoang',
+			icon: Telegram
 		}
 	];
 </script>
@@ -39,26 +58,18 @@
 
 	<div class="w-content overview">
 		<div class="avatar">
-			<img
-				src="https://avatars.githubusercontent.com/u/51996720?v=4"
-				alt="Conrad"
-				width="200"
-				height="200"
-				loading="eager"
-				decoding="async"
-			/>
+			<Avatar />
 			<EmailSender />
 		</div>
 		<h1 class="name">
 			Conrad Hoang <span> <VerifiedBadgeIcon /> </span>
 		</h1>
 
-		<span class="status">
-			{#each deets as { icon, text, title }}
-				<span>
-					{icon}
-					<title>{title}</title>
-					<span>{text}</span>
+		<span class="details">
+			{#each deets as { icon, text }}
+				<span class="detail">
+					<span class="dcon"> <svelte:component this={icon} /></span>
+					{text}
 				</span>
 			{/each}
 		</span>
@@ -68,7 +79,13 @@
 			<p>Software Engineer, Creative Developer, Troublemaker solver.</p>
 		</div>
 
-		<span>Links: </span>
+		<div class="links">
+			{#each links as { label, link, icon }}
+				<a href={link} aria-label={label} target="_blank">
+					{label} <span> <svelte:component this={icon} /></span>
+				</a>
+			{/each}
+		</div>
 	</div>
 </header>
 
@@ -99,21 +116,8 @@
 		justify-content: end;
 		align-items: center;
 		padding-bottom: 0.5rem;
-		min-height: calc(var(--step-9) * 0.3);
+		min-height: calc(var(--step-9) * 0.5);
 		padding-top: 0.5rem;
-
-		& > img {
-			position: absolute;
-			display: block;
-			top: 0;
-			left: 0;
-			width: var(--step-9);
-			height: auto;
-			aspect-ratio: 1;
-			transform: translateY(-50%);
-			border: solid var(--text) 3px;
-			border-radius: 100px;
-		}
 	}
 
 	.name {
@@ -122,10 +126,65 @@
 		font-size: var(--step-3);
 		column-gap: 0.5rem;
 		align-items: center;
-		& > span {
+		span {
 			display: inline-flex;
 			width: var(--step-2);
 			aspect-ratio: 1;
+		}
+	}
+
+	%leading {
+		display: flex;
+		align-items: center;
+		column-gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.details {
+		@extend %leading;
+		color: var(--subtext);
+		font-size: var(--step--1);
+		margin-bottom: 0.25rem;
+
+		.detail {
+			display: flex;
+			align-items: center;
+			gap: 0.25rem;
+
+			.dcon {
+				width: 1.25rem;
+				height: 1.25rem;
+			}
+		}
+	}
+
+	.summary {
+		line-height: 1.25;
+		& > * {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	.links {
+		@extend %leading;
+		a {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.25rem;
+			border: 1px solid var(--mauve);
+			padding: 0.25rem 0.75rem;
+			border-radius: 30px;
+			text-decoration: none;
+			font-size: var(--step--1);
+			span {
+				width: 1.25rem;
+				height: 1.25rem;
+			}
+
+			&:hover {
+				color: var(--crust);
+				background: var(--mauve);
+			}
 		}
 	}
 </style>

@@ -47,6 +47,8 @@
 	--l-base: hsl(220, 23%, 95%);
 	--l-crust: hsl(220, 21%, 89%);
 
+	--step--2: clamp(0.7rem, calc(0.6rem + 0.2vw), 0.8rem);
+	--step--1: clamp(0.8rem, calc(0.7rem + 0.3vw), 1rem);
 	--step-0: clamp(1rem, calc(0.9rem + 0.5vw), 1.25rem);
 	--step-1: clamp(1.2rem, calc(1rem + 0.6vw), 1.5rem);
 	--step-2: clamp(1.4rem, calc(1.2rem + 0.9vw), 1.9rem);
