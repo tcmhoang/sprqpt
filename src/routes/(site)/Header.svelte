@@ -106,6 +106,7 @@
 
 	.overview {
 		padding-left: 1rem;
+		max-width: 100%;
 		padding-right: 1rem;
 		margin: auto;
 		display: grid;
@@ -130,9 +131,10 @@
 
 		.polarized {
 			display: block;
-			transition: transform 300ms ease;
-			mix-blend-mode: screen;
+			transition: transform 300ms ease, color 100ms ease-in;
+			mix-blend-mode: exclusion;
 			position: relative;
+
 			&::before,
 			&::after {
 				content: attr(data-content);
@@ -147,14 +149,14 @@
 			}
 
 			&:hover {
-				color: var(--red);
+				color: var(--l-red);
 				transform: translateY(-0.3rem);
 				&::before {
-					color: var(--blue);
+					color: var(--l-blue);
 					transform: translate(0.3rem, 0.3rem);
 				}
 				&::after {
-					color: var(--yellow);
+					color: var(--l-yellow);
 					transform: translate(-0.3rem, 0.3rem);
 				}
 			}
@@ -169,7 +171,7 @@
 	%leading {
 		display: flex;
 		align-items: center;
-		column-gap: 1rem;
+		gap: 0.5rem;
 		flex-wrap: wrap;
 	}
 
@@ -201,7 +203,7 @@
 	.links {
 		@extend %leading;
 		a {
-			display: inline-flex;
+			display: flex;
 			align-items: center;
 			gap: 0.25rem;
 			border: 1px solid var(--mauve);
