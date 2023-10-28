@@ -31,17 +31,17 @@
 	const links = [
 		{
 			label: 'Github',
-			link: 'github.com/tcmhoang',
+			link: 'https://github.com/tcmhoang',
 			icon: GithubIcon
 		},
 		{
 			label: 'Keybase',
-			link: 'keybase.io/tcmhoang',
+			link: 'https://keybase.io/tcmhoang',
 			icon: KeybaseIcon
 		},
 		{
 			label: 'Telegram',
-			link: 't.me/tcmhoang',
+			link: 'https://t.me/tcmhoang',
 			icon: Telegram
 		}
 	];
@@ -77,7 +77,10 @@
 
 		<div class="summary">
 			<p>On the mission to spice up the web, pixel by pixel ✨</p>
-			<p>Software Engineer, Creative Developer, Troublemaker solver.</p>
+			<p>
+				Software Engineer, Creative Developer, Troublemaker solver, Spam
+				Deleter.
+			</p>
 		</div>
 
 		<div class="links">

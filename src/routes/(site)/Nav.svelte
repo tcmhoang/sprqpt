@@ -26,6 +26,7 @@
 		backdrop-filter: blur(7px);
 		height: 3rem;
 		z-index: 10;
+		view-transition-name: header;
 	}
 
 	a {

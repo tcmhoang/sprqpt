@@ -942,7 +942,7 @@
 		@for $i from 1 through 6 {
 			&#frame#{$i} {
 				animation: calc(var(--_unit) * 6ms)
-					step-end
+					linear
 					calc(var(--_unit) * ($i - 1) * 1ms)
 					infinite
 					sprint;
