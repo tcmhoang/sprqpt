@@ -47,7 +47,9 @@
 
 		&:focus,
 		&:hover,
+		&:focus-visible,
 		&:active {
+			outline: 0;
 			#env-lid {
 				transition: transform opacity color 300ms;
 				transform: scaleY(-1);

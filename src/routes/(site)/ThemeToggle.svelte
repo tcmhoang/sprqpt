@@ -100,6 +100,10 @@
 		height: 100%;
 		aspect-ratio: 1;
 
+		&:focus-visible {
+			background: var(--surface);
+		}
+
 		&:hover {
 			border-radius: 0.3rem;
 			background: var(--surface);

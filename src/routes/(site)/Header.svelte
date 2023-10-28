@@ -85,8 +85,9 @@
 
 		<div class="links">
 			{#each links as { label, link, icon }}
-				<a href={link} aria-label={label} target="_blank">
-					{label} <span> <svelte:component this={icon} /></span>
+				<a href={link} target="_blank">
+					{label}
+					<span><svelte:component this={icon} /></span>
 				</a>
 			{/each}
 		</div>
@@ -222,6 +223,11 @@
 			&:hover {
 				color: var(--crust);
 				background: var(--mauve);
+			}
+
+			&:focus-visible {
+				outline: 0;
+				background: var(--surface);
 			}
 		}
 	}

@@ -34,9 +34,11 @@
 		height: 100%;
 		aspect-ratio: 1;
 
-		&:hover {
+		&:hover,
+		&:focus-visible {
 			background: var(--surface);
 			border-radius: 0.3rem;
+			outline: 0;
 		}
 	}
 </style>

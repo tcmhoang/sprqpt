@@ -136,4 +136,12 @@ html {
 	background: var(--base);
 	color: var(--text);
 	text-rendering: optimizeSpeed;
+	line-height: 1;
+	tab-size: 4;
+	font-feature-settings: normal;
+	transition: background-color 150ms ease-out;
+}
+
+body {
+	line-height: inherit;
 }
