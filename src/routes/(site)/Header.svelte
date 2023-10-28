@@ -62,7 +62,8 @@
 			<EmailSender />
 		</div>
 		<h1 class="name">
-			Conrad Hoang <span> <VerifiedBadgeIcon /> </span>
+			<span class="polarized" data-content="Conrad Hoang">Conrad Hoang</span>
+			<span class="badge"> <VerifiedBadgeIcon /> </span>
 		</h1>
 
 		<span class="details">
@@ -126,7 +127,39 @@
 		font-size: var(--step-3);
 		column-gap: 0.5rem;
 		align-items: center;
-		span {
+
+		.polarized {
+			display: block;
+			transition: transform 300ms ease;
+			mix-blend-mode: screen;
+			position: relative;
+			&::before,
+			&::after {
+				content: attr(data-content);
+				position: absolute;
+				mix-blend-mode: inherit;
+				font: inherit;
+				transition: inherit;
+				display: inherit;
+				left: 0;
+				right: 0;
+				top: 0;
+			}
+
+			&:hover {
+				color: var(--red);
+				transform: translateY(-0.3rem);
+				&::before {
+					color: var(--blue);
+					transform: translate(0.3rem, 0.3rem);
+				}
+				&::after {
+					color: var(--yellow);
+					transform: translate(-0.3rem, 0.3rem);
+				}
+			}
+		}
+		.badge {
 			display: inline-flex;
 			width: var(--step-2);
 			aspect-ratio: 1;
