@@ -1,52 +1,11 @@
 /**
- * Interface for Document
- *
- * @interface Document
+ * @typedef {Document & ViewTransitionAPI} WTDocument
  */
 
 /**
- * @function
- * @name Document#startViewTransition
+ * @typedef ViewTransitionAPI
+ * @property {Function} startViewTransition
  * @param {() => Promise<void> | void} callback
- * @returns {ViewTransition}
- */
-
-/**
- * @interface ViewTransition
- */
-
-/**
- * @function
- * @name ViewTransition#finished
- * @returns {Promise<void>}
- */
-
-/**
- * @function
- * @name ViewTransition#ready
- * @returns {Promise<void>}
- */
-
-/**
- * @function
- * @name ViewTransition#updateCallbackDone
- * @returns {Promise<void>}
- */
-
-/**
- * @function
- * @name ViewTransition#skipTransition
- * @returns {void}
- */
-
-/**
- * @interface CSSStyleDeclaration
- */
-
-/**
- * @function
- * @name CSSStyleDeclaration#viewTransitionName
- * @returns {string}
  */
 
 /** Contains Css variables to modify the current theme in the iframe

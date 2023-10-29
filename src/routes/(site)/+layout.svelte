@@ -8,10 +8,12 @@
 	let hide_seek = false;
 
 	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
+		const doc = /** @type {WTDocument} */ (document);
+
+		if (!doc.startViewTransition) return;
 
 		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
+			doc.startViewTransition(async () => {
 				resolve();
 				await navigation.complete;
 			});
