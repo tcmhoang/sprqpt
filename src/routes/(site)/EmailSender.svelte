@@ -1,5 +1,10 @@
 <button>
-	Contact <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="96.3 -4.7 45.1 46.2">
+	Contact <svg
+		role="presentation"
+		aria-hidden="true"
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="96.3 -4.7 45.1 46.2"
+	>
 		<title>Email Icon</title>
 		<path
 			fill="var(--crust)"

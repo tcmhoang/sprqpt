@@ -1,50 +1,20 @@
 <script>
-	import BirthdayCakeIcon from '$lib/icons/BirthdayCakeIcon.svelte';
-	import BriefcaseIcon from '$lib/icons/BriefcaseIcon.svelte';
-	import GithubIcon from '$lib/icons/GithubIcon.svelte';
-	import KeybaseIcon from '$lib/icons/KeybaseIcon.svelte';
-	import PositionLocationIcon from '$lib/icons/PositionLocationIcon.svelte';
-	import Telegram from '$lib/icons/Telegram.svelte';
-	import VerifiedBadgeIcon from '$lib/icons/VerifiedBadgeIcon.svelte';
 	import Avatar from './Avatar.svelte';
 	import Banner from './Banner.svelte';
 	import EmailSender from './EmailSender.svelte';
+	import NameWithVerifiedBadge from './NameWithVerifiedBadge.svelte';
 
 	/** @type BannerData */
 	export let bannerData;
 
-	const deets = [
-		{
-			text: 'Available',
-			icon: BriefcaseIcon
-		},
-		{
-			text: 'September 25th',
-			icon: BirthdayCakeIcon
-		},
-		{
-			text: 'Global',
-			icon: PositionLocationIcon
-		}
-	];
+	/** @type {Detail[]} */
+	export let deets;
 
-	const links = [
-		{
-			label: 'Github',
-			link: 'https://github.com/tcmhoang',
-			icon: GithubIcon
-		},
-		{
-			label: 'Keybase',
-			link: 'https://keybase.io/tcmhoang',
-			icon: KeybaseIcon
-		},
-		{
-			label: 'Telegram',
-			link: 'https://t.me/tcmhoang',
-			icon: Telegram
-		}
-	];
+	/** @type {IconedLink[]} */
+	export let links;
+
+	/**@type {string[]} */
+	export let summary;
 </script>
 
 <header>
@@ -61,10 +31,8 @@
 			<Avatar />
 			<EmailSender />
 		</div>
-		<h1 class="name">
-			<span class="polarized" data-content="Conrad Hoang">Conrad Hoang</span>
-			<span class="badge"> <VerifiedBadgeIcon /> </span>
-		</h1>
+
+		<NameWithVerifiedBadge />
 
 		<span class="details">
 			{#each deets as { icon, text }}
@@ -76,11 +44,9 @@
 		</span>
 
 		<div class="summary">
-			<p>On the mission to spice up the web, pixel by pixel ✨</p>
-			<p>
-				Software Engineer, Creative Developer, Troublemaker solver, Spam
-				Deleter.
-			</p>
+			{#each summary as content}
+				<p>{content}</p>
+			{/each}
 		</div>
 
 		<div class="links">
@@ -124,52 +90,6 @@
 		padding-bottom: 0.5rem;
 		min-height: calc(var(--step-9) * 0.5);
 		padding-top: 0.5rem;
-	}
-
-	.name {
-		display: flex;
-		font-weight: bold;
-		font-size: var(--step-3);
-		column-gap: 0.5rem;
-		align-items: center;
-
-		.polarized {
-			display: block;
-			transition: transform 300ms ease, color 100ms ease-in;
-			mix-blend-mode: exclusion;
-			position: relative;
-
-			&::before,
-			&::after {
-				content: attr(data-content);
-				position: absolute;
-				mix-blend-mode: inherit;
-				font: inherit;
-				transition: inherit;
-				display: inherit;
-				left: 0;
-				right: 0;
-				top: 0;
-			}
-
-			&:hover {
-				color: var(--l-red);
-				transform: translateY(-0.3rem);
-				&::before {
-					color: var(--l-blue);
-					transform: translate(0.3rem, 0.3rem);
-				}
-				&::after {
-					color: var(--l-yellow);
-					transform: translate(-0.3rem, 0.3rem);
-				}
-			}
-		}
-		.badge {
-			display: inline-flex;
-			width: var(--step-2);
-			aspect-ratio: 1;
-		}
 	}
 
 	%leading {

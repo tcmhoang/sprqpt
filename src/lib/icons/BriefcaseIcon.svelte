@@ -1,7 +1,8 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 32 32"
-	role="img"
+	role="presentation"
+	aria-hidden="true"
 	xml:space="preserve"
 	fill="currentColor"
 	><g id="SVGRepo_iconCarrier"
@@ -15,7 +16,6 @@
 				stroke-miterlimit: 10;
 			}
 		</style>
-		<title>Briefcase Icon</title>
 		<path class="st0" d="M28 21v4l-2 2H6l-2-2v-4" /><path
 			class="st0"
 			d="M16 24h0l-2-2v-3h4v3l-2 2z"

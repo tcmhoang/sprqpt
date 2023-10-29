@@ -4,6 +4,8 @@
 	import Header from './Header.svelte';
 	import './style.scss';
 	import CatIcon from '$lib/icons/CatIcon.svelte';
+	import { page } from '$app/stores';
+	import default_banner from '$lib/constants/default_banner';
 
 	let hide_seek = false;
 
@@ -19,65 +21,26 @@
 			});
 		});
 	});
-
-	const nyan_css = {
-		sys: '',
-		dark: `
-		--nyan-r: var(--d-red);
-		--nyan-o: var(--d-orange);
-		--nyan-y: var(--d-yellow);
-		--nyan-g: var(--d-green);
-		--nyan-b: var(--d-blue);
-		--nyan-p: var(--d-purple);
-		--nyan-s: var(--d-subtext);
-		--nyan-bg-l: var(--d-surface);
-		--nyan-bg-d: var(--d-crust);
-
-		--c-bread: var(--d-peach);
-		--c-eyes: var(--d-crust);
-		--c-tart: var(--d-flamingo);
-		--c-topping: var(--d-pink);
-		--c-fur: var(--d-surface);
-		--c-cheeck: var(--d-rosewater);
-		--c-shape: var(--d-text);
-		`,
-		light: `
-		--nyan-r: var(--l-red);
-		--nyan-o: var(--l-orange);
-		--nyan-y: var(--l-yellow);
-		--nyan-g: var(--l-green);
-		--nyan-b: var(--l-blue);
-		--nyan-p: var(--l-purple);
-		--nyan-s: var(--l-surface);
-		--nyan-bg-l: var(--l-surface);
-		--nyan-bg-d: var(--l-crust);
-
-		--c-bread: var(--l-peach);
-		--c-eyes: var(--l-crust);
-		--c-tart: var(--l-flamingo);
-		--c-topping: var(--l-pink);
-		--c-fur: var(--l-surface);
-		--c-cheeck: var(--l-rosewater);
-		--c-shape: var(--l-text);
-		`
-	};
-
-	const bannerData = {
-		hero_url: '/demos/nyan-cat',
-		hero_alt: "Conrad's CSS Nyan Cat Demo",
-		hero_css: nyan_css
-	};
 </script>
+
+<svelte:head>
+	<title>{$page.data.title ?? 'Conrad Hoang'}</title>
+</svelte:head>
 
 <svelte:body on:mouseenter={() => (hide_seek = true)} on:mouseleave={() => (hide_seek = false)} />
 
-<div class="wm-cat" class:hide_seek aria-hidden="true">
+<div class="wm-cat" class:hide_seek aria-hidden="true" role="presentation">
 	<CatIcon />
 </div>
 
 <Nav />
 
-<Header {bannerData} />
+<Header
+	bannerData={$page.data.bannerData ?? default_banner}
+	summary={$page.data.summary}
+	deets={$page.data.deets}
+	links={$page.data.links}
+/>
 
 <main class="w-content main"><slot /></main>
 

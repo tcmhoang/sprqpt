@@ -1,4 +1,8 @@
 /**
+ * @typedef {import('svelte').ComponentType} Component
+ */
+
+/**
  * @typedef {Document & ViewTransitionAPI} WTDocument
  */
 
@@ -22,9 +26,20 @@
  * @property {CssModifier | null} hero_css - runtime injected css
  */
 
-/** Contains a personal information to render Header
- * @typedef Deet
- * @property {string} icon
+/** Contains a personal information to render the Header Component
+ * @typedef Detail
+ * @property {Component} icon
  * @property {string} text
- * @property {string} title
+ */
+
+/** Contains a link information
+ * @typedef Link
+ * @property {string} label
+ * @property {string} link
+ */
+/** Contains a link information to render w/ an icon
+ * @typedef IconedLink
+ * @property {string} label
+ * @property {string} link
+ * @property {Component} icon
  */

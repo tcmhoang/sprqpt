@@ -1,27 +1,13 @@
 <script>
 	import { page } from '$app/stores';
+	import tab_routes from '$lib/constants/tab_routes';
 
 	const p_name = $page.url.pathname;
-
-	const tabs = [
-		{
-			label: 'Feed',
-			link: '/'
-		},
-		{
-			label: 'About',
-			link: '/about'
-		},
-		{
-			label: 'Links',
-			link: '/links'
-		}
-	];
 </script>
 
 <div role="navigation">
 	<ul role="tablist">
-		{#each tabs as { label, link }}
+		{#each tab_routes as { label, link }}
 			<li role="presentation">
 				<a
 					href={link}
