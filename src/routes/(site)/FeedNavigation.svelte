@@ -1,24 +1,41 @@
+<script>
+	import { page } from '$app/stores';
+
+	const p_name = $page.url.pathname;
+
+	const tabs = [
+		{
+			label: 'Feed',
+			link: '/'
+		},
+		{
+			label: 'About',
+			link: '/about'
+		},
+		{
+			label: 'Links',
+			link: '/links'
+		}
+	];
+</script>
+
 <div role="navigation">
 	<ul role="tablist">
-		<li role="presentation">
-			<a href="/">
-				<span>Feed</span>
-			</a>
-		</li>
-		<li role="presentation">
-			<a href="/about">
-				<span>About</span>
-			</a>
-		</li>
-		<li role="presentation">
-			<a href="/links">
-				<span>Links</span>
-			</a>
-		</li>
+		{#each tabs as { label, link }}
+			<li role="presentation">
+				<a
+					href={link}
+					role="tab"
+					aria-selected={p_name == link ? 'true' : null}
+				>
+					<span>{label}</span>
+				</a>
+			</li>
+		{/each}
 	</ul>
 </div>
 
-<style>
+<style lang="scss">
 	ul {
 		display: grid;
 		width: 100%;
@@ -39,12 +56,23 @@
 		width: 100%;
 		height: 100%;
 
-		&:focus-visible {
+		color: var(--soverlay);
+
+		&:focus-visible,
+		&:hover {
 			background: var(--surface);
 			outline: 0;
 		}
-		&:hover {
-			background: var(--surface);
+	}
+
+	[aria-selected='true'] {
+		color: var(--text);
+		span {
+			border-bottom: 4px solid var(--yellow);
+		}
+
+		&::before {
+			view-transition-name: tab-nav;
 		}
 	}
 </style>
