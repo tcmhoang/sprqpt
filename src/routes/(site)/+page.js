@@ -22,23 +22,6 @@ export const load = () => ({
 		}
 	],
 
-	links: [
-		{
-			label: 'Github',
-			link: 'https://github.com/tcmhoang',
-			icon: GithubIcon
-		},
-		{
-			label: 'Keybase',
-			link: 'https://keybase.io/tcmhoang',
-			icon: KeybaseIcon
-		},
-		{
-			label: 'Telegram',
-			link: 'https://t.me/tcmhoang',
-			icon: Telegram
-		}
-	],
 	summary: [
 		'On the mission to spice up the web, pixel by pixel ✨',
 		'Software Engineer, Creative Developer, Troublemaker solver, Spam Deleter.'

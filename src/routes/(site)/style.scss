@@ -59,36 +59,6 @@ select {
 	font: inherit;
 }
 
-button {
-	display: inline-block;
-	border: none;
-	padding: 0.25rem 0.75rem;
-	margin: 0;
-	text-decoration: none;
-	background-color: var(--blue);
-	color: var(--crust);
-	font-weight: bold;
-	font-size: var(--step-1);
-	cursor: pointer;
-	text-align: center;
-	appearance: none;
-	border-radius: 100px;
-
-	&:hover,
-	&:focus {
-		background: var(--sky);
-	}
-
-	&:focus {
-		outline: 1px solid var(--text);
-		outline-offset: -4px;
-	}
-
-	&:active {
-		transform: scale(0.99);
-	}
-}
-
 ::selection {
 	background: var(--yellow);
 	color: var(--crust);
