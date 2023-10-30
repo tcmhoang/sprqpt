@@ -31,12 +31,11 @@ body {
 }
 
 h1 {
-	font-size: var(--step-5);
-	line-height: 1;
+	font-weight: bold;
+	font-size: var(--step-4);
 }
 h2 {
 	font-size: var(--step-3);
-	line-height: 1;
 }
 h3 {
 	font-size: var(--step-2);
@@ -68,11 +67,6 @@ select {
 	outline-color: var(--peach);
 }
 
-.hidden {
-	display: none !important;
-	visibility: hidden;
-}
-
 ul ::marker {
 	color: var(--yellow);
 }
@@ -88,5 +82,10 @@ ul ::marker {
 
 	.w-post {
 		@extend .w-content;
+	}
+
+	.hidden {
+		display: none;
+		visibility: hidden;
 	}
 }

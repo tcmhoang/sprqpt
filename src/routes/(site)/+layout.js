@@ -1,9 +1,7 @@
 import BirthdayCakeIcon from '$lib/icons/BirthdayCakeIcon.svelte';
 import BriefcaseIcon from '$lib/icons/BriefcaseIcon.svelte';
-import GithubIcon from '$lib/icons/GithubIcon.svelte';
-import KeybaseIcon from '$lib/icons/KeybaseIcon.svelte';
 import PositionLocationIcon from '$lib/icons/PositionLocationIcon.svelte';
-import Telegram from '$lib/icons/Telegram.svelte';
+import NameWithVerifiedBadge from '$lib/components/NameWithVerifiedBadge.svelte';
 
 export const load = () => ({
 	title: 'Feed',
@@ -25,5 +23,6 @@ export const load = () => ({
 	summary: [
 		'On the mission to spice up the web, pixel by pixel ✨',
 		'Software Engineer, Creative Developer, Troublemaker solver, Spam Deleter.'
-	]
+	],
+	heading: NameWithVerifiedBadge
 });

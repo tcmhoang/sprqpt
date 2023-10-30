@@ -1,7 +1,7 @@
 <script>
 	import { onNavigate } from '$app/navigation';
 	import Nav from './Nav.svelte';
-	import Header from './Header.svelte';
+	import Header from './Header/Header.svelte';
 	import './style.scss';
 	import CatIcon from '$lib/icons/CatIcon.svelte';
 	import { page } from '$app/stores';
@@ -39,7 +39,7 @@
 	bannerData={$page.data.bannerData ?? default_banner}
 	summary={$page.data.summary}
 	deets={$page.data.deets}
-	links={$page.data.links}
+	heading={$page.data.heading}
 />
 
 <main class="w-content main"><slot /></main>

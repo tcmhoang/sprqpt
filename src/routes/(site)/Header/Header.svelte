@@ -2,7 +2,9 @@
 	import Avatar from './Avatar.svelte';
 	import Banner from './Banner.svelte';
 	import EmailSender from './EmailSender.svelte';
-	import NameWithVerifiedBadge from './NameWithVerifiedBadge.svelte';
+
+	/** @type {string|Component} */
+	export let heading;
 
 	/** @type BannerData */
 	export let bannerData;
@@ -10,8 +12,11 @@
 	/** @type {Detail[]} */
 	export let deets;
 
-	/**@type {string[]} */
+	/**@type {string[]|Component} */
 	export let summary;
+
+	const cast_to_component = (/** @type {string|Component} */ val) =>
+		/** @type Component*/ (val);
 </script>
 
 <header>
@@ -29,7 +34,28 @@
 			<EmailSender />
 		</div>
 
-		<NameWithVerifiedBadge />
+		<h1>
+			{#if typeof heading == 'string'}
+				{heading}
+			{:else}
+				<svelte:component this={cast_to_component(heading)} />
+			{/if}
+		</h1>
+
+		<div
+			class="summary"
+			style={!(summary instanceof Array)
+				? '--text: var(--subtext); --yellow: var(--peach)'
+				: null}
+		>
+			{#if summary instanceof Array}
+				{#each summary as content}
+					<p>{content}</p>
+				{/each}
+			{:else}
+				<svelte:component this={cast_to_component(summary)} />
+			{/if}
+		</div>
 
 		<span class="details">
 			{#each deets as { icon, text }}
@@ -39,12 +65,6 @@
 				</span>
 			{/each}
 		</span>
-
-		<div class="summary">
-			{#each summary as content}
-				<p>{content}</p>
-			{/each}
-		</div>
 	</div>
 </header>
 
@@ -59,7 +79,6 @@
 		border-radius: 13px;
 		overflow: hidden;
 		transform: translateZ(0px);
-		padding-bottom: 0.5rem;
 	}
 
 	.overview {
@@ -75,9 +94,7 @@
 		display: flex;
 		justify-content: end;
 		align-items: center;
-		padding-bottom: 0.5rem;
 		min-height: calc(var(--step-9) * 0.5);
-		padding-top: 0.5rem;
 	}
 
 	.details {
@@ -85,10 +102,8 @@
 		align-items: center;
 		gap: 0.5rem;
 		flex-wrap: wrap;
-
 		color: var(--subtext);
 		font-size: var(--step--1);
-		margin-bottom: 0.25rem;
 
 		.detail {
 			display: flex;
@@ -105,7 +120,7 @@
 	.summary {
 		line-height: 1.25;
 		& > * {
-			margin-bottom: 0.5rem;
+			margin-bottom: 0.25rem;
 		}
 	}
 </style>

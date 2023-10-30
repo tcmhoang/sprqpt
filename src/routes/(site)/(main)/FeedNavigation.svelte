@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import tab_routes from '$lib/constants/tab_routes';
 
-	const p_name = $page.url.pathname;
+	$: p_name = $page.url.pathname;
 </script>
 
 <div role="navigation">
@@ -54,11 +54,8 @@
 	[aria-selected='true'] {
 		color: var(--text);
 		span {
-			border-bottom: 4px solid var(--yellow);
-		}
-
-		&::before {
 			view-transition-name: tab-nav;
+			border-bottom: 4px solid var(--yellow);
 		}
 	}
 </style>

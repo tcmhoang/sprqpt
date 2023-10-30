@@ -1,0 +1,55 @@
+<script>
+	import VerifiedBadgeIcon from '$lib/icons/VerifiedBadgeIcon.svelte';
+</script>
+
+<div>
+	<span class="polarized" data-content="Conrad Hoang">Conrad Hoang</span>
+	<span class="badge"> <VerifiedBadgeIcon /> </span>
+</div>
+
+<style lang="scss">
+	div {
+		color: var(--text);
+		display: flex;
+		column-gap: 0.5rem;
+		align-items: center;
+		height: 100%;
+	}
+	.polarized {
+		display: block;
+		transition: transform 300ms ease, color 100ms ease-in;
+		position: relative;
+
+		&::before,
+		&::after {
+			mix-blend-mode: inherit;
+			content: attr(data-content);
+			position: absolute;
+			font: inherit;
+			transition: inherit;
+			display: inherit;
+			left: 0;
+			right: 0;
+			top: 0;
+		}
+
+		&:hover {
+			mix-blend-mode: exclusion;
+			color: var(--l-red);
+			transform: translateY(-0.3rem);
+			&::before {
+				color: var(--l-blue);
+				transform: translate(0.3rem, 0.3rem);
+			}
+			&::after {
+				color: var(--l-yellow);
+				transform: translate(-0.3rem, 0.3rem);
+			}
+		}
+	}
+	.badge {
+		display: inline-flex;
+		height: 75%;
+		aspect-ratio: 1;
+	}
+</style>
