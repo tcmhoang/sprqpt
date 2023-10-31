@@ -22,6 +22,9 @@
 </div>
 
 <style lang="scss">
+	div {
+		view-transition-name: nav;
+	}
 	ul {
 		display: grid;
 		width: 100%;
