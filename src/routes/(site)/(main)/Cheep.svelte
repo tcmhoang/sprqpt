@@ -1,10 +1,14 @@
-<article class="cheep">
-	<a href="/" aria-label="Conrad's Feed">
+<script>
+	import Chip from '$lib/components/Chip.svelte';
+</script>
+
+<article>
+	<a class="avatar" href="/" aria-label="Conrad's Feed">
 		<img
-			src="https://avatars.githubusercontent.com/u/51996720?s=80&v=4"
+			src="https://avatars.githubusercontent.com/u/51996720?s=40&v=4"
 			alt="Author"
-			width="80"
-			height="80"
+			width="40"
+			height="40"
 			decoding="async"
 			loading="lazy"
 		/>
@@ -15,7 +19,51 @@
 			<span>•</span>
 			<time datetime="2008-02-14 20:00">Formatted Date</time>
 		</div>
-		<div class="status">Feeling Okay</div>
+		<div>
+			<Chip content="Feeling chill" emoji="😎" />
+		</div>
 		<div class="content">Random content</div>
 	</div>
 </article>
+
+<style lang="scss">
+	article {
+		display: grid;
+		width: 100%;
+		grid-template-columns: auto 1fr;
+		gap: 0.5rem;
+		padding: 1rem;
+		border-radius: 0.5rem;
+	}
+
+	.avatar {
+		width: 2.5rem;
+		height: 2.5rem;
+		img {
+			border-radius: 2.5rem;
+		}
+	}
+
+	.content {
+		display: grid;
+		row-gap: 0.25rem;
+		line-height: 1.25;
+	}
+
+	.author {
+		display: flex;
+		column-gap: 0.5rem;
+		align-items: center;
+		color: var(--subtext);
+		font-size: var(--step--1);
+		a {
+			color: var(--text);
+			font-weight: bold;
+			font-size: var(--step-0);
+		}
+
+		time {
+			font-size: var(--step--2);
+		}
+	}
+</style>
