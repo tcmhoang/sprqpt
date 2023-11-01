@@ -4,6 +4,7 @@ import PositionLocationIcon from '$lib/icons/PositionLocationIcon.svelte';
 import NameWithVerifiedBadge from '$lib/components/NameWithVerifiedBadge.svelte';
 
 export const load = () => ({
+	title: 'Feed',
 	deets: [
 		{
 			text: 'Available',
@@ -21,7 +22,7 @@ export const load = () => ({
 
 	summary: [
 		'On the mission to spice up the web, pixel by pixel ✨',
-		'Software Engineer, Creative Developer, Troublemaker solver, Spam Deleter.'
+		'Software Engineer, Creative Developer, Troublemaker solver, Spam Deleter, Email Personality.'
 	],
 	heading: NameWithVerifiedBadge
 });

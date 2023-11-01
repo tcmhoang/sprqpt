@@ -1,9 +1,9 @@
 <script>
-	import Cheep from './Cheep.svelte';
+	import Card from './Card/Card.svelte';
 </script>
 
 <div>
-	<Cheep />
+	<Card />
 </div>
 
 <style>
