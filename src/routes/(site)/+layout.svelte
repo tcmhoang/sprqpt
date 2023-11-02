@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>{$page.data.title ?? 'Conrad Hoang'}</title>
+	<title>{`${$page.data.title ?? ''} • ${$page.url.hostname}`}</title>
 </svelte:head>
 
 <svelte:body on:mouseenter={() => (hide_seek = true)} on:mouseleave={() => (hide_seek = false)} />
@@ -58,6 +58,7 @@
 <style>
 	.wm-cat {
 		height: 55vh;
+		aspect-ratio: 1;
 		opacity: 0.05;
 		position: fixed;
 		z-index: -1;

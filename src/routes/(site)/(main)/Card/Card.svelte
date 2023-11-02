@@ -21,7 +21,8 @@
 	</div>
 	<div class="content">
 		<div class="author">
-			<a href="/" class="name">Conrad</a>
+			<a href="/">Conrad</a>
+
 			<span>•</span>
 			<time datetime="2008-02-14 20:00">Formatted Date</time>
 		</div>
@@ -53,6 +54,7 @@
 		a {
 			width: 2.5rem;
 			height: 2.5rem;
+
 			img {
 				border-radius: 2.5rem;
 			}
@@ -95,6 +97,11 @@
 			color: var(--text);
 			font-weight: bold;
 			font-size: var(--step-0);
+			&:hover {
+				text-decoration: var(--peach) double underline 1px;
+				text-underline-offset: 2px;
+				text-decoration-skip: ink;
+			}
 		}
 
 		time {
