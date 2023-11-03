@@ -1,5 +1,5 @@
 <script>
-	import About from '$lib/contents/about.md';
+	import About from '$lib/content/about.md';
 </script>
 
-<About/>
+<About />

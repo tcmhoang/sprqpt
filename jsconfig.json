@@ -15,5 +15,17 @@
 		"strict": true,
 		"target": "es2020"
 	},
-	"plugins": ["plugins/markdown"]
+	"plugins": ["plugins/markdown"],
+	"markdown": {
+		"tags": [
+			"title",
+			"date",
+			"updated",
+			"categories",
+			"excerpt",
+			"hero",
+			"heroAlt",
+			"heroOpts"
+		]
+	}
 }
