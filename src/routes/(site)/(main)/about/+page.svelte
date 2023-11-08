@@ -1,5 +1,5 @@
 <script>
-	import About from '$lib/content/about.md';
+	export let data;
 </script>
 
-<About />
+<svelte:component this={data.content} />
