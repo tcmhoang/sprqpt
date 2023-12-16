@@ -21,6 +21,7 @@
         buildInputs = [
 	corepack_21
 	nodePackages_latest.svelte-check
+	nodePackages.typescript-language-server
 	nodePackages_latest.svelte-language-server
 	vscode-langservers-extracted
 	fish
