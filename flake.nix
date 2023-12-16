@@ -26,8 +26,8 @@
 	fish
 	];
 	shellHook = ''
-		fish
 		pnpm i
+		fish
 	'';
       };
     };

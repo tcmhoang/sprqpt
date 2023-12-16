@@ -1,5 +1,5 @@
 {
-	"name": "page",
+	"name": "tcmhoang",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -12,23 +12,19 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^2.1.1",
-		"@sveltejs/kit": "^1.27.3",
-		"eslint": "^8.53.0",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^8.10.0",
 		"eslint-plugin-markdown": "^3.0.1",
-		"eslint-plugin-svelte": "^2.34.1",
-		"mdsvex": "^0.11.0",
+		"eslint-plugin-svelte": "^2.35.1",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"sass": "^1.69.5",
-		"svelte": "^4.2.2",
-		"svelte-check": "^3.5.2",
-		"vite": "^4.5.0"
+		"svelte": "^4.2.8",
+		"svelte-check": "^3.6.2",
+		"vite": "^5.0.0"
 	},
-	"type": "module",
-	"dependencies": {
-		"rehype-raw": "^7.0.0",
-		"remark-gfm": "^4.0.0"
-	}
+	"type": "module"
 }
