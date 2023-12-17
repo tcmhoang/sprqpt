@@ -1,13 +1,13 @@
 ---
 title: 'About me'
 date: '2023-11-02'
-updated: '2023-11-02'
+created: '2023-11-02'
 excerpt: 'A bit about myself'
 ---
 
 ## Ciao 👋
 
-I'm Tuan (pronounced 'Twan'), also known as Conrad. I'm a curious software
+I'm Conrad ,also known as Tuan *(you can also called me 'Twan')*. I'm a curious software
 engineer who always strives for the best possible way of solving problems.
 
 I've worked with many programming languages before and absolutely
@@ -23,10 +23,10 @@ a deep, but not too narrow understanding to not limiting
 themselves from discovering to the great creations.
 
 I make "things" and hack on various other projects on the side when I get
-the time. All whilst improving my design mindsets and well-structured
+the time. All the while, improving my design mindsets and well-structured
 code. 
 
 Don’t be shy, just say "Hi!". I can’t wait to chat with you! 😄
 
-Like always, stay awesome!
+**Like always, stay awesome!**
 

@@ -23,10 +23,6 @@
 	});
 </script>
 
-<svelte:head>
-	<title>{`${$page.data.title ?? ''} • ${$page.url.hostname}`}</title>
-</svelte:head>
-
 <svelte:body on:mouseenter={() => (hide_seek = true)} on:mouseleave={() => (hide_seek = false)} />
 
 <div class="wm-cat" class:hide_seek aria-hidden="true" role="presentation">

@@ -23,20 +23,11 @@
 			if (iframe_elem) {
 				switch (s) {
 					case 'light':
-						return onThemeChange(
-							heroCss?.light ?? '',
-							iframe_elem
-						);
+						return onThemeChange(heroCss?.light ?? '', iframe_elem);
 					case 'dark':
-						return onThemeChange(
-							heroCss?.dark ?? '',
-							iframe_elem
-						);
+						return onThemeChange(heroCss?.dark ?? '', iframe_elem);
 					case 'system':
-						return onThemeChange(
-							heroCss?.sys ?? '',
-							iframe_elem
-						);
+						return onThemeChange(heroCss?.sys ?? '', iframe_elem);
 					default:
 						return;
 				}
@@ -53,19 +44,14 @@
 
 <div class="banner">
 	{#if !heroCss}
-		<img
-			src={heroUrl}
-			alt={heroAlt}
-			width="750"
-			height="250"
-			style="object-fit: cover;"
-		/>
+		<img src={heroUrl} alt={heroAlt} width="750" height="250" style="object-fit: cover;" />
 	{:else}
 		<iframe
 			src={heroUrl}
 			frameborder="0"
 			title={heroAlt}
 			loading="lazy"
+			scrolling="no"
 			bind:this={iframe}
 		/>
 	{/if}

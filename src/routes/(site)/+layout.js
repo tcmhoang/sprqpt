@@ -4,7 +4,6 @@ import PositionLocationIcon from '$lib/icons/PositionLocationIcon.svelte';
 import NameWithVerifiedBadge from '$lib/components/NameWithVerifiedBadge.svelte';
 
 export const load = () => ({
-	title: 'Feed',
 	deets: [
 		{
 			text: 'Available',

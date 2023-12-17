@@ -9,11 +9,7 @@
 	<ul role="tablist">
 		{#each tab_routes as { label, link }}
 			<li role="presentation">
-				<a
-					href={link}
-					role="tab"
-					aria-selected={p_name == link ? 'true' : null}
-				>
+				<a href={link} role="tab" aria-selected={p_name == link ? 'true' : null}>
 					<span>{label}</span>
 				</a>
 			</li>
@@ -58,7 +54,7 @@
 		color: var(--text);
 		span {
 			view-transition-name: tab-nav;
-			border-bottom: 4px solid var(--yellow);
+			border-bottom: 4px solid var(--mauve);
 		}
 	}
 </style>
