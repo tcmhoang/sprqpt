@@ -14,10 +14,7 @@ export default {
 			assets: 'build',
 			precompress: false,
 			strict: true
-		}),
-		paths: {
-			relative: false
-		}
+		})
 	},
 
 	extensions: ['.svelte', '.md'],
