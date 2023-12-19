@@ -49,7 +49,7 @@
 	}
 	.badge {
 		display: inline-flex;
-		height: 75%;
+		height: 50%;
 		aspect-ratio: 1;
 	}
 </style>

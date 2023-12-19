@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { markdoc } from 'svelte-markdoc-preprocess';
 import { dirname, join } from 'path';
@@ -9,7 +9,15 @@ const node_path = join(root, './src/lib/nodes/Nodes.svelte');
 const layout_path = join(root, './src/lib/layouts');
 export default {
 	kit: {
-		adapter: adapter()
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			precompress: false,
+			strict: true
+		}),
+		paths: {
+			relative: false
+		}
 	},
 
 	extensions: ['.svelte', '.md'],

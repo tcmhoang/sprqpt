@@ -12,9 +12,9 @@
 			(GPG)
 		</a>
 	</div>
-	<p>Subscribe to RSS <a href="feed.xml">via RSS</a></p>
+	<p>Subscribe to RSS</p>
 
-	<strong>tcmhoang © 2024</strong>
+	<small>tcmhoang © 2024</small>
 
 	<div class="hidden" aria-hidden="true" itemtype="http://schema.org/Person">
 		<span itemprop="gender">Male</span>
@@ -40,7 +40,7 @@
 		row-gap: 0.5rem;
 	}
 
-	strong {
+	small {
 		color: var(--sub-text);
 		font-size: var(--step--2);
 	}
