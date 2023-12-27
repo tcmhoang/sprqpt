@@ -1,9 +1,27 @@
 <script>
+	import { onMount } from 'svelte';
+
 	/** @type number */
 	export let level;
+
+	/** @type Element */
+	let element;
+
+	/** @type string | null */
+	let id = null;
+
+	onMount(() => {
+		if (element.firstElementChild?.textContent ?? false) {
+			id = (element.firstElementChild?.textContent ?? '')
+				.replace(/[?]/g, '')
+				.replace(/\s+/g, '-')
+				.toLowerCase();
+		}
+	});
 </script>
 
-<svelte:element this={`h${level}`}> <slot /> </svelte:element>
+<svelte:element this={`h${level}`} bind:this={element}> <slot /> </svelte:element>
+<p>{id}</p>
 
 <style>
 	h2 {
