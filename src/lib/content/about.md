@@ -7,12 +7,12 @@ excerpt: 'A bit about myself'
 
 ## Ciao 👋
 
-I'm Conrad ,also known as Tuan *('Twan' is acceptable)*. I'm a curious software
+I'm Conrad, also known as Tuan *('Twan' is acceptable)*. I'm a curious software
 engineer who always strives for the best possible way of solving problems.
 
 I've worked with many programming languages before and absolutely
 appreciated the way that they taught me seeing things from
-different angles and perspectives. I enjoy speaking about this and showing
+different perspectives. I enjoy speaking about that and showing
 people how to use these techniques to level up their skills. It's
 incredible to me that you can open a computer and learn about anything
 at your fingertips!

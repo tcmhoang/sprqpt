@@ -23,15 +23,20 @@
 	<meta name="DC.title" content={title} />
 	<meta name="DC.Creator" content={author ?? 'Conrad Hoang'} />
 	<meta name="DC.Language" content="en" />
-
 	<meta name="description" content={excerpt} />
 	<title>{`${title} • ${$page.url.hostname}`}</title>
-
-	<dcterms />
 </svelte:head>
 
-<slot />
+<div>
+	<slot />
 
-<small>
-	Updated on {new Date(Date.parse(date)).toDateString()}
-</small>
+	<small>
+		Updated on {new Date(Date.parse(date)).toDateString()}
+	</small>
+</div>
+
+<style>
+	div {
+		padding: 0 1rem;
+	}
+</style>
