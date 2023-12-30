@@ -18,6 +18,8 @@
 	</div>
 	<p>Subscribe to RSS</p>
 
+	<p>Vectors and icons by <a href="https://www.svgrepo.com" target="_blank">SVG Repo</a></p>
+
 	<small>tcmhoang © 2024</small>
 
 	<div class="hidden" aria-hidden="true" itemtype="http://schema.org/Person">

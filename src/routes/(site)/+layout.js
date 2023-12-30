@@ -1,4 +1,4 @@
-import BirthdayCakeIcon from '$lib/icons/BirthdayCakeIcon.svelte';
+import BirthdayIcon from '$lib/icons/BirthdayIcon.svelte';
 import BriefcaseIcon from '$lib/icons/BriefcaseIcon.svelte';
 import PositionLocationIcon from '$lib/icons/PositionLocationIcon.svelte';
 import NameWithVerifiedBadge from '$lib/components/NameWithVerifiedBadge.svelte';
@@ -11,7 +11,7 @@ export const load = () => ({
 		},
 		{
 			text: 'September 25th',
-			icon: BirthdayCakeIcon
+			icon: BirthdayIcon
 		},
 		{
 			text: 'Global',

@@ -1,4 +1,5 @@
 <script>
+	import PaperClipIcon from '$lib/icons/PaperClipIcon.svelte';
 	import { onMount } from 'svelte';
 
 	/** @type number */
@@ -27,19 +28,36 @@
 </script>
 
 <svelte:element this={`h${level}`} bind:this={element} {id}>
-	<slot />
-	<a href="#{id}" title="permalink">permalink</a>
+	<span> <slot /> </span>
+	<a href="#{id}" title="permalink">
+		<PaperClipIcon />
+	</a>
 </svelte:element>
 
-<style>
-	h2 {
+<style lang="scss">
+	@for $i from 1 through 6 {
+		h#{$i} {
+			font-size: var(--step-#{5 - $i});
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		font-weight: bold;
-		font-size: var(--step-2);
 		margin-bottom: 0.5rem;
+		display: flex;
+		column-gap: 0.5rem;
+		align-items: center;
+		margin-top: 2rem;
+		scroll-margin-top: 4rem;
 	}
 	a {
-		font-weight: bold;
-		color: var(--peach);
-		font-size: var(--step--2);
+		color: var(--text);
+		width: 2.75rem;
+		height: 2.75rem;
 	}
 </style>
