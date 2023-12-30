@@ -1,14 +1,18 @@
+<script>
+	const gpg_md5 = 'f10aa4c5c18b8bda4ead64f1b8e8bff3'.toUpperCase();
+	const ssh_sha256 =
+		'ee6e28d659105cf2befecce76386682726aa6d7170af059b3d35033e26acad2e'.toUpperCase();
+</script>
+
 <footer class="w-content">
 	<div>
 		<a href="/keys/conradhoang.ssh.pub">
-			<abbr title="SHA256:1891d46e318031f42c4942b3a6a6886b2dc019c8f7d9e20a6949f00c0088d8e3"
-				>1891d4&hellip;</abbr
-			>
+			<abbr title="SHA256:{ssh_sha256}">{ssh_sha256.substring(0, 6)}&hellip;</abbr>
 			(SSH)
 		</a>
 		<br />
 		<a href="/keys/conradhoang.gpg.pub">
-			<abbr title="MD5:7EEC55A3F4BEBF079E5F51CA6304382A6349D8B3">7EEC55&hellip;</abbr>
+			<abbr title="MD5:{gpg_md5}">{gpg_md5.substring(0, 6)}&hellip;</abbr>
 			(GPG)
 		</a>
 	</div>
