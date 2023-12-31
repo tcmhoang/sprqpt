@@ -55,5 +55,11 @@
 		color: var(--text);
 		width: 2.75rem;
 		height: 2.75rem;
+		border-radius: 0.375rem;
+
+		&:hover {
+			color: var(--peach);
+			background-color: var(--p-surface);
+		}
 	}
 </style>
