@@ -12,14 +12,10 @@
 	let id = null;
 
 	onMount(() => {
-		if (element && element.childNodes) {
+		if (element && element.childNodes.length) {
 			id =
-				[...element.childNodes]
-					.find((c) => c.nodeType == Node.TEXT_NODE)
-					?.textContent?.replace(
-						/[\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF|?]/g,
-						''
-					)
+				element.childNodes[0].textContent
+					?.replace(/[\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF|?]/g, '')
 					.trim()
 					.replace(/\s+/g, '-')
 					.toLowerCase() ?? null;

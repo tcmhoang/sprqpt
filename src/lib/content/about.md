@@ -1,32 +1,38 @@
 ---
 title: 'About me'
-date: '2023-11-02'
+date: '2024-01-01'
 created: '2023-11-02'
 excerpt: 'A bit about myself'
 ---
 
 ## Ciao 👋
 
-I'm Conrad, also known as Tuan *('Twan' is acceptable)*. I'm a curious software
-engineer who always strives for the best possible way of solving problems.
+I'm Conrad, also known as Tuan *(but hey, Twan works too, no sweat!  Call
+me whichever floats your boat! )*. I'm an uber-curious Software Engineer
+who always strives for the best possible way of solving problems.
 
-I've worked with many programming languages before and absolutely
-appreciated the way that they taught me seeing things from
-different perspectives. I enjoy speaking about that and showing
-people how to use these techniques to level up their skills. It's
-incredible to me that you can open a computer and learn about anything
-at your fingertips!
+I've worked with many programming languages before. Each one has taught 
+me to see things through a new perspective, all the while gaining a 
+treasure trove of new concepts.  I enjoy speaking about them and sharing 
+these techniques with other people to level up their skills. It's 
+incredible to me that you can just open a computer and learn basically 
+about anything at your fingertips.
 
-I firmly believe that in order to understand, explore and further in
-any field, one needs to be equipped with diverse knowledge, which has
-a deep, but not too narrow understanding to not limiting
-themselves from discovering to the great creations.
+I firmly believe that in order to understand, explore, and further in
+any field, one needs to be equipped with diverse knowledge, which has a 
+deep, but not too narrow understanding to not limit oneself from
+discovering the great creations. That's why I'm all about getting my
+hands dirty in every corner of the CS, constantly expanding my skill set. 
+My ultimate goal is to find a place where I can utilize and continue to 
+expand my knowledge. To me, problem-solving isn't limited by languages 
+or paradigms but fuels pure innovation for the future. That means using 
+computers in ways we can't even imagine yet! Like, imagine being a master 
+carpenter who can build anything from a toothpick tower to a spaceship, 
+just by grabbing the right tool. That's the kind of developer I wanna be!
 
-I make "things" and hack on various other projects on the side when I get
-the time. All the while, improving my design mindsets and horning my
-skill set to make code well-structured.
+When I have free time, I like to build cool stuff and tinker with side 
+projects *(Gotta keep that design mindset on point and that coding skills 
+sharp)*.  So don't be a stranger! Hit me up with a "Hi!" and let's have a 
+chat about all things such as tech, banh mi, or whatever you have in mind.
 
-Don’t be shy, just say "Hi!". I can’t wait to chat with you! 😄
-
-**Like always, stay awesome!**
-
+**Stay curious, stay awesome, and keep coding like nobody's watching! ✌️**
