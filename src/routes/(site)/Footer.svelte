@@ -16,7 +16,6 @@
 			(GPG)
 		</a>
 	</div>
-	<p>Subscribe to RSS</p>
 
 	<p>Vectors and icons by <a href="https://www.svgrepo.com" target="_blank">SVG Repo</a></p>
 

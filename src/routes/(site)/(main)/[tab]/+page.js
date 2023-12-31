@@ -12,7 +12,7 @@ export const load = async ({ params }) => {
 			};
 		case 'links':
 			return {
-				content: ''
+				content: (await import('$lib/content/links.md')).default
 			};
 		default:
 			error(404);
