@@ -7,9 +7,10 @@ excerpt: 'A bit about myself'
 
 ## Ciao 👋
 
-I'm Conrad, also known as Tuan *(but hey, Twan works too, no sweat!  Call
-me whichever floats your boat! )*. I'm an uber-curious Software Engineer
-who always strives for the best possible way of solving problems.
+I'm Conrad, also known as Tuan 
+*(but hey, Twan works too, no sweat! Call me whichever floats your boat! )*.
+I'm an uber-curious Software Engineer who always strives for the best
+possible way of solving problems.
 
 I've worked with many programming languages before. Each one has taught 
 me to see things through a new perspective, all the while gaining a 
@@ -31,8 +32,9 @@ carpenter who can build anything from a toothpick tower to a spaceship,
 just by grabbing the right tool. That's the kind of developer I wanna be!
 
 When I have free time, I like to build cool stuff and tinker with side 
-projects *(Gotta keep that design mindset on point and that coding skills 
-sharp)*.  So don't be a stranger! Hit me up with a "Hi!" and let's have a 
+projects 
+*(Gotta keep that design mindset on point and that coding skills sharp)*. 
+So don't be a stranger! Hit me up with a "Hi!" and let's have a 
 chat about all things such as tech, banh mi, or whatever you have in mind.
 
 **Stay curious, stay awesome, and keep coding like nobody's watching! ✌️**

@@ -32,6 +32,7 @@
 		<div class="content">Random content</div>
 	</div>
 </article>
+>
 
 <style lang="scss">
 	article {
