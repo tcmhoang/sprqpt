@@ -1,7 +1,7 @@
 ---
 date: '2024-01-01'
-emotag: '🎆 Feeling excited'
-image: '$lib/assets/danang-2021.jpg'
+emo: '🎆'
+emodesc: 'Feeling excited'
 layout: cheep
 ---
 
@@ -19,3 +19,6 @@ food? Idk. The website is still under construction. New features are
 coming. If something sparks for interest, don't be hesitant to subscribe to my
 RSS (when I finish implementing it) 🤭. Hopefully, I can get it running
 with all of my desired features before the lunar new year.
+
+![2 years ago]($lib/assets/danang-2021.jpg 'Danang 2021')
+

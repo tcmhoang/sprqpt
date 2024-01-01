@@ -5,14 +5,11 @@
 	/** @type string */
 	export let date;
 
-	/** @type string */
-	export let emotag;
-
-	const emoji = emotag.substring(0, 1);
-	const emoji_desc = emotag.substring(1);
-
 	/** @type string | null | undefined */
-	export let image;
+	export let emo;
+
+	/** @type string | null | undefined*/
+	export let emodesc;
 
 	/** @type string | null | undefined */
 	export let author;
@@ -45,19 +42,12 @@
 			</a>
 		</div>
 		<div>
-			<Chip content={emoji_desc} {emoji} />
+			{#if emo && emodesc}
+				<Chip content={emodesc} emoji={emo} />
+			{/if}
 		</div>
 		<div class="content">
 			<slot />
-			{#if image}
-				<enhanced:img
-					src={image}
-					sizes="40px"
-					decoding="async"
-					loading="lazy"
-					class="cheep-image"
-				/>
-			{/if}
 		</div>
 	</div>
 </article>
@@ -85,6 +75,8 @@
 			height: 2.5rem;
 
 			.img-ava {
+				width: 100%;
+				height: auto;
 				border-radius: 2.5rem;
 			}
 		}
@@ -136,12 +128,5 @@
 		time {
 			font-size: var(--step--2);
 		}
-	}
-
-	.cheep-image {
-		border-radius: 0.5rem;
-		max-width: 100%;
-		height: auto;
-		vertical-align: middle;
 	}
 </style>

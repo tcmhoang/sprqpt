@@ -6,6 +6,7 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"lib": ["es2020", "DOM", "DOM.Iterable"],
+		"types": ["vite/client"],
 		"moduleResolution": "bundler",
 		"module": "es2020",
 		"resolveJsonModule": true,

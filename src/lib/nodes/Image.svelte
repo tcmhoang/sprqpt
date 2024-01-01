@@ -1,5 +1,5 @@
 <script>
-	/** @type string | null | undefined */
+	/** @type string */
 	export let src;
 	/** @type string | null | undefined*/
 	export let alt;
@@ -12,8 +12,8 @@
 <figure>
 	{#if isVideo}
 		<video class="enhanced" controls loop muted />
-	{:else if src}
-		<enhanced:img {src} {alt} class="enhanced" decoding="async" loading="lazy" />
+	{:else}
+		<img {src} {alt} class="enhanced" decoding="async" loading="lazy" />
 	{/if}
 	<figcaption>{title ?? alt ?? 'An image'}</figcaption>
 </figure>
@@ -24,6 +24,7 @@
 		margin-bottom: 0.5rem;
 		max-width: 100%;
 		height: auto;
+		vertical-align: middle;
 	}
 
 	figure {
