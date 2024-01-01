@@ -37,7 +37,7 @@ export default {
 			nodes: node_path,
 			layouts: {
 				default: join(layout_path, './Default.svelte'),
-				post: join(layout_path, './Post/Post.svelte')
+				cheep: join(layout_path, './Cheep/Cheep.svelte')
 			}
 		})
 	]

@@ -1,38 +1,25 @@
-<script context="module">
-	const pattern = /^.*-(\d+)x(\d+).(.*)$/gm;
-</script>
-
 <script>
-	/** @type string
-	 * must have this format
-	 * ...-WxH.xxx
-	 * to calc the sizes(wxh)*/
+	/** @type string | null | undefined */
 	export let src;
-	/** @type string | null */
+	/** @type string | null | undefined*/
 	export let alt;
-	/** @type string | null */
+	/** @type string | null  | undefined*/
 	export let title;
 
-	const isVideo = src.endsWith('.mp4') ?? false;
-
-	const [w, h, ext] = [...(src.match(pattern) ?? [0, 0, ''])];
+	const isVideo = src?.endsWith('.mp4') ?? false;
 </script>
 
 <figure>
 	{#if isVideo}
-		<video {src} controls loop muted />
-	{:else}
-		<picture>
-			<source srcset="{src} {w}w" sizes="{w}px" type="image/{ext}" />
-			<img {src} alt={alt ?? title} width={w} height={h} decoding="async" loading="lazy" />
-		</picture>
+		<video class="enhanced" controls loop muted />
+	{:else if src}
+		<enhanced:img {src} {alt} class="enhanced" decoding="async" loading="lazy" />
 	{/if}
 	<figcaption>{title ?? alt ?? 'An image'}</figcaption>
 </figure>
 
 <style>
-	img,
-	video {
+	.enhanced {
 		border-radius: 0.5rem;
 		margin-bottom: 0.5rem;
 		max-width: 100%;

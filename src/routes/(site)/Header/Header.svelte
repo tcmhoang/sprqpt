@@ -15,8 +15,7 @@
 	/**@type {string[]|Component} */
 	export let summary;
 
-	const cast_to_component = (/** @type {string|Component} */ val) =>
-		/** @type Component*/ (val);
+	const cast_to_component = (/** @type {string|Component} */ val) => /** @type Component*/ (val);
 </script>
 
 <header>
@@ -29,8 +28,10 @@
 	</div>
 
 	<div class="w-content overview">
-		<div class="avatar">
-			<Avatar />
+		<div class="avatar-container">
+			<div class="avatar-wrapper">
+				<Avatar />
+			</div>
 			<EmailSender />
 		</div>
 
@@ -44,9 +45,7 @@
 
 		<div
 			class="summary"
-			style={!(summary instanceof Array)
-				? '--text: var(--subtext); --yellow: var(--peach)'
-				: null}
+			style={!(summary instanceof Array) ? '--text: var(--subtext); --yellow: var(--peach)' : null}
 		>
 			{#if summary instanceof Array}
 				{#each summary as content}
@@ -89,12 +88,18 @@
 		display: grid;
 		grid-gap: 0.5rem;
 	}
-	.avatar {
+	.avatar-container {
 		position: relative;
 		display: flex;
 		justify-content: end;
 		align-items: center;
 		min-height: calc(var(--step-9) * 0.5);
+	}
+
+	.avatar-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
 	.details {

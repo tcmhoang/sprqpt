@@ -1,23 +1,20 @@
-<img
-	src="https://avatars.githubusercontent.com/u/51996720?v=4"
+<enhanced:img
+	src="$lib/assets/me.jpg"
 	alt="Conrad"
-	width="200"
-	height="200"
 	loading="eager"
 	decoding="async"
+	class="avatar"
+	sizes="(min-width:1920px) 460px, (min-width:768px) 230px"
 />
 
 <style>
-	img {
-		position: absolute;
+	.avatar {
+		border: solid var(--text) 3px;
 		display: block;
-		top: 0;
-		left: 0;
 		width: var(--step-9);
 		height: auto;
-		aspect-ratio: 1;
 		transform: translateY(-50%);
-		border: solid var(--text) 3px;
+		aspect-ratio: 1;
 		border-radius: 100px;
 	}
 </style>

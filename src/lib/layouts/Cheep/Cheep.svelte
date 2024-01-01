@@ -1,18 +1,34 @@
 <script>
 	import LinkIcon from '$lib/icons/LinkIcon.svelte';
 	import Chip from './Chip.svelte';
+
+	/** @type string */
+	export let date;
+
+	/** @type string */
+	export let emotag;
+
+	const emoji = emotag.substring(0, 1);
+	const emoji_desc = emotag.substring(1);
+
+	/** @type string | null | undefined */
+	export let image;
+
+	/** @type string | null | undefined */
+	export let author;
+
+	author = author ?? 'Conrad';
 </script>
 
 <article>
 	<div class="avatar">
 		<a href="/" aria-label="Conrad's Feed">
-			<img
-				src="https://avatars.githubusercontent.com/u/51996720?s=40&v=4"
-				alt="Author"
-				width="40"
-				height="40"
+			<enhanced:img
+				src="$lib/assets/me.jpg"
+				sizes="40px"
 				decoding="async"
 				loading="lazy"
+				class="img-ava"
 			/>
 		</a>
 		<div class="actions">
@@ -21,18 +37,30 @@
 	</div>
 	<div class="content">
 		<div class="author">
-			<a href="/">Conrad</a>
+			<a href="/"
+				>{author}
 
-			<span>•</span>
-			<time datetime="2008-02-14 20:00">Formatted Date</time>
+				<span>•</span>
+				<time datetime={date}>{new Date(Date.parse(date)).toDateString()}</time>
+			</a>
 		</div>
 		<div>
-			<Chip content="Feeling chill" emoji="😎" />
+			<Chip content={emoji_desc} {emoji} />
 		</div>
-		<div class="content">Random content</div>
+		<div class="content">
+			<slot />
+			{#if image}
+				<enhanced:img
+					src={image}
+					sizes="40px"
+					decoding="async"
+					loading="lazy"
+					class="cheep-image"
+				/>
+			{/if}
+		</div>
 	</div>
 </article>
->
 
 <style lang="scss">
 	article {
@@ -56,7 +84,7 @@
 			width: 2.5rem;
 			height: 2.5rem;
 
-			img {
+			.img-ava {
 				border-radius: 2.5rem;
 			}
 		}
@@ -108,5 +136,12 @@
 		time {
 			font-size: var(--step--2);
 		}
+	}
+
+	.cheep-image {
+		border-radius: 0.5rem;
+		max-width: 100%;
+		height: auto;
+		vertical-align: middle;
 	}
 </style>

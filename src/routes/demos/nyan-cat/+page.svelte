@@ -89,14 +89,7 @@
 		@function render_rainbow() {
 			$res: ();
 			@each $c in $colors {
-				$res: append(
-					$res,
-					(
-						_gen2StopTile($c, transparent),
-						_gen2StopTile(transparent, $c)
-					),
-					comma
-				);
+				$res: append($res, (_gen2StopTile($c, transparent), _gen2StopTile(transparent, $c)), comma);
 			}
 			@return $res;
 		}
@@ -117,11 +110,7 @@
 		transform: (
 			translate(
 				clamp(-40vw, calc(100vw * var(--x) - 50vw), 30vw),
-				clamp(
-					calc($sheight * -0.2),
-					calc($sheight * (var(--y) - 0.5)),
-					calc($sheight * 0.2)
-				)
+				clamp(calc($sheight * -0.2), calc($sheight * (var(--y) - 0.5)), calc($sheight * 0.2))
 			)
 		);
 		overflow: hidden;
@@ -182,11 +171,7 @@
 			.star:nth-child(#{$i}) {
 				left: calc(nth($star_trail, 1) + 30%);
 				top: nth($star_trail, 2);
-				animation: calc(var(--speed) * 0.5 * 2 * 1.3s)
-					ease-in-out
-					calc(1s / $i)
-					infinite
-					whoosh;
+				animation: calc(var(--speed) * 0.5 * 2 * 1.3s) ease-in-out calc(1s / $i) infinite whoosh;
 				&::after {
 					animation-delay: calc(1s / $i);
 				}
@@ -324,11 +309,7 @@
 		left: 45%;
 		transform: translate(
 			clamp(-40vw, calc(100vw * var(--x) - 50vw), 30vw),
-			clamp(
-				calc($sheight * -0.2),
-				calc($sheight * (var(--y) - 0.5)),
-				calc($sheight * 0.2)
-			)
+			clamp(calc($sheight * -0.2), calc($sheight * (var(--y) - 0.5)), calc($sheight * 0.2))
 		);
 		height: $cat_height;
 		aspect-ratio: 5/3;

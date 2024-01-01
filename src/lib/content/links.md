@@ -15,4 +15,3 @@ Wanna get in touch. Here are some links that you can find me:
 - [Github](https://github.com/tcmhoang)
 - [Telegram](https://t.me/tcmhoang)
 - [RSS](/)
-

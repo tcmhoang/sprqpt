@@ -96,37 +96,21 @@
 						id="rect5496-38"
 						style="fill:var(--cat-shape);"
 					/>
-					<path
-						d="m 12,13 2,0 0,2 -2,0 z"
-						id="rect5779"
-						style="fill:var(--cat-cheeck);"
-					/>
-					<path
-						d="m 23,13 2,0 0,2 -2,0 z"
-						id="rect5781"
-						style="fill:var(--cat-cheeck);"
-					/>
+					<path d="m 12,13 2,0 0,2 -2,0 z" id="rect5779" style="fill:var(--cat-cheeck);" />
+					<path d="m 23,13 2,0 0,2 -2,0 z" id="rect5781" style="fill:var(--cat-cheeck);" />
 					<path
 						d="m 15,16 0,-2 1,0 0,1 2,0 0,-1 1,0 0,1 2,0 0,-1 1,0 0,2 z"
 						id="path5785"
 						style="fill:var(--cat-shape);"
 					/>
-					<path
-						d="m 19,12 1,0 0,1 -1,0 z"
-						id="rect5787"
-						style="fill:var(--cat-shape);"
-					/>
+					<path d="m 19,12 1,0 0,1 -1,0 z" id="rect5787" style="fill:var(--cat-shape);" />
 					<g id="g5857">
 						<path
 							d="m 21,13 0,-1 1,0 0,-1 1,0 0,2 z"
 							id="path5795"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 21,11 1,0 0,1 -1,0 z"
-							id="path5797"
-							style="fill:var(--cat-eyes);"
-						/>
+						<path d="m 21,11 1,0 0,1 -1,0 z" id="path5797" style="fill:var(--cat-eyes);" />
 					</g>
 					<g transform="translate(-7,0)" id="g5861">
 						<path
@@ -134,11 +118,7 @@
 							id="path5863"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 21,11 1,0 0,1 -1,0 z"
-							id="path5865"
-							style="fill:var(--cat-eyes);"
-						/>
+						<path d="m 21,11 1,0 0,1 -1,0 z" id="path5865" style="fill:var(--cat-eyes);" />
 					</g>
 				</g>
 			</g>
@@ -236,37 +216,21 @@
 							id="rect5496-38"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 12,13 2,0 0,2 -2,0 z"
-							id="rect5779"
-							style="fill:var(--cat-cheeck);"
-						/>
-						<path
-							d="m 23,13 2,0 0,2 -2,0 z"
-							id="rect5781"
-							style="fill:var(--cat-cheeck);"
-						/>
+						<path d="m 12,13 2,0 0,2 -2,0 z" id="rect5779" style="fill:var(--cat-cheeck);" />
+						<path d="m 23,13 2,0 0,2 -2,0 z" id="rect5781" style="fill:var(--cat-cheeck);" />
 						<path
 							d="m 15,16 0,-2 1,0 0,1 2,0 0,-1 1,0 0,1 2,0 0,-1 1,0 0,2 z"
 							id="path5785"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 19,12 1,0 0,1 -1,0 z"
-							id="rect5787"
-							style="fill:var(--cat-shape);"
-						/>
+						<path d="m 19,12 1,0 0,1 -1,0 z" id="rect5787" style="fill:var(--cat-shape);" />
 						<g id="g5857">
 							<path
 								d="m 21,13 0,-1 1,0 0,-1 1,0 0,2 z"
 								id="path5795"
 								style="fill:var(--cat-shape);"
 							/>
-							<path
-								d="m 21,11 1,0 0,1 -1,0 z"
-								id="path5797"
-								style="fill:var(--cat-eyes);"
-							/>
+							<path d="m 21,11 1,0 0,1 -1,0 z" id="path5797" style="fill:var(--cat-eyes);" />
 						</g>
 						<g transform="translate(-7,0)" id="g5861">
 							<path
@@ -274,11 +238,7 @@
 								id="path5863"
 								style="fill:var(--cat-shape);"
 							/>
-							<path
-								d="m 21,11 1,0 0,1 -1,0 z"
-								id="path5865"
-								style="fill:var(--cat-eyes);"
-							/>
+							<path d="m 21,11 1,0 0,1 -1,0 z" id="path5865" style="fill:var(--cat-eyes);" />
 						</g>
 					</g>
 				</g>
@@ -317,16 +277,8 @@
 	<g id="frame3" class="frame">
 		<g transform="translate(1,1)" id="g4137">
 			<g id="g3806">
-				<path
-					d="m 6,20 0,-4 4,0 0,3 -1,0 0,1 z"
-					id="path3977"
-					style="fill:var(--cat-shape);"
-				/>
-				<path
-					d="m 7,17 2,0 0,2 -2,0 z"
-					id="rect3979"
-					style="fill:var(--cat-fur);"
-				/>
+				<path d="m 6,20 0,-4 4,0 0,3 -1,0 0,1 z" id="path3977" style="fill:var(--cat-shape);" />
+				<path d="m 7,17 2,0 0,2 -2,0 z" id="rect3979" style="fill:var(--cat-fur);" />
 			</g>
 			<g transform="matrix(-1,0,0,1,21,-1032.3622)" id="g3841">
 				<path
@@ -390,37 +342,21 @@
 						id="rect5496-38"
 						style="fill:var(--cat-shape);"
 					/>
-					<path
-						d="m 12,13 2,0 0,2 -2,0 z"
-						id="rect5779"
-						style="fill:var(--cat-cheeck);"
-					/>
-					<path
-						d="m 23,13 2,0 0,2 -2,0 z"
-						id="rect5781"
-						style="fill:var(--cat-cheeck);"
-					/>
+					<path d="m 12,13 2,0 0,2 -2,0 z" id="rect5779" style="fill:var(--cat-cheeck);" />
+					<path d="m 23,13 2,0 0,2 -2,0 z" id="rect5781" style="fill:var(--cat-cheeck);" />
 					<path
 						d="m 15,16 0,-2 1,0 0,1 2,0 0,-1 1,0 0,1 2,0 0,-1 1,0 0,2 z"
 						id="path5785"
 						style="fill:var(--cat-shape);"
 					/>
-					<path
-						d="m 19,12 1,0 0,1 -1,0 z"
-						id="rect5787"
-						style="fill:var(--cat-shape);"
-					/>
+					<path d="m 19,12 1,0 0,1 -1,0 z" id="rect5787" style="fill:var(--cat-shape);" />
 					<g id="g5857">
 						<path
 							d="m 21,13 0,-1 1,0 0,-1 1,0 0,2 z"
 							id="path5795"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 21,11 1,0 0,1 -1,0 z"
-							id="path5797"
-							style="fill:var(--cat-eyes);"
-						/>
+						<path d="m 21,11 1,0 0,1 -1,0 z" id="path5797" style="fill:var(--cat-eyes);" />
 					</g>
 					<g transform="translate(-7,0)" id="g5861">
 						<path
@@ -428,11 +364,7 @@
 							id="path5863"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 21,11 1,0 0,1 -1,0 z"
-							id="path5865"
-							style="fill:var(--cat-eyes);"
-						/>
+						<path d="m 21,11 1,0 0,1 -1,0 z" id="path5865" style="fill:var(--cat-eyes);" />
 					</g>
 				</g>
 			</g>
@@ -543,37 +475,21 @@
 						id="rect5496-38"
 						style="fill:var(--cat-shape);"
 					/>
-					<path
-						d="m 12,13 2,0 0,2 -2,0 z"
-						id="rect5779"
-						style="fill:var(--cat-cheeck);"
-					/>
-					<path
-						d="m 23,13 2,0 0,2 -2,0 z"
-						id="rect5781"
-						style="fill:var(--cat-cheeck);"
-					/>
+					<path d="m 12,13 2,0 0,2 -2,0 z" id="rect5779" style="fill:var(--cat-cheeck);" />
+					<path d="m 23,13 2,0 0,2 -2,0 z" id="rect5781" style="fill:var(--cat-cheeck);" />
 					<path
 						d="m 15,16 0,-2 1,0 0,1 2,0 0,-1 1,0 0,1 2,0 0,-1 1,0 0,2 z"
 						id="path5785"
 						style="fill:var(--cat-shape);"
 					/>
-					<path
-						d="m 19,12 1,0 0,1 -1,0 z"
-						id="rect5787"
-						style="fill:var(--cat-shape);"
-					/>
+					<path d="m 19,12 1,0 0,1 -1,0 z" id="rect5787" style="fill:var(--cat-shape);" />
 					<g id="g5857">
 						<path
 							d="m 21,13 0,-1 1,0 0,-1 1,0 0,2 z"
 							id="path5795"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 21,11 1,0 0,1 -1,0 z"
-							id="path5797"
-							style="fill:var(--cat-eyes);"
-						/>
+						<path d="m 21,11 1,0 0,1 -1,0 z" id="path5797" style="fill:var(--cat-eyes);" />
 					</g>
 					<g transform="translate(-7,0)" id="g5861">
 						<path
@@ -581,11 +497,7 @@
 							id="path5863"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 21,11 1,0 0,1 -1,0 z"
-							id="path5865"
-							style="fill:var(--cat-eyes);"
-						/>
+						<path d="m 21,11 1,0 0,1 -1,0 z" id="path5865" style="fill:var(--cat-eyes);" />
 					</g>
 				</g>
 			</g>
@@ -696,37 +608,21 @@
 						id="rect5496-38"
 						style="fill:var(--cat-shape);"
 					/>
-					<path
-						d="m 12,13 2,0 0,2 -2,0 z"
-						id="rect5779"
-						style="fill:var(--cat-cheeck);"
-					/>
-					<path
-						d="m 23,13 2,0 0,2 -2,0 z"
-						id="rect5781"
-						style="fill:var(--cat-cheeck);"
-					/>
+					<path d="m 12,13 2,0 0,2 -2,0 z" id="rect5779" style="fill:var(--cat-cheeck);" />
+					<path d="m 23,13 2,0 0,2 -2,0 z" id="rect5781" style="fill:var(--cat-cheeck);" />
 					<path
 						d="m 15,16 0,-2 1,0 0,1 2,0 0,-1 1,0 0,1 2,0 0,-1 1,0 0,2 z"
 						id="path5785"
 						style="fill:var(--cat-shape);"
 					/>
-					<path
-						d="m 19,12 1,0 0,1 -1,0 z"
-						id="rect5787"
-						style="fill:var(--cat-shape);"
-					/>
+					<path d="m 19,12 1,0 0,1 -1,0 z" id="rect5787" style="fill:var(--cat-shape);" />
 					<g id="g5857">
 						<path
 							d="m 21,13 0,-1 1,0 0,-1 1,0 0,2 z"
 							id="path5795"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 21,11 1,0 0,1 -1,0 z"
-							id="path5797"
-							style="fill:var(--cat-eyes);"
-						/>
+						<path d="m 21,11 1,0 0,1 -1,0 z" id="path5797" style="fill:var(--cat-eyes);" />
 					</g>
 					<g transform="translate(-7,0)" id="g5861">
 						<path
@@ -734,11 +630,7 @@
 							id="path5863"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 21,11 1,0 0,1 -1,0 z"
-							id="path5865"
-							style="fill:var(--cat-eyes);"
-						/>
+						<path d="m 21,11 1,0 0,1 -1,0 z" id="path5865" style="fill:var(--cat-eyes);" />
 					</g>
 				</g>
 			</g>
@@ -861,37 +753,21 @@
 						id="rect5496-38"
 						style="fill:var(--cat-shape);"
 					/>
-					<path
-						d="m 12,13 2,0 0,2 -2,0 z"
-						id="rect5779"
-						style="fill:var(--cat-cheeck);"
-					/>
-					<path
-						d="m 23,13 2,0 0,2 -2,0 z"
-						id="rect5781"
-						style="fill:var(--cat-cheeck);"
-					/>
+					<path d="m 12,13 2,0 0,2 -2,0 z" id="rect5779" style="fill:var(--cat-cheeck);" />
+					<path d="m 23,13 2,0 0,2 -2,0 z" id="rect5781" style="fill:var(--cat-cheeck);" />
 					<path
 						d="m 15,16 0,-2 1,0 0,1 2,0 0,-1 1,0 0,1 2,0 0,-1 1,0 0,2 z"
 						id="path5785"
 						style="fill:var(--cat-shape);"
 					/>
-					<path
-						d="m 19,12 1,0 0,1 -1,0 z"
-						id="rect5787"
-						style="fill:var(--cat-shape);"
-					/>
+					<path d="m 19,12 1,0 0,1 -1,0 z" id="rect5787" style="fill:var(--cat-shape);" />
 					<g id="g5857">
 						<path
 							d="m 21,13 0,-1 1,0 0,-1 1,0 0,2 z"
 							id="path5795"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 21,11 1,0 0,1 -1,0 z"
-							id="path5797"
-							style="fill:var(--cat-eyes);"
-						/>
+						<path d="m 21,11 1,0 0,1 -1,0 z" id="path5797" style="fill:var(--cat-eyes);" />
 					</g>
 					<g transform="translate(-7,0)" id="g5861">
 						<path
@@ -899,11 +775,7 @@
 							id="path5863"
 							style="fill:var(--cat-shape);"
 						/>
-						<path
-							d="m 21,11 1,0 0,1 -1,0 z"
-							id="path5865"
-							style="fill:var(--cat-eyes);"
-						/>
+						<path d="m 21,11 1,0 0,1 -1,0 z" id="path5865" style="fill:var(--cat-eyes);" />
 					</g>
 				</g>
 			</g>

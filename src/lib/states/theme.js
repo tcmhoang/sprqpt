@@ -18,8 +18,7 @@ function init_state() {
 		subscribe: subscribe,
 		next: (/** @type Storage */ local_storage, /** @type Document*/ doc_elem) =>
 			update((currTheme) => {
-				const nstate =
-					themes[(themes.indexOf(currTheme) + 1) % themes.length];
+				const nstate = themes[(themes.indexOf(currTheme) + 1) % themes.length];
 
 				local_storage.setItem('theme', JSON.stringify(nstate));
 				doc_elem.documentElement.dataset.theme = nstate;
