@@ -20,7 +20,6 @@
 	nativeBuildInputs = [nodejs_21];
         buildInputs = [
 	corepack_21
-	git-lfs
 	nodePackages_latest.svelte-check
 	nodePackages.typescript-language-server
 	nodePackages_latest.svelte-language-server
