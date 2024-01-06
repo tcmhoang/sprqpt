@@ -4,6 +4,6 @@
 
 <style>
 	p {
-		margin-bottom: 1.5rem;
+		margin-bottom: 0.75rem;
 	}
 </style>

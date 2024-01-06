@@ -2,6 +2,8 @@
 	import LinkIcon from '$lib/icons/LinkIcon.svelte';
 	import Chip from './Chip.svelte';
 
+	import { page } from '$app/stores';
+
 	/** @type string */
 	export let date;
 
@@ -13,6 +15,13 @@
 
 	/** @type string | null | undefined */
 	export let author;
+
+	const prefix = date.split('-').join('');
+	const file_name =
+		$page.data?.tweets
+			?.map((/** @type [string, Component] */ t) => t[0].replace(/.*\//gm, ''))
+			.find((/** @type string */ p) => p.startsWith(prefix))
+			.replace(/\.md/gm, '') ?? $page.url;
 
 	author = author ?? 'Conrad';
 </script>
@@ -29,17 +38,14 @@
 			/>
 		</a>
 		<div class="actions">
-			<a href="/" title="Permalink"><LinkIcon /></a>
+			<a href="/cheeps/{file_name}" title="Permalink"><LinkIcon /></a>
 		</div>
 	</div>
 	<div class="content">
 		<div class="author">
-			<a href="/"
-				>{author}
-
-				<span>•</span>
-				<time datetime={date}>{new Date(Date.parse(date)).toDateString()}</time>
-			</a>
+			<a href="/">{author} </a>
+			<span>•</span>
+			<time datetime={date}>{new Date(Date.parse(date)).toDateString()}</time>
 		</div>
 		<div>
 			{#if emo && emodesc}
@@ -105,7 +111,7 @@
 	.content {
 		display: grid;
 		row-gap: 0.25rem;
-		line-height: 1.25;
+		line-height: 1.5;
 	}
 
 	.author {

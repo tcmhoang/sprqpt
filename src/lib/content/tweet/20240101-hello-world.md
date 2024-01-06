@@ -1,11 +1,11 @@
 ---
 date: '2024-01-01'
-emo: '🎆'
+emo: '🎊'
 emodesc: 'Feeling excited'
 layout: cheep
 ---
 
-## Hello world and happy new years~
+**Hello world and happy new years**
 
 Happy new year y'all.
 
@@ -20,5 +20,4 @@ coming. If something sparks for interest, don't be hesitant to subscribe to my
 RSS (when I finish implementing it) 🤭. Hopefully, I can get it running
 with all of my desired features before the lunar new year.
 
-![2 years ago]($lib/assets/danang-2021.jpg 'Danang 2021')
 

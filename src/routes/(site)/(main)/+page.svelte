@@ -1,13 +1,15 @@
 <script>
 	import { page } from '$app/stores';
 	export let data;
+
+	const tweets = /** @type [string, Component] [] */ (data.tweets).map((i) => i[1]);
 </script>
 
 <svelte:head>
 	<title>{`Feed • ${$page.url.hostname}`}</title>
 </svelte:head>
 <div>
-	{#each data.tweets as tweet}
+	{#each tweets as tweet}
 		<svelte:component this={tweet} />
 	{/each}
 </div>
