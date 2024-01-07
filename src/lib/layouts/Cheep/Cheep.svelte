@@ -31,6 +31,7 @@
 		<a href="/" aria-label="Conrad's Feed">
 			<enhanced:img
 				src="$lib/assets/me.jpg"
+				alt="Author"
 				sizes="40px"
 				decoding="async"
 				loading="lazy"

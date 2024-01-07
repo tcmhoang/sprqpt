@@ -11,8 +11,7 @@ export const load = async ({ params }) => {
 		return {
 			content: (await import('$lib/content/tweet/20240101-hello-world.md')).default
 		};
-	} catch (e) {
-		console.error(e);
+	} catch (_) {
 		error(404);
 	}
 };

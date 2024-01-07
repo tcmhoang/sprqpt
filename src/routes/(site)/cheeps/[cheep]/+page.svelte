@@ -2,4 +2,10 @@
 	export let data;
 </script>
 
-<svelte:component this={data.content} />
+<div><svelte:component this={data.content} /></div>
+
+<style>
+	div {
+		display: flex;
+	}
+</style>

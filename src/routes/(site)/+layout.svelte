@@ -1,11 +1,8 @@
 <script>
 	import { onNavigate } from '$app/navigation';
 	import Nav from './Nav.svelte';
-	import Header from './Header/Header.svelte';
 	import './style.scss';
 	import CatIcon from '$lib/icons/CatIcon.svelte';
-	import { page } from '$app/stores';
-	import default_banner from '$lib/constants/default_banner';
 	import Footer from './Footer.svelte';
 
 	let hide_seek = false;
@@ -31,13 +28,6 @@
 </div>
 
 <Nav />
-
-<Header
-	bannerData={$page.data.bannerData ?? default_banner}
-	summary={$page.data.summary}
-	deets={$page.data.deets}
-	heading={$page.data.heading}
-/>
 
 <main class="w-content main"><slot /></main>
 
