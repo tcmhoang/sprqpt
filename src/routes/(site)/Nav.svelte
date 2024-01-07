@@ -5,7 +5,7 @@
 </script>
 
 <nav>
-	<a href="/" aria-label={base}>
+	<a href="{base}/" aria-label={base}>
 		<CatIcon />
 	</a>
 

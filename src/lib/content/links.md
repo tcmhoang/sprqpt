@@ -9,9 +9,9 @@ excerpt: 'Links that you can find me'
 
 Wanna get in touch. Here are some links that you can find me:
 
-- [Website](/)
+- [Website](https://tcmhoang.github.io/)
 - [Resumé](/resume)
 - [Keybase](https://keybase.io/tcmhoang)
 - [Github](https://github.com/tcmhoang)
 - [Telegram](https://t.me/tcmhoang)
-- [RSS](/)
+- [RSS](https://tcmhoang.github.io/)

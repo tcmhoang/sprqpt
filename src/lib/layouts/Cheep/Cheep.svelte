@@ -2,6 +2,7 @@
 	import tweet from '$lib/content/tweet/tweet';
 	import LinkIcon from '$lib/icons/LinkIcon.svelte';
 	import Chip from './Chip.svelte';
+	import { base } from '$app/paths';
 
 	/** @type string */
 	export let date;
@@ -25,7 +26,7 @@
 
 <article>
 	<div class="avatar">
-		<a href="/" aria-label="Conrad's Feed">
+		<a href="{base}/" aria-label="Conrad's Feed">
 			<enhanced:img
 				src="$lib/assets/me.jpg"
 				alt="Author"
@@ -36,12 +37,12 @@
 			/>
 		</a>
 		<div class="actions">
-			<a href="/cheeps/{id}" title="Permalink"><LinkIcon /></a>
+			<a href="{base}/cheeps/{id}" title="Permalink"><LinkIcon /></a>
 		</div>
 	</div>
 	<div class="content">
 		<div class="author">
-			<a href="/">{author} </a>
+			<a href="{base}/">{author} </a>
 			<span>•</span>
 			<time datetime={date}>{new Date(Date.parse(date)).toDateString()}</time>
 		</div>

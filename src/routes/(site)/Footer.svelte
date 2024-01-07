@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 	const gpg_md5 = 'f10aa4c5c18b8bda4ead64f1b8e8bff3'.toUpperCase();
 	const ssh_sha256 =
 		'ee6e28d659105cf2befecce76386682726aa6d7170af059b3d35033e26acad2e'.toUpperCase();
@@ -6,12 +7,12 @@
 
 <footer class="w-content">
 	<div>
-		<a href="/keys/conradhoang.ssh.pub">
+		<a href="{base}/keys/conradhoang.ssh.pub">
 			<abbr title="SHA256:{ssh_sha256}">{ssh_sha256.substring(0, 6)}&hellip;</abbr>
 			(SSH)
 		</a>
 		<br />
-		<a href="/keys/conradhoang.gpg.pub">
+		<a href="{base}/keys/conradhoang.gpg.pub">
 			<abbr title="MD5:{gpg_md5}">{gpg_md5.substring(0, 6)}&hellip;</abbr>
 			(GPG)
 		</a>
