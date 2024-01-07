@@ -16,7 +16,6 @@
 	nav {
 		display: flex;
 		background-color: var(--overlay);
-		flex: 1 1 0;
 		justify-content: space-between;
 		align-items: center;
 		position: sticky;

@@ -2,10 +2,9 @@
 date: '2024-01-01'
 emo: '🎊'
 emodesc: 'Feeling excited'
+title: 'Hello world!'
 layout: cheep
 ---
-
-**Hello world and happy new years**
 
 Happy new year y'all.
 

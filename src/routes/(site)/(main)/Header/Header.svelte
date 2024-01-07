@@ -70,6 +70,7 @@
 <style lang="scss">
 	header {
 		max-width: var(--width);
+		width: 100%;
 		border-radius: 10px;
 		margin: auto;
 	}

@@ -2,9 +2,7 @@
 
 <style>
 	strong {
-		font-size: var(--step-2);
-		font: bold;
+		font-weight: bold;
 		color: var(--text);
-		margin-bottom: 0.25rem;
 	}
 </style>

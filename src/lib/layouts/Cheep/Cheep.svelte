@@ -1,11 +1,13 @@
 <script>
+	import tweet from '$lib/content/tweet/tweet';
 	import LinkIcon from '$lib/icons/LinkIcon.svelte';
 	import Chip from './Chip.svelte';
 
-	import { page } from '$app/stores';
-
 	/** @type string */
 	export let date;
+
+	/** @type string | undefined | null */
+	export let title;
 
 	/** @type string | null | undefined */
 	export let emo;
@@ -16,14 +18,9 @@
 	/** @type string | null | undefined */
 	export let author;
 
-	const prefix = date.split('-').join('');
-	const file_name =
-		$page.data?.tweets
-			?.map((/** @type [string, Component] */ t) => t[0].replace(/.*\//gm, ''))
-			.find((/** @type string */ p) => p.startsWith(prefix))
-			.replace(/\.md/gm, '') ?? $page.url;
-
 	author = author ?? 'Conrad';
+
+	const id = tweet.fetch_id(date, emo);
 </script>
 
 <article>
@@ -39,7 +36,7 @@
 			/>
 		</a>
 		<div class="actions">
-			<a href="/cheeps/{file_name}" title="Permalink"><LinkIcon /></a>
+			<a href="/cheeps/{id}" title="Permalink"><LinkIcon /></a>
 		</div>
 	</div>
 	<div class="content">
@@ -54,6 +51,9 @@
 			{/if}
 		</div>
 		<div class="content">
+			{#if title}
+				<h3>{title}</h3>
+			{/if}
 			<slot />
 		</div>
 	</div>

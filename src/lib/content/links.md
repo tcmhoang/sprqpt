@@ -5,7 +5,7 @@ created: '2024-01-01'
 excerpt: 'Links that you can find me'
 ---
 
-## Links
+## Links 🖇️
 
 Wanna get in touch. Here are some links that you can find me:
 
