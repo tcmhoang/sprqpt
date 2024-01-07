@@ -22,7 +22,6 @@ export default {
 			preloadStrategy: 'preload-mjs'
 		},
 		paths: {
-			base: dev ? '' : '/tcmhoang.github.io',
 			relative: false
 		},
 		prerender: {
