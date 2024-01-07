@@ -22,7 +22,8 @@ export default {
 			preloadStrategy: 'preload-mjs'
 		},
 		paths: {
-			base: dev ? '' : '/tcmhoang.github.io'
+			base: dev ? '' : '/tcmhoang.github.io',
+			relative: false
 		},
 		prerender: {
 			origin: dev ? 'http://localhost:5173' : 'https://tcmhoang.github.io'
