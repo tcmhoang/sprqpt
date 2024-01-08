@@ -11,8 +11,10 @@ const themes = ['system', 'dark', 'light'];
  * @name next
  *
  */
+
+const init_value = 'system';
 function init_state() {
-	const { subscribe, set, update } = writable('system');
+	const { subscribe, set, update } = writable(init_value);
 
 	return {
 		subscribe: subscribe,
@@ -31,6 +33,8 @@ function init_state() {
 					set(parsedState);
 					doc_elem.documentElement.dataset.theme = parsedState;
 				}
+			} else {
+				doc_elem.documentElement.dataset.theme = init_value;
 			}
 		}
 	};

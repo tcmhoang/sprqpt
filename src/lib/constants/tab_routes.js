@@ -1,15 +1,14 @@
-import { base } from '$app/paths';
 export default [
 	{
 		label: 'Feed',
-		link: `${base}/`
+		link: `/`
 	},
 	{
 		label: 'About',
-		link: `${base}/about/`
+		link: `/about/`
 	},
 	{
 		label: 'Links',
-		link: `${base}/links/`
+		link: `/links/`
 	}
 ];

@@ -7,12 +7,12 @@
 
 <footer class="w-content">
 	<div>
-		<a href="{base}/keys/conradhoang.ssh.pub">
+		<a href="/keys/conradhoang.ssh.pub">
 			<abbr title="SHA256:{ssh_sha256}">{ssh_sha256.substring(0, 6)}&hellip;</abbr>
 			(SSH)
 		</a>
 		<br />
-		<a href="{base}/keys/conradhoang.gpg.pub">
+		<a href="/keys/conradhoang.gpg.pub">
 			<abbr title="MD5:{gpg_md5}">{gpg_md5.substring(0, 6)}&hellip;</abbr>
 			(GPG)
 		</a>

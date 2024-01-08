@@ -1,4 +1,3 @@
-import { base } from '$app/paths';
 const nyan_css = {
 	sys: '',
 	dark: `
@@ -41,7 +40,7 @@ const nyan_css = {
 		`
 };
 
-const nyan_url = `${base}/demos/nyan-cat`;
+const nyan_url = `/demos/nyan-cat`;
 
 const nyan_alt = "Conrad's CSS Nyan Cat Demo";
 

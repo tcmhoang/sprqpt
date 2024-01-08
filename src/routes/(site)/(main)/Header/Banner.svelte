@@ -18,22 +18,26 @@
 
 	const on_iframe_load = () => {
 		if (!unsubscribe) {
-			const iframe_elem = iframe?.contentDocument?.querySelector('body');
-			console.log(iframe_elem);
+			const iframe_doc = iframe.contentDocument || iframe.contentWindow?.document;
 
-			if (iframe_elem) {
-				unsubscribe = theme.subscribe((s) => {
-					switch (s) {
-						case 'light':
-							return onThemeChange(heroCss?.light ?? '', iframe_elem);
-						case 'dark':
-							return onThemeChange(heroCss?.dark ?? '', iframe_elem);
-						case 'system':
-							return onThemeChange(heroCss?.sys ?? '', iframe_elem);
-						default:
-							return;
-					}
-				});
+			if (!!iframe_doc && iframe_doc?.readyState == 'complete') {
+				console.log(iframe_doc);
+				const iframe_elem = iframe_doc.querySelector('body');
+				if (iframe_elem?.children.length ?? false) {
+					console.log(iframe_elem?.children);
+					unsubscribe = theme.subscribe((s) => {
+						switch (s) {
+							case 'light':
+								return onThemeChange(heroCss?.light ?? '', iframe_elem);
+							case 'dark':
+								return onThemeChange(heroCss?.dark ?? '', iframe_elem);
+							case 'system':
+								return onThemeChange(heroCss?.sys ?? '', iframe_elem);
+							default:
+								return;
+						}
+					});
+				}
 			}
 		}
 	};
@@ -41,15 +45,16 @@
 	// A hack to set css in iframe at runtime
 	onMount(() => {
 		const id_check_iframe = setInterval(() => {
-			console.log('checking');
 			unsubscribe ? clearInterval(id_check_iframe) : on_iframe_load();
 		}, 500);
 	});
 
 	onDestroy(() => (unsubscribe ? unsubscribe() : null));
 
-	function onThemeChange(/** @type {string} */ css, /** @type HTMLElement */ iframe_elem) {
+	function onThemeChange(/** @type {string} */ css, /** @type {HTMLElement | null} */ iframe_elem) {
+		console.log('in');
 		if (iframe_elem) iframe_elem.style.cssText = css;
+		console.log(iframe_elem);
 	}
 </script>
 

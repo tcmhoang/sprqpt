@@ -9,7 +9,7 @@ excerpt: 'Links that you can find me'
 
 Wanna get in touch. Here are some links that you can find me:
 
-- [Website](https://tcmhoang.github.io/)
+- [Website](/)
 - [Resumé](https://tcmhoang.github.io/resume)
 - [Keybase](https://keybase.io/tcmhoang)
 - [Github](https://github.com/tcmhoang)
