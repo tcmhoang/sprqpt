@@ -4,7 +4,7 @@
 	loading="eager"
 	decoding="async"
 	class="avatar"
-	sizes="(min-width:1920px) 460px, (min-width:768px) 230px"
+	sizes="88px"
 />
 
 <style>

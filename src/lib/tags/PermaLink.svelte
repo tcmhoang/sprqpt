@@ -1,54 +1,41 @@
+<script context="module">
+	const emojiRegex = /[\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF]|\?/g;
+</script>
+
 <script>
 	import PaperClipIcon from '$lib/icons/PaperClipIcon.svelte';
 	import { onMount } from 'svelte';
 
-	/** @type number */
-	export let level;
-
-	const emojiRegex = /[\uE000-\uF8FF]|\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDDFF]|\?/g;
-
 	/** @type Element */
 	let element;
 
-	/** @type {{id?: string}} */
-	let props = {};
+	/** @type string | null */
+	let id = null;
 
 	onMount(() => {
 		if (element && element.childNodes.length) {
 			const maybe_text_content = element.childNodes[0].textContent;
 
 			if (!emojiRegex.test(maybe_text_content ?? '')) {
-				props = {
-					id: maybe_text_content?.replace(emojiRegex, '').trim().replace(/\s+/g, '-').toLowerCase()
-				};
+				id =
+					maybe_text_content?.replace(emojiRegex, '').trim().replace(/\s+/g, '-').toLowerCase() ??
+					id;
 			}
 		}
 	});
 </script>
 
-<svelte:element this={`h${level}`} bind:this={element} {...props}>
-	<span> <slot /> </span>
-	{#if props.id}
-		<a href="#{props.id}" title="permalink">
+<div>
+	<span {id} bind:this={element}> <slot /> </span>
+	{#if id}
+		<a href="#{id}" title="permalink">
 			<PaperClipIcon />
 		</a>
 	{/if}
-</svelte:element>
+</div>
 
 <style lang="scss">
-	@for $i from 1 through 6 {
-		h#{$i} {
-			font-size: var(--step-#{5 - $i});
-		}
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-weight: bold;
+	div {
 		margin-bottom: 0.5rem;
 		display: flex;
 		column-gap: 0.5rem;

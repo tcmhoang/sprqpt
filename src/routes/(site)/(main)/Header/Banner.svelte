@@ -18,13 +18,13 @@
 
 	const on_iframe_load = () => {
 		if (!unsubscribe) {
-			const iframe_doc = iframe.contentDocument || iframe.contentWindow?.document;
+			const iframe_doc = iframe.contentDocument ?? iframe.contentWindow?.document;
 
 			if (!!iframe_doc && iframe_doc?.readyState == 'complete') {
-				console.log(iframe_doc);
 				const iframe_elem = iframe_doc.querySelector('body');
+
+				// If does not have children => not load completely
 				if (iframe_elem?.children.length ?? false) {
-					console.log(iframe_elem?.children);
 					unsubscribe = theme.subscribe((s) => {
 						switch (s) {
 							case 'light':
@@ -52,9 +52,7 @@
 	onDestroy(() => (unsubscribe ? unsubscribe() : null));
 
 	function onThemeChange(/** @type {string} */ css, /** @type {HTMLElement | null} */ iframe_elem) {
-		console.log('in');
 		if (iframe_elem) iframe_elem.style.cssText = css;
-		console.log(iframe_elem);
 	}
 </script>
 

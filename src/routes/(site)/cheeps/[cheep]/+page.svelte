@@ -16,7 +16,7 @@
 <style>
 	.container {
 		display: flex;
-		height: 80vh;
+		height: 75vh;
 		justify-items: center;
 		align-items: center;
 	}
