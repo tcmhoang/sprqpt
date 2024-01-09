@@ -7,6 +7,7 @@
 
 <svelte:head>
 	<title>{`Feed • ${$page.url.hostname}`}</title>
+	<meta name="description" content="Conrad Hoang's personal website" />
 </svelte:head>
 <div>
 	{#each tweets as tweet}

@@ -40,8 +40,8 @@
 		font-weight: 700;
 		width: 100%;
 		height: 100%;
-
-		color: var(--soverlay);
+		color: var(--text);
+		opacity: 0.7;
 
 		&:focus-visible,
 		&:hover {
@@ -51,7 +51,7 @@
 	}
 
 	[aria-selected='true'] {
-		color: var(--text);
+		opacity: 1;
 		span {
 			view-transition-name: tab-nav;
 			border-bottom: 4px solid var(--mauve);

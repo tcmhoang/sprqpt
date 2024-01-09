@@ -35,6 +35,10 @@
 </footer>
 
 <style>
+	a {
+		color: var(--pink);
+		font-size: var(--step-0);
+	}
 	footer {
 		color: var(--text);
 		padding: 2rem 0;

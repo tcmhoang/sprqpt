@@ -52,7 +52,7 @@
 		</div>
 		<div class="content">
 			{#if title}
-				<h3>{title}</h3>
+				<h2>{title}</h2>
 			{/if}
 			<slot />
 		</div>
@@ -73,6 +73,9 @@
 		}
 	}
 
+	h2 {
+		font-size: var(--step-2);
+	}
 	.avatar {
 		display: flex;
 		flex-flow: column nowrap;

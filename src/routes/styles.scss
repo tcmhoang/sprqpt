@@ -20,7 +20,7 @@
 	--d-blue: hsl(217, 92%, 76%);
 	--d-lavender: hsl(232, 97%, 85%);
 	--d-text: hsl(226, 64%, 88%);
-	--d-subtext: hsl(228, 24%, 72%);
+	--d-subtext: hsl(227, 35%, 80%);
 	--d-overlay: hsl(231, 11%, 47% / 35%);
 	--d-soverlay: hsl(231, 11%, 47%);
 	--d-surface: hsl(237, 16%, 23%);
@@ -43,9 +43,8 @@
 	--l-blue: hsl(220, 91%, 54%);
 	--l-lavender: hsl(231, 87%, 72%);
 	--l-text: hsl(234, 16%, 35%);
-	--l-subtext: hsl(233, 10%, 47%);
+	--l-subtext: hsl(233, 13%, 50%);
 	--l-overlay: hsl(230, 12%, 49% / 35%);
-	--l-soverlay: hsl(230, 12%, 49%);
 	--l-surface: hsl(228, 11%, 65%);
 	--l-p-surface: hsl(225, 14%, 77%);
 	--l-base: hsl(220, 23%, 95%);
@@ -84,7 +83,6 @@ html,
 	--text: var(--l-text);
 	--subtext: var(--l-subtext);
 	--overlay: var(--l-overlay);
-	--soverlay: var(--l-soverlay);
 	--surface: var(--l-surface);
 	--p-surface: var(--l-p-surface);
 	--base: var(--l-base);
@@ -111,7 +109,6 @@ html,
 	--text: var(--d-text);
 	--subtext: var(--d-subtext);
 	--overlay: var(--d-overlay);
-	--soverlay: var(--d-soverlay);
 	--surface: var(--d-surface);
 	--p-surface: var(--d-p-surface);
 	--base: var(--d-base);

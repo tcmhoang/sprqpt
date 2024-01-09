@@ -1,11 +1,10 @@
 <script>
-	import { base } from '$app/paths';
 	import CatIcon from '$lib/icons/CatIcon.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
 </script>
 
 <nav>
-	<a href="/" aria-label={base}>
+	<a href="/" aria-label="Homepage">
 		<CatIcon />
 	</a>
 
