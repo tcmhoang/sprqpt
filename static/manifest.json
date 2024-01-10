@@ -1,11 +1,11 @@
 {
-	"name": "Conrad Hoang's blog",
-	"id": "personal application",
+	"name": "TCMH Feed",
+	"id": "Personal application",
 	"short_name": "TCMH",
 	"icons": [
 		{
 			"src": "icons/favicon.ico",
-			"sizes": "32x32",
+			"sizes": "48x48",
 			"type": "image/x-icon"
 		},
 		{
@@ -20,7 +20,24 @@
 		}
 	],
 	"start_url": "/",
-	"theme_color": "#df8e1d",
-	"background_color": "#eff1f5",
-	"display": "standalone"
+	"scope": "/",
+	"theme_color": "#181825",
+	"background_color": "#11111b",
+	"display": "standalone",
+	"screenshots": [
+		{
+			"src": "screenshots/1.jpg",
+			"sizes": "779x1038",
+			"type": "image/jpg",
+			"form_factor": "wide",
+			"label": "Conrad's Hoang feed"
+		},
+		{
+			"src": "screenshots/1.jpg",
+			"sizes": "779x1038",
+			"type": "image/jpg",
+			"label": "Conrad's Hoang feed"
+		}
+	],
+	"description": "Join me in my programming journey!"
 }
