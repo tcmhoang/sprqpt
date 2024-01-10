@@ -20,6 +20,11 @@ export default {
 			precompress: true,
 			strict: true
 		}),
+		csp: {
+			directives: {
+				'script-src': ['self']
+			}
+		},
 		output: {
 			preloadStrategy: 'preload-mjs'
 		},
