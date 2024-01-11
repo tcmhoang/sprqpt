@@ -5,10 +5,10 @@ export default [
 	},
 	{
 		label: 'About',
-		link: `/about/`
+		link: `/about`
 	},
 	{
 		label: 'Links',
-		link: `/links/`
+		link: `/links`
 	}
 ];

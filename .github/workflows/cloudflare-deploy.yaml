@@ -6,6 +6,7 @@ on:
 
 jobs:
   build_site:
+    name: Build site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,10 +22,9 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
+          BASE_PATH: '/sprqpt.com'
         run: |
           pnpm build
-          touch build/.nojekyll
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v2
@@ -32,18 +32,21 @@ jobs:
           path: 'build/'
 
   deploy:
+    name: Publish to Cloudflare Pages
     needs: build_site
     runs-on: ubuntu-latest
-
     permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      contents: read
+      deployments: write
 
     steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v2
+      - name: Publishing 🚀
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACC_ID }}
+          projectName: ${{ vars.CLOUDFLARE_PRJ_ID }}
+          directory: 'build/'
+          gitHubToken: ${{ secrets.GH_TOKEN }}
+
+
