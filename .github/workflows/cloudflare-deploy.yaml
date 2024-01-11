@@ -9,38 +9,24 @@ jobs:
     name: Build site
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: 📚 Git Checkout
         uses: actions/checkout@v3
 
-      - name: Install pnpm
+      - name: ⚙️ Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: pnpm i
 
-      - name: build
+      - name: 👷 build
         env:
           BASE_PATH: '/sprqpt.com'
         run: |
           pnpm build
 
-      - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: 'build/'
-
-  deploy:
-    name: Publish to Cloudflare Pages
-    needs: build_site
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-
-    steps:
-      - name: Publishing 🚀
+      - name: 📢 Publish
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -48,5 +34,6 @@ jobs:
           projectName: ${{ vars.CLOUDFLARE_PRJ_ID }}
           directory: 'build/'
           gitHubToken: ${{ secrets.GH_TOKEN }}
+          wranglerVersion: '3'
 
 
