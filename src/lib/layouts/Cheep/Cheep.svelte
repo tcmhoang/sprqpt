@@ -27,7 +27,7 @@
 	<div class="avatar">
 		<a href="/" aria-label="Conrad's Feed">
 			<enhanced:img
-				src="$lib/assets/me.jpeg"
+				src="$lib/assets/me.jpeg?w=40"
 				alt="Author"
 				sizes="40px"
 				decoding="async"
@@ -41,7 +41,7 @@
 	</div>
 	<div class="content">
 		<div class="author">
-			<a href="/">{author} </a>
+			<a href="/">{author}</a>
 			<span>•</span>
 			<time datetime={date}>{new Date(Date.parse(date)).toDateString()}</time>
 		</div>

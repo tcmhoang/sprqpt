@@ -22,7 +22,8 @@ export default {
 		}),
 		csp: {
 			directives: {
-				'script-src': ['self']
+				'script-src': ['self'],
+				'connect-src': ['self', 'https://*.cloudflare.com/cdn-cgi/challenge-platform/*']
 			}
 		},
 		output: {

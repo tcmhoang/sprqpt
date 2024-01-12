@@ -1,10 +1,10 @@
 <enhanced:img
-	src="$lib/assets/me.jpeg"
+	src="$lib/assets/me.jpeg?w=80"
 	alt="Conrad"
 	loading="eager"
 	decoding="async"
 	class="avatar"
-	sizes="88px"
+	sizes="80px"
 />
 
 <style>

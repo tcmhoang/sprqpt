@@ -1,12 +1,11 @@
-name: Deploy to GitHub Pages
-
+name: Deploy to Cloudflare
 on:
   push:
     branches: 'main'
 
 jobs:
   build_site:
-    name: Build site
+    name: Deploy site
     runs-on: ubuntu-latest
     steps:
       - name: 📚 Git Checkout
