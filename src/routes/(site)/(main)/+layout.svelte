@@ -6,7 +6,7 @@
 </script>
 
 <Header
-	bannerData={$page.data.bannerData ?? default_banner}
+	banner_data={$page.data.banner_data ?? default_banner}
 	summary={$page.data.summary}
 	deets={$page.data.deets}
 	heading={$page.data.heading}

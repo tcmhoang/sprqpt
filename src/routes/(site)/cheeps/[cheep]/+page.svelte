@@ -1,10 +1,10 @@
 <script>
 	export let data;
-	import { page } from '$app/stores';
+	import { build_title } from '$lib/constants/page.js';
 </script>
 
 <svelte:head>
-	<title>{`${data.title} • ${$page.url.hostname}`}</title>
+	<title>{build_title(data.title)}</title>
 </svelte:head>
 
 <div class="container">

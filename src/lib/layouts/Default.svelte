@@ -1,5 +1,5 @@
 <script>
-	import { page } from '$app/stores';
+	import { build_title } from '$lib/constants/page';
 
 	/** @type string */
 	export let excerpt;
@@ -24,7 +24,7 @@
 	<meta name="DC.Creator" content={author ?? 'Conrad Hoang'} />
 	<meta name="DC.Language" content="en" />
 	<meta name="description" content={excerpt} />
-	<title>{`${title} • ${$page.url.hostname}`}</title>
+	<title>{build_title(title)}</title>
 </svelte:head>
 
 <div>

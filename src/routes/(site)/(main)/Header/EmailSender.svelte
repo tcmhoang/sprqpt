@@ -1,4 +1,4 @@
-<a href="mailto:tcmhoang@outlook.com">
+<a href="mailto:conrad@sprqpt.com">
 	Contact <svg
 		role="img"
 		aria-hidden="true"

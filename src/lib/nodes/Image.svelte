@@ -6,11 +6,11 @@
 	/** @type string | null  | undefined*/
 	export let title;
 
-	const isVideo = src?.endsWith('.mp4') ?? false;
+	const is_video = src?.endsWith('.mp4') ?? false;
 </script>
 
 <figure>
-	{#if isVideo}
+	{#if is_video}
 		<video class="enhanced" controls loop muted />
 	{:else}
 		<img {src} {alt} class="enhanced" decoding="async" loading="lazy" />

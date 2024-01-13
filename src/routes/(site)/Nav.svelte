@@ -11,7 +11,7 @@
 	<ThemeToggle />
 </nav>
 
-<style>
+<style lang="scss">
 	nav {
 		display: flex;
 		background-color: var(--overlay);

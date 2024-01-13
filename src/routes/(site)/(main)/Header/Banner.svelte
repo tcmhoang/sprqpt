@@ -3,12 +3,12 @@
 	import { onDestroy, onMount } from 'svelte';
 
 	/** @type string */
-	export let heroUrl;
+	export let hero_url;
 	/** @type string */
-	export let heroAlt;
+	export let hero_alt;
 
 	/** @type {CssModifier | null } */
-	export let heroCss;
+	export let hero_css;
 
 	/** @type HTMLIFrameElement */
 	let iframe;
@@ -28,11 +28,11 @@
 					unsubscribe = theme.subscribe((s) => {
 						switch (s) {
 							case 'light':
-								return onThemeChange(heroCss?.light ?? '', iframe_elem);
+								return on_theme_change(hero_css?.light ?? '', iframe_elem);
 							case 'dark':
-								return onThemeChange(heroCss?.dark ?? '', iframe_elem);
+								return on_theme_change(hero_css?.dark ?? '', iframe_elem);
 							case 'system':
-								return onThemeChange(heroCss?.sys ?? '', iframe_elem);
+								return on_theme_change(hero_css?.sys ?? '', iframe_elem);
 							default:
 								return;
 						}
@@ -51,19 +51,22 @@
 
 	onDestroy(() => (unsubscribe ? unsubscribe() : null));
 
-	function onThemeChange(/** @type {string} */ css, /** @type {HTMLElement | null} */ iframe_elem) {
+	function on_theme_change(
+		/** @type {string} */ css,
+		/** @type {HTMLElement | null} */ iframe_elem
+	) {
 		if (iframe_elem) iframe_elem.style.cssText = css;
 	}
 </script>
 
 <div class="banner">
-	{#if !heroCss}
-		<img src={heroUrl} alt={heroAlt} width="750" height="250" style="object-fit: cover;" />
+	{#if !hero_css}
+		<img src={hero_url} alt={hero_alt} width="750" height="250" style="object-fit: cover;" />
 	{:else}
 		<iframe
-			src={heroUrl}
+			src={hero_url}
 			frameborder="0"
-			title={heroAlt}
+			title={hero_alt}
 			loading="lazy"
 			scrolling="no"
 			bind:this={iframe}

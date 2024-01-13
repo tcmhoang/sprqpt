@@ -1,12 +1,12 @@
 <script>
-	import { page } from '$app/stores';
+	import { build_title } from '$lib/constants/page.js';
 	export let data;
 
 	const tweets = /** @type [string, Component] [] */ (data.tweets).map((i) => i[1]);
 </script>
 
 <svelte:head>
-	<title>{`Feed • ${$page.url.hostname}`}</title>
+	<title>{build_title('Feed')}</title>
 	<meta name="description" content="Conrad Hoang's personal website" />
 </svelte:head>
 <div>

@@ -11,7 +11,8 @@ const ASSETS = [
 
 const supportSchema = ['https:', 'http:'];
 
-self.addEventListener('install', (event) => {
+self.addEventListener('install', (e) => {
+	const event = /** @type FetchEvent */ (e);
 	// Create a new cache and add all files to it
 	async function addFilesToCache() {
 		const cache = await caches.open(CACHE);
@@ -21,7 +22,8 @@ self.addEventListener('install', (event) => {
 	event.waitUntil(addFilesToCache());
 });
 
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', (e) => {
+	const event = /** @type FetchEvent */ (e);
 	// Remove previous cached data from disk
 	async function deleteOldCaches() {
 		for (const key of await caches.keys()) {
@@ -32,8 +34,9 @@ self.addEventListener('activate', (event) => {
 	event.waitUntil(deleteOldCaches());
 });
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', (e) => {
 	// ignore POST requests etc
+	const event = /** @type FetchEvent */ (e);
 	if (event.request.method !== 'GET') return;
 
 	async function respond() {

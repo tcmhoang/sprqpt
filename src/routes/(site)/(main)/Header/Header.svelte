@@ -7,7 +7,7 @@
 	export let heading;
 
 	/** @type BannerData */
-	export let bannerData;
+	export let banner_data;
 
 	/** @type {Detail[]} */
 	export let deets;
@@ -21,9 +21,9 @@
 <header>
 	<div class="bannerContainer">
 		<Banner
-			heroUrl={bannerData.hero_url}
-			heroAlt={bannerData.hero_alt}
-			heroCss={bannerData.hero_css}
+			hero_url={banner_data.hero_url}
+			hero_alt={banner_data.hero_alt}
+			hero_css={banner_data.hero_css}
 		/>
 	</div>
 

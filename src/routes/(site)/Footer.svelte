@@ -1,5 +1,7 @@
 <script>
-	import { base } from '$app/paths';
+	import Gnup from '$lib/icons/Gnup.svelte';
+	import Terminal from '$lib/icons/Terminal.svelte';
+
 	const gpg_md5 = 'f10aa4c5c18b8bda4ead64f1b8e8bff3'.toUpperCase();
 	const ssh_sha256 =
 		'ee6e28d659105cf2befecce76386682726aa6d7170af059b3d35033e26acad2e'.toUpperCase();
@@ -7,24 +9,19 @@
 
 <footer class="w-content">
 	<div>
-		<a href="/keys/conradhoang.ssh.pub">
-			<abbr title="SHA256:{ssh_sha256}">{ssh_sha256.substring(0, 6)}&hellip;</abbr>
-			(SSH)
+		<a href="/keys/conradhoang.ssh.pub" title="SSH - {ssh_sha256}">
+			<Terminal />
 		</a>
-		<br />
-		<a href="/keys/conradhoang.gpg.pub">
-			<abbr title="MD5:{gpg_md5}">{gpg_md5.substring(0, 6)}&hellip;</abbr>
-			(GPG)
+		<a href="/keys/conradhoang.gpg.pub" title="GPG - {gpg_md5}">
+			<Gnup />
 		</a>
 	</div>
-
-	<p>Vectors and icons by <a href="https://www.svgrepo.com" target="_blank">SVG Repo</a></p>
 
 	<small>tcmhoang © 2024</small>
 
 	<div class="hidden" aria-hidden="true" itemtype="http://schema.org/Person">
 		<span itemprop="gender">Male</span>
-		<span itemprop="email">tcmhoang@outlook.com</span>
+		<span itemprop="email">conrad@sprqpt.com</span>
 		<span itemprop="givenName">Tuan</span>
 		<span itemprop="familyName">Hoang</span>
 		<span itemprop="name">Tuan Minh Hoang</span>
@@ -34,10 +31,25 @@
 	</div>
 </footer>
 
-<style>
-	a {
-		color: var(--pink);
-		font-size: var(--step-0);
+<style lang="scss">
+	div {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		row-gap: 1rem;
+		a {
+			color: var(--pink);
+			border-radius: 0.375rem;
+			display: grid;
+			place-items: center;
+			width: 2.5rem;
+			height: 2.5rem;
+			padding: 0.25rem;
+
+			&:hover {
+				background: var(--surface);
+			}
+		}
 	}
 	footer {
 		color: var(--text);
@@ -52,6 +64,6 @@
 
 	small {
 		color: var(--sub-text);
-		font-size: var(--step--2);
+		font-size: var(--step--1);
 	}
 </style>

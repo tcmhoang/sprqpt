@@ -18,15 +18,15 @@
 	 * @returns {Promise<void>}
 	 */
 
-	const pointerHandler = (e) =>
+	const pointer_handler = (e) =>
 		coords.set({
 			x: e.clientX / container.clientWidth,
 			y: e.clientY / container.clientHeight
 		});
 
 	onMount(() => {
-		container.addEventListener('pointermove', pointerHandler);
-		return () => container.removeEventListener('pointermove', pointerHandler);
+		container.addEventListener('pointermove', pointer_handler);
+		return () => container.removeEventListener('pointermove', pointer_handler);
 	});
 </script>
 
