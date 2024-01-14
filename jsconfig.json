@@ -5,7 +5,7 @@
 		"checkJs": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"lib": ["esnext", "DOM", "DOM.Iterable", "WebWorker"],
+		"lib": ["es2022", "DOM", "DOM.Iterable", "WebWorker"],
 		"types": ["vite/client"],
 		"moduleResolution": "bundler",
 		"module": "es2020",

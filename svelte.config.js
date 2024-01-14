@@ -25,10 +25,10 @@ export default {
 
 		csp: {
 			directives: {
-				'script-src': ['self'],
-				'connect-src': ['self', 'https://*.cloudflare.com/cdn-cgi/challenge-platform/*']
+				'script-src': ['self']
 			}
 		},
+
 		inlineStyleThreshold: 5000,
 		prerender: {
 			concurrency: 8
