@@ -7,7 +7,7 @@
 		'ee6e28d659105cf2befecce76386682726aa6d7170af059b3d35033e26acad2e'.toUpperCase();
 </script>
 
-<footer class="w-content">
+<footer class="w-content" id="footer">
 	<div>
 		<a href="/keys/conradhoang.ssh.pub" title="SSH - {ssh_sha256}">
 			<Terminal />
@@ -38,7 +38,7 @@
 		justify-content: center;
 		row-gap: 1rem;
 		a {
-			color: var(--pink);
+			color: var(--overlay);
 			border-radius: 0.375rem;
 			display: grid;
 			place-items: center;
@@ -48,6 +48,7 @@
 
 			&:hover {
 				background: var(--surface);
+				color: var(--flamingo);
 			}
 		}
 	}

@@ -93,6 +93,7 @@
 		cursor: pointer;
 		height: 100%;
 		aspect-ratio: 1;
+		border-radius: 0.3rem;
 
 		&:focus-visible {
 			background: var(--surface);
