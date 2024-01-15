@@ -1,21 +1,26 @@
 <script>
-	import Gnup from '$lib/icons/Gnup.svelte';
-	import Terminal from '$lib/icons/Terminal.svelte';
+	import GnupIcon from '$lib/icons/GnupIcon.svelte';
+	import TerminalIcon from '$lib/icons/TerminalIcon.svelte';
 
 	const gpg_md5 = 'f10aa4c5c18b8bda4ead64f1b8e8bff3'.toUpperCase();
 	const ssh_sha256 =
 		'ee6e28d659105cf2befecce76386682726aa6d7170af059b3d35033e26acad2e'.toUpperCase();
 </script>
 
-<footer class="w-content" id="footer">
-	<div>
-		<a href="/keys/conradhoang.ssh.pub" title="SSH - {ssh_sha256}">
-			<Terminal />
+<footer class="w-content">
+	<div class="keys">
+		<a href="/keys/conradhoang.ssh.pub">
+			<span><TerminalIcon /></span>
+			(SSH)<abbr title="SHA256:{ssh_sha256}">{ssh_sha256.substring(0, 6)}&hellip;</abbr>
 		</a>
-		<a href="/keys/conradhoang.gpg.pub" title="GPG - {gpg_md5}">
-			<Gnup />
+		<br />
+		<a href="/keys/conradhoang.gpg.pub">
+			<span><GnupIcon /></span>
+			(GPG)<abbr title="MD5:{gpg_md5}">{gpg_md5.substring(0, 6)}&hellip;</abbr>
 		</a>
 	</div>
+
+	<p>Vectors and icons by <a href="https://www.svgrepo.com" target="_blank">SVG Repo</a></p>
 
 	<small>tcmhoang © 2024</small>
 
@@ -32,26 +37,32 @@
 </footer>
 
 <style lang="scss">
-	div {
+	.keys {
 		display: flex;
-		flex-wrap: wrap;
+		flex-flow: row wrap;
 		justify-content: center;
-		row-gap: 1rem;
+		gap: 0.725rem;
 		a {
+			span {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
 			color: var(--overlay);
 			border-radius: 0.375rem;
-			display: grid;
-			place-items: center;
-			width: 2.5rem;
-			height: 2.5rem;
-			padding: 0.25rem;
-
+			display: flex;
+			align-items: center;
+			flex-flow: row nowrap;
 			&:hover {
 				background: var(--surface);
 				color: var(--flamingo);
 			}
 		}
 	}
+
+	p > a {
+		text-decoration: revert;
+	}
+
 	footer {
 		color: var(--text);
 		padding: 2rem 0;
@@ -65,6 +76,5 @@
 
 	small {
 		color: var(--sub-text);
-		font-size: var(--step--1);
 	}
 </style>

@@ -7,11 +7,8 @@ excerpt: 'Links that you can find me'
 
 ## Links 🖇️
 
-Wanna get in touch. Here are some links that you can find me:
+Needs something? Chances are they here
 
-- [Website](/)
-- [Resumé](/resume)
-- [Keybase](https://keybase.io/tcmhoang)
-- [Github](https://github.com/tcmhoang)
-- [Telegram](https://t.me/tcmhoang)
-- [RSS](/)
+{% linkme /%}
+
+
