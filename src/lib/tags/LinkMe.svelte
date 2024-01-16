@@ -26,7 +26,7 @@
 	{/each}
 </div>
 
-<style>
+<style lang="scss">
 	div {
 		display: grid;
 		grid-template-columns: 1fr 1fr;

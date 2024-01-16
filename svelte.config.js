@@ -29,7 +29,6 @@ export default {
 			}
 		},
 
-		inlineStyleThreshold: 5000,
 		prerender: {
 			concurrency: 8
 		},
