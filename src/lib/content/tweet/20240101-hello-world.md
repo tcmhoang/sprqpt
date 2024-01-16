@@ -4,6 +4,7 @@ emo: '🎊'
 emodesc: 'Feeling excited'
 title: 'Hello world!'
 layout: cheep
+description: 'My very first post'
 ---
 
 Happy new year y'all.

@@ -9,7 +9,7 @@
 	/** @type {[string, string,Component][]} */
 	const links = [
 		['Website', '/', WebsiteIcon],
-		['RSS', '/', RssIcon],
+		['RSS', '/rss.xml', RssIcon],
 		['Resume', '/resume', ResumeIcon],
 		['Keybase', 'https://keybase.io/tcmhoang', KeybaseIcon],
 		['Github', 'https://github.com/tcmhoang', GithubIcon],

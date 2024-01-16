@@ -9,4 +9,7 @@
 	});
 </script>
 
+<svelte:head>
+	<link rel="alternate" type="application/rss+xml" title="Conrad Hoang RSS Feed" href="/rss.xml" />
+</svelte:head>
 <slot />
