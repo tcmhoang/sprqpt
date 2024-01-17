@@ -14,7 +14,6 @@
 <style lang="scss">
 	nav {
 		display: flex;
-		background-color: var(--overlay);
 		justify-content: space-between;
 		align-items: center;
 		position: sticky;

@@ -47,7 +47,7 @@
 				width: 1.5rem;
 				height: 1.5rem;
 			}
-			color: var(--overlay);
+			color: var(--text);
 			border-radius: 0.375rem;
 			display: flex;
 			align-items: center;
