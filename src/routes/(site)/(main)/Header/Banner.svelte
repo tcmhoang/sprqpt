@@ -43,10 +43,11 @@
 	};
 
 	// A hack to set css in iframe at runtime
+	// onload on iframe not working as expected
 	onMount(() => {
 		const id_check_iframe = setInterval(() => {
 			unsubscribe ? clearInterval(id_check_iframe) : on_iframe_load();
-		}, 500);
+		}, 250);
 	});
 
 	onDestroy(() => (unsubscribe ? unsubscribe() : null));
@@ -70,7 +71,6 @@
 			loading="lazy"
 			scrolling="no"
 			bind:this={iframe}
-			on:load={on_iframe_load}
 		/>
 	{/if}
 </div>
