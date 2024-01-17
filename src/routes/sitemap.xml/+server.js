@@ -1,6 +1,7 @@
 import tab_routes from '$lib/constants/tab_routes';
 import tweet from '$lib/content/tweet/tweet';
 import * as sitemap from 'super-sitemap';
+export const prerender = true;
 
 export const GET = async () => {
 	return await sitemap.response({
@@ -22,8 +23,10 @@ export const GET = async () => {
 				)
 		},
 
-		excludePatterns: [
-			'^/demos*' // i.e. routes starting with `/dashboard`
-		]
+		excludePatterns: ['^/demos*'],
+		lang: {
+			default: 'en',
+			alternates: []
+		}
 	});
 };
