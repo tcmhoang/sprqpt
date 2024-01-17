@@ -19,10 +19,17 @@
 
 <div>
 	{#each links as [content, link, icon]}
-		<a href={link}>
-			<svelte:component this={icon} />
-			{content}
-		</a>
+		{#if content == 'RSS'}
+			<a data-sveltekit-reload href={link}>
+				<svelte:component this={icon} />
+				{content}
+			</a>
+		{:else}
+			<a href={link}>
+				<svelte:component this={icon} />
+				{content}
+			</a>
+		{/if}
 	{/each}
 </div>
 
