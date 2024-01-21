@@ -6,16 +6,16 @@
 	/** @type string */
 	export let date;
 
-	/** @type string | undefined | null */
+	/** @type string | undefined */
 	export let title;
 
-	/** @type string | null | undefined */
+	/** @type string | undefined */
 	export let emo;
 
-	/** @type string | null | undefined*/
+	/** @type string | undefined*/
 	export let emodesc;
 
-	/** @type string | null | undefined */
+	/** @type string | undefined */
 	export let author;
 
 	author = author ?? 'Conrad';
