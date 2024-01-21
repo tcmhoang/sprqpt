@@ -1,8 +1,7 @@
 <script>
-	import FeedNavigation from './FeedNavigation.svelte';
+	import Header from './Header/Header.svelte';
 	import { page } from '$app/stores';
 	import default_banner from '$lib/constants/default_banner';
-	import Header from './Header/Header.svelte';
 </script>
 
 <Header
@@ -11,6 +10,5 @@
 	deets={$page.data.deets}
 	heading={$page.data.heading}
 />
-<FeedNavigation />
 
 <slot />
