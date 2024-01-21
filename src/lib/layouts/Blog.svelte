@@ -2,16 +2,16 @@
 	import DefaultHeader from './DefaultHeader.svelte';
 
 	/** @type string */
-	export let excerpt;
-
-	/** @type string */
-	export let title;
+	export let date;
 
 	/** @type string */
 	export let created;
 
 	/** @type string */
-	export let date;
+	export let title;
+
+	/** @type string */
+	export let excerpt;
 
 	/** @type string | undefined */
 	export let author;
@@ -21,10 +21,6 @@
 
 <div>
 	<slot />
-
-	<small>
-		Updated on {new Date(Date.parse(date)).toDateString()}
-	</small>
 </div>
 
 <style>
