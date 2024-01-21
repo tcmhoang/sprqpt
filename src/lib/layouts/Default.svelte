@@ -13,7 +13,7 @@
 	/** @type string */
 	export let date;
 
-	/** @type string | null | undefined */
+	/** @type string | undefined */
 	export let author;
 </script>
 

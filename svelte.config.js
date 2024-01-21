@@ -12,9 +12,6 @@ const node_path = join(root, './src/lib/nodes/Nodes.svelte');
 const layout_path = join(root, './src/lib/layouts');
 const tags_path = join(root, './src/lib/tags/');
 export default {
-	compilerOptions: {
-		css: 'external'
-	},
 	kit: {
 		adapter: adapter({
 			pages: 'build',
@@ -22,18 +19,10 @@ export default {
 			precompress: true,
 			strict: true
 		}),
-
 		csp: {
 			directives: {
 				'script-src': ['self']
 			}
-		},
-
-		prerender: {
-			concurrency: 8
-		},
-		output: {
-			preloadStrategy: 'preload-mjs'
 		},
 		paths: {
 			relative: false

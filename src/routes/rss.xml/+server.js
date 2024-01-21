@@ -10,7 +10,7 @@ const avatar = 'https://avatars.githubusercontent.com/u/51996720?v=4';
 
 export const GET = async () => {
 	const all_tweets_metadata =
-		/** @type {{date: String, title: string, emo: string | null | undefined, description: string, tags: string | undefined, author: string | undefined  }[]} */
+		/** @type {{date: String, title: string, emo: string | undefined, description: string, tags: string[] | undefined, author: string | undefined  }[]} */
 		(
 			Object.entries(
 				import.meta.glob('$lib/content/tweet/*.md', { eager: true, import: 'frontmatter' })
@@ -34,7 +34,7 @@ export const GET = async () => {
 						md.date,
 						md.author ?? author,
 						md.description,
-						md.tags?.split(',') ?? []
+						md.tags ?? []
 					)
 				)
 				.join('')
