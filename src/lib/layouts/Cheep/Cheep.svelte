@@ -43,7 +43,7 @@
 		<div class="author">
 			<a href="/">{author}</a>
 			<span>•</span>
-			<time datetime={date}>{new Date(Date.parse(date)).toDateString()}</time>
+			<time datetime={date}>{new Date(date).toUTCString()}</time>
 		</div>
 		<div>
 			{#if emo && emodesc}

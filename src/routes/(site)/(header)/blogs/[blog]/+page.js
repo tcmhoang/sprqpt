@@ -1,27 +1,42 @@
-import BirthdayIcon from '$lib/icons/BirthdayIcon.svelte';
-import BriefcaseIcon from '$lib/icons/BriefcaseIcon.svelte';
-import PositionLocationIcon from '$lib/icons/PositionLocationIcon.svelte';
+import TagIcon from '$lib/icons/TagIcon.svelte';
+import CalendarIcon from '$lib/icons/CalendarIcon.svelte';
 import NameWithVerifiedBadge from '$lib/components/NameWithVerifiedBadge.svelte';
+import { error } from '@sveltejs/kit';
+import blog from '$lib/content/blog/blog';
 
-export const load = () => ({
-	deets: [
-		{
-			text: 'Available',
-			icon: BriefcaseIcon
-		},
-		{
-			text: 'September 25th',
-			icon: BirthdayIcon
-		},
-		{
-			text: 'Global',
-			icon: PositionLocationIcon
-		}
-	],
+/**
+ * @function
+ * @param {{params: {blog:string}}} params;
+ */
+export const load = async ({ params }) => {
+	const id = params.blog;
 
-	summary: [
-		'On the mission to spice up the web, pixel by pixel ✨',
-		'Software Engineer, Creative Developer, Troublemaker solver, Spam Deleter, Email Personality.'
-	],
-	heading: NameWithVerifiedBadge
-});
+	const all_blogs =
+		/** @type {{frontmatter: {date: String, title: string, created: string, tags: string[] | undefined, exerept: string }, default: Component}[]} */
+		(Object.entries(import.meta.glob('$lib/content/blog/*.md', { eager: true })).map((i) => i[1]));
+
+	const maybe_blog_metadata = all_blogs.find(
+		({ frontmatter }) => blog.fetch_id(frontmatter.created, frontmatter.title) == id
+	);
+
+	if (maybe_blog_metadata) {
+		return {
+			deets: [
+				{
+					text: new Date(maybe_blog_metadata.frontmatter.date).toUTCString(),
+					icon: CalendarIcon
+				},
+				{
+					text: maybe_blog_metadata.frontmatter.tags?.join(' ,'),
+					icon: TagIcon
+				}
+			],
+
+			summary: NameWithVerifiedBadge,
+			heading: maybe_blog_metadata.frontmatter.title,
+			exerept: maybe_blog_metadata.frontmatter.exerept,
+			content: maybe_blog_metadata.default
+		};
+	}
+	error(404);
+};
