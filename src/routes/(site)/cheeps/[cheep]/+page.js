@@ -1,15 +1,12 @@
 import tweet from '$lib/content/tweet/tweet';
 import { error } from '@sveltejs/kit';
 
-/**
- * @function
- * @param {{params: {cheep:string}}} params;
- */
+/** @type {import('./$types').PageLoad} */
 export const load = async ({ params }) => {
 	const id = params.cheep;
 
 	const all_tweets =
-		/** @type {{frontmatter: {date: String, title: string, emo: string | null | undefined  }, default: Component}[]} */
+		/** @type {{frontmatter: {date: String, title: string, emo: string | undefined  }, default: Component}[]} */
 		(Object.entries(import.meta.glob('$lib/content/tweet/*.md', { eager: true })).map((i) => i[1]));
 
 	const maybe_tweet_content = all_tweets.find(
