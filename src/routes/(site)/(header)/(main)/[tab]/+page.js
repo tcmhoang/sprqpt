@@ -1,9 +1,6 @@
 import { error } from '@sveltejs/kit';
 
-/**
- * @function
- * @param {{params: {tab:string}}} params;
- */
+/** @type {import('./$types').PageLoad} */
 export const load = async ({ params }) => {
 	switch (params.tab) {
 		case 'about':

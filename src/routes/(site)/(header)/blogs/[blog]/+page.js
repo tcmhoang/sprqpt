@@ -4,10 +4,7 @@ import NameWithVerifiedBadge from '$lib/components/NameWithVerifiedBadge.svelte'
 import { error } from '@sveltejs/kit';
 import blog from '$lib/content/blog/blog';
 
-/**
- * @function
- * @param {{params: {blog:string}}} params;
- */
+/** @type {import('./$types').PageLoad} */
 export const load = async ({ params }) => {
 	const id = params.blog;
 
