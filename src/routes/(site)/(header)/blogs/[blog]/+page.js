@@ -20,7 +20,7 @@ export const load = async ({ params }) => {
 		return {
 			deets: [
 				{
-					text: new Date(maybe_blog_metadata.frontmatter.date).toUTCString(),
+					text: new Date(maybe_blog_metadata.frontmatter.date).toDateString(),
 					icon: CalendarIcon
 				},
 				{

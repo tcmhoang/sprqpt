@@ -23,7 +23,7 @@
 	<slot />
 
 	<small>
-		Updated on {new Date(date).toUTCString()}
+		Updated on {new Date(date).toDateString()}
 	</small>
 </div>
 
