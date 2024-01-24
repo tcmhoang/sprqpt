@@ -64,7 +64,7 @@ const generate_entry = (title, url, date, author, description, tags) => `
 	<author>${email} (${author})</author>
 	<description><![CDATA[${description}]]></description>
 	<guid isPermaLink="true">${url}</guid>
-	<pubDate>${new Date(date).toUTCString()}</pubDate>
+	<pubDate>${new Date(date).toDateString()}</pubDate>
 	<source url="${url}/rss">Conrad Hoang RSS Feed</source>
 	${tags.map((tag) => `<category>${tag}</category>`).join('')}
 </item>`;
@@ -91,8 +91,8 @@ const render = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 		<language>en-us</language>
 		<copyright>${author} ${new Date().getFullYear()}</copyright>
 		<docs>https://www.rssboard.org/rss-specification</docs>
-		<pubDate>${new Date().toUTCString()}</pubDate>
-		<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+		<pubDate>${new Date().toDateString()}</pubDate>
+		<lastBuildDate>${new Date().toDateString()}</lastBuildDate>
 		<managingEditor>${email} (${author})</managingEditor>
 		<webMaster>${email} (${author})</webMaster>
 		<image>
