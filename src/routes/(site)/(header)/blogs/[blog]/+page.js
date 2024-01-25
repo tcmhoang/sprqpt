@@ -35,5 +35,5 @@ export const load = async ({ params }) => {
 			content: maybe_blog_metadata.default
 		};
 	}
-	error(404);
+	return error(404);
 };

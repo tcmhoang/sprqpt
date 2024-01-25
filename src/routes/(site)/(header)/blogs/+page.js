@@ -4,10 +4,7 @@ import PositionLocationIcon from '$lib/icons/PositionLocationIcon.svelte';
 import NameWithVerifiedBadge from '$lib/components/NameWithVerifiedBadge.svelte';
 import blog from '$lib/content/blog/blog';
 
-/** @type {import('./$types').PageLoad} */
-export const load = async ({ url }) => {
-	let tag = url.searchParams.get('tag');
-
+export const load = async () => {
 	const all_blogs_meta =
 		/** @type { {date: String, title: string, created: string, tags: string[] | undefined, exerept: string, id: string }[]} */
 		(
@@ -16,13 +13,9 @@ export const load = async ({ url }) => {
 			).map((i) => i[1])
 		).map((v) => ({ ...v, id: blog.fetch_id(v.created, v.title) }));
 
-	const all_tags = [
-		...new Set(all_blogs_meta.flatMap((frontmatter) => frontmatter.tags ?? []))
-	].sort();
 	return {
-		tags: all_tags,
-		blogs: tag ? all_blogs_meta.filter((v) => (v.tags ?? []).includes(tag ?? '')) : all_blogs_meta,
 		deets: [
+			all_blogs_meta,
 			{
 				text: 'Available',
 				icon: BriefcaseIcon
