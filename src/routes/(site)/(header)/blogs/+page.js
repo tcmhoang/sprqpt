@@ -13,9 +13,12 @@ export const load = async () => {
 			).map((i) => i[1])
 		).map((v) => ({ ...v, id: blog.fetch_id(v.created, v.title) }));
 
+	const tags = [...new Set(all_blogs_meta.flatMap((data) => data.tags))];
+
 	return {
+		tags,
+		blogs: all_blogs_meta,
 		deets: [
-			all_blogs_meta,
 			{
 				text: 'Available',
 				icon: BriefcaseIcon
