@@ -6,14 +6,14 @@ import blog from '$lib/content/blog/blog';
 
 export const load = async () => {
 	const all_blogs_meta =
-		/** @type { {date: String, title: string, created: string, tags: string[] | undefined, excerept: string, id: string, pimage: () => Promise<object>}[]} */
+		/** @type { {date: String, title: string, created: string, tags: string[] | undefined, excerpt: string, id: string, pimage: () => Promise<object>}[]} */
 		(
 			Object.entries(
 				import.meta.glob('$lib/content/blog/*.md', { eager: true, import: 'frontmatter' })
 			).map((i) => i[1])
 		)
 			.map((v) => ({ ...v, id: blog.fetch_id(v.created, v.title) }))
-			.map((v) => ({ ...v, pimage: blog.fetch_image(v.id) }));
+			.map((v) => ({ ...v, pimage: blog.fetch_thumbnail(v.id) }));
 
 	const tags = [...new Set(all_blogs_meta.flatMap((data) => data.tags))];
 
