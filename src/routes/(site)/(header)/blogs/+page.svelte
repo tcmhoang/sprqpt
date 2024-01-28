@@ -1,17 +1,39 @@
 <script>
+	import { build_title } from '$lib/constants/page.js';
+
 	export let data;
 
 	let tags = data.tags.map((v) => [v, true]);
 
-	const toggle_filter = (/** @type string **/ value) =>
-		(tags = [...tags.filter((v) => v[0] != value), [value, !tags.find((v) => v[0] == value)[1]]]);
+	const toggle_filter = (/** @type Event **/ event) =>
+		(tags = [
+			...tags.filter((v) => v[0] != /** @type HTMLElement **/ (event.target).textContent),
+			[
+				/** @type HTMLElement **/ (event.target).textContent ?? '',
+				!(tags.find((v) => v[0] == /** @type HTMLElement **/ (event.target).textContent) ?? [
+					'',
+					false
+				])[1]
+			]
+		]);
 </script>
 
+<svelte:head>
+	<title>{build_title('Blogs')}</title>
+	<meta name="description" content="Conrad Hoang's blogs" />
+</svelte:head>
 <div>
 	{#each tags as [title, activated]}
-		<button class:activated on:click={toggle_filter(title)}>{title}</button>
+		<button class:activated on:click={toggle_filter}>{title}</button>
 	{/each}
 </div>
+
+{#each data.blogs as { date, title, created, tags, excerept, id, pimage }}
+	<div />
+	{#await pimage() then optimized_image}
+		<enhanced:img src={optimized_image.default} />
+	{/await}
+{/each}
 
 <style lang="scss">
 	div {
