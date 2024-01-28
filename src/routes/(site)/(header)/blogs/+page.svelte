@@ -1,9 +1,11 @@
 <script>
 	import { build_title } from '$lib/constants/page.js';
+	import { slide } from 'svelte/transition';
 
 	export let data;
 
 	let tags = data.tags.map((v) => [v, true]);
+	console.log(tags);
 
 	const toggle_filter = (/** @type Event **/ event) =>
 		(tags = [
@@ -16,33 +18,103 @@
 				])[1]
 			]
 		]);
+	$: blogs = data.blogs.filter((meta) =>
+		meta.tags?.some((t) => tags.some(([k, v]) => k == t && v))
+	);
 </script>
 
 <svelte:head>
 	<title>{build_title('Blogs')}</title>
 	<meta name="description" content="Conrad Hoang's blogs" />
 </svelte:head>
-<div>
+<div class="filter-chips">
 	{#each tags as [title, activated]}
 		<button class:activated on:click={toggle_filter}>{title}</button>
 	{/each}
 </div>
 
-{#each data.blogs as { date, title, created, tags, excerept, id, pimage }}
-	<div />
-	{#await pimage() then optimized_image}
-		<enhanced:img src={optimized_image.default} />
-	{/await}
-{/each}
+<div class="blogs" transition:slide|global>
+	{#each blogs as { title, created, tags, excerpt, id, pimage } (id)}
+		<a class="card" href="/blogs/{id}" transition:slide>
+			{#if pimage}
+				{#await pimage() then optimized_image}
+					<enhanced:img class="card-thumbnail" src={optimized_image.default} />
+				{/await}
+			{/if}
+			<dl class="card-content">
+				<dt class="card-title">
+					<strong>{title}</strong>
+				</dt>
+				<dd>
+					<small>{excerpt}</small>
+				</dd>
+				<dt>Published at</dt>
+				<dd>
+					<time datetime={created}>{new Date(created).toDateString()}</time>
+				</dd>
+				{#if tags}
+					<dt>Tags:</dt>
+					<dd>{tags.join(', ')}</dd>
+				{/if}
+			</dl>
+		</a>
+	{/each}
+</div>
 
 <style lang="scss">
-	div {
+	.blogs {
+		display: grid;
+		gap: 0.75rem;
+	}
+	.card {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 3/1;
+		border-radius: 13px;
+		display: grid;
+		padding: 1rem;
+		grid-template: auto / 50% 1fr;
+		gap: 1.5rem;
+		&:hover {
+			background-color: var(--surface);
+		}
+	}
+
+	.card-thumbnail {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 3/2;
+		object-fit: cover;
+		border-radius: 13px;
+	}
+
+	dl {
+		display: grid;
+		gap: 0.1rem;
+	}
+
+	dt {
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		opacity: 0.8;
+		top: 0.2em;
+		color: var(--pink);
+	}
+
+	dd {
+		color: var(--text);
+		font-size: 0.9rem;
+		margin: 0;
+	}
+
+	.filter-chips {
 		display: flex;
 		gap: 0.25rem;
 		align-content: center;
 		justify-content: center;
 		padding: 0.25rem 0.75rem;
 	}
+
 	button {
 		display: inline-flex;
 		background: var(--crust);
