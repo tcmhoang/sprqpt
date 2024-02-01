@@ -5,7 +5,6 @@
 	export let data;
 
 	let tags = data.tags.map((v) => [v, true]);
-	console.log(tags);
 
 	const toggle_filter = (/** @type Event **/ event) =>
 		(tags = [

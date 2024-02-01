@@ -2,4 +2,4 @@
 	export let data;
 </script>
 
-<div>{JSON.stringify(data)}</div>
+<svelte:component this={data.content} />
