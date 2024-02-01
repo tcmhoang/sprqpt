@@ -49,7 +49,8 @@
 	}
 	.badge {
 		display: inline-flex;
-		height: 50%;
+		max-height: 80%;
+		min-height: 60%;
 		aspect-ratio: 1;
 	}
 </style>
