@@ -49,6 +49,10 @@
 		}
 	}
 
+	span {
+		border-bottom: 4px solid transparent;
+	}
+
 	[aria-selected='true'] {
 		span {
 			color: var(--text);
