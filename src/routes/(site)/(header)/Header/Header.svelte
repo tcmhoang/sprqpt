@@ -43,10 +43,7 @@
 			{/if}
 		</h1>
 
-		<div
-			class="summary"
-			style={!(summary instanceof Array) ? '--text: var(--subtext); --yellow: var(--peach)' : null}
-		>
+		<div class="summary {!(summary instanceof Array) ? 'summary-comp' : ''}">
 			{#if summary instanceof Array}
 				{#each summary as content}
 					<p>{content}</p>
@@ -106,7 +103,7 @@
 	.details {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 1rem;
 		flex-wrap: wrap;
 		color: var(--subtext);
 		font-size: var(--step--1);
@@ -114,7 +111,7 @@
 		.detail {
 			display: flex;
 			align-items: center;
-			gap: 0.25rem;
+			gap: 0.5rem;
 
 			.dcon {
 				width: 1.25rem;
@@ -128,5 +125,12 @@
 		& > * {
 			margin-bottom: 0.25rem;
 		}
+	}
+
+	.summary-comp {
+		--text: var(--subtext);
+		--yellow: var(--peach);
+		font-size: var(--step-1);
+		padding-bottom: 0.5rem;
 	}
 </style>
