@@ -32,12 +32,12 @@
 	{/each}
 </div>
 
-<div class="blogs" transition:slide|global>
-	{#each blogs as { title, created, tags, excerpt, id, pimage } (id)}
+<div class="blogs">
+	{#each blogs as { title, created, tags, excerpt, id, thumbnail, alt } (id)}
 		<a class="card" href="/blogs/{id}" transition:slide>
-			{#if pimage}
-				{#await pimage() then optimized_image}
-					<enhanced:img class="card-thumbnail" src={optimized_image.default} />
+			{#if thumbnail}
+				{#await thumbnail() then optimized_image}
+					<enhanced:img class="card-thumbnail" src={optimized_image.default} {alt} />
 				{/await}
 			{/if}
 			<dl class="card-content">
