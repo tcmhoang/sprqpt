@@ -22,6 +22,6 @@
 	}
 
 	ul {
-		list-style: none;
+		list-style: disc;
 	}
 </style>
