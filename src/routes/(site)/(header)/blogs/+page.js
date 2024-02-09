@@ -19,7 +19,8 @@ export const load = async () => {
 				return { ...v, alt, thumbnail };
 			});
 
-	const tags = [...new Set(all_blogs_meta.flatMap((data) => data.tags))];
+	/** @type {string[]} */
+	const tags = [...new Set(all_blogs_meta.flatMap((data) => data.tags ?? []))];
 
 	return {
 		tags,

@@ -4,10 +4,11 @@
 
 	export let data;
 
-	let tags = data.tags.map((v) => [v, true]);
+	/** @type {[string,boolean][]} */
+	let tags = data.tags.sort().map((v) => [v, true]) ?? [];
 
 	const toggle_filter = (/** @type Event **/ event) =>
-		(tags = [
+		(tags = /** @type {[string,boolean][]} */ ([
 			...tags.filter((v) => v[0] != /** @type HTMLElement **/ (event.target).textContent),
 			[
 				/** @type HTMLElement **/ (event.target).textContent ?? '',
@@ -16,7 +17,7 @@
 					false
 				])[1]
 			]
-		]);
+		]).toSorted((a, b) => (a.at(0) + '').localeCompare(b.at(0) + '')));
 	$: blogs = data.blogs.filter((meta) =>
 		meta.tags?.some((t) => tags.some(([k, v]) => k == t && v))
 	);
