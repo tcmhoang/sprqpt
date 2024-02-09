@@ -1,5 +1,5 @@
 <script>
-	import '@catppuccin/highlightjs/sass/catppuccin-mocha.scss';
+	import '@catppuccin/highlightjs/css/catppuccin-mocha.css';
 	import hljs from 'highlight.js/lib/core';
 	import shell from 'highlight.js/lib/languages/shell';
 
