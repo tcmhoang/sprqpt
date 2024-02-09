@@ -2,7 +2,7 @@
 	import { theme } from '$lib/states/theme';
 	import { onDestroy, onMount } from 'svelte';
 
-	/** @type string */
+	/** @type any */
 	export let hero_url;
 	/** @type string */
 	export let hero_alt;
@@ -13,44 +13,46 @@
 	/** @type HTMLIFrameElement */
 	let iframe;
 
-	/** @type {(function(): void) | null} */
-	let unsubscribe = null;
+	if (hero_css) {
+		/** @type {(function(): void) | null} */
+		let unsubscribe = null;
 
-	const on_iframe_load = () => {
-		if (!unsubscribe) {
-			const iframe_doc = iframe.contentDocument ?? iframe.contentWindow?.document;
+		const on_iframe_load = () => {
+			if (!unsubscribe) {
+				const iframe_doc = iframe.contentDocument ?? iframe.contentWindow?.document;
 
-			if (!!iframe_doc && iframe_doc?.readyState == 'complete') {
-				const iframe_elem = iframe_doc.querySelector('body');
+				if (!!iframe_doc && iframe_doc?.readyState == 'complete') {
+					const iframe_elem = iframe_doc.querySelector('body');
 
-				// If does not have children => not load completely
-				if (iframe_elem?.children.length ?? false) {
-					unsubscribe = theme.subscribe((s) => {
-						switch (s) {
-							case 'light':
-								return on_theme_change(hero_css?.light ?? '', iframe_elem);
-							case 'dark':
-								return on_theme_change(hero_css?.dark ?? '', iframe_elem);
-							case 'system':
-								return on_theme_change(hero_css?.sys ?? '', iframe_elem);
-							default:
-								return;
-						}
-					});
+					// If does not have children => not load completely
+					if (iframe_elem?.children.length ?? false) {
+						unsubscribe = theme.subscribe((s) => {
+							switch (s) {
+								case 'light':
+									return on_theme_change(hero_css?.light ?? '', iframe_elem);
+								case 'dark':
+									return on_theme_change(hero_css?.dark ?? '', iframe_elem);
+								case 'system':
+									return on_theme_change(hero_css?.sys ?? '', iframe_elem);
+								default:
+									return;
+							}
+						});
+					}
 				}
 			}
-		}
-	};
+		};
 
-	// A hack to set css in iframe at runtime
-	// onload on iframe not working as expected
-	onMount(() => {
-		const id_check_iframe = setInterval(() => {
-			unsubscribe ? clearInterval(id_check_iframe) : on_iframe_load();
-		}, 250);
-	});
+		// A hack to set css in iframe at runtime
+		// onload on iframe not working as expected
+		onMount(() => {
+			const id_check_iframe = setInterval(() => {
+				unsubscribe ? clearInterval(id_check_iframe) : on_iframe_load();
+			}, 250);
+		});
 
-	onDestroy(() => (unsubscribe ? unsubscribe() : null));
+		onDestroy(() => (unsubscribe ? unsubscribe() : null));
+	}
 
 	function on_theme_change(
 		/** @type {string} */ css,
@@ -62,7 +64,11 @@
 
 <div class="banner">
 	{#if !hero_css}
-		<img src={hero_url} alt={hero_alt} width="750" height="250" style="object-fit: cover;" />
+		<enhanced:img
+			src={hero_url.default}
+			alt={hero_alt}
+			style="object-fit: cover; aspect-ratio: 3/1; width: 100%; height: auto;"
+		/>
 	{:else}
 		<iframe
 			src={hero_url}
