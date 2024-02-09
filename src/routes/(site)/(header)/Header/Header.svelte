@@ -57,7 +57,11 @@
 			{#each deets as { icon, text }}
 				<span class="detail">
 					<span class="dcon"> <svelte:component this={icon} /></span>
-					{text}
+					{#if text.startsWith('/')}
+						<a href={text}>{text}</a>
+					{:else}
+						{text}
+					{/if}
 				</span>
 			{/each}
 		</span>
@@ -125,6 +129,11 @@
 		& > * {
 			margin-bottom: 0.25rem;
 		}
+	}
+
+	a {
+		font-weight: bold;
+		color: var(--peach);
 	}
 
 	.summary-comp {
