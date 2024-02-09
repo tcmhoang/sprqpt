@@ -16,8 +16,14 @@ export const load = async ({ params }) => {
 		({ frontmatter }) => blog.fetch_id(frontmatter.created, frontmatter.title) == id
 	);
 
+	const [alt, , bg] = blog.fetch_image(id);
+
 	if (maybe_blog_metadata) {
 		return {
+			banner_data: {
+				hero_url: await bg(),
+				hero_alt: alt
+			},
 			deets: [
 				{
 					text: new Date(maybe_blog_metadata.frontmatter.date).toDateString(),
