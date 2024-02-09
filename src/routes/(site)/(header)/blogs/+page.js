@@ -1,5 +1,6 @@
 import BirthdayIcon from '$lib/icons/BirthdayIcon.svelte';
 import BriefcaseIcon from '$lib/icons/BriefcaseIcon.svelte';
+import BlogIcon from '$lib/icons/BlogIcon.svelte';
 import PositionLocationIcon from '$lib/icons/PositionLocationIcon.svelte';
 import NameWithVerifiedBadge from '$lib/components/NameWithVerifiedBadge.svelte';
 import blog from '$lib/content/blog/blog';
@@ -31,6 +32,10 @@ export const load = async () => {
 			{
 				text: 'September 25th',
 				icon: BirthdayIcon
+			},
+			{
+				text: '/blogs',
+				icon: BlogIcon
 			},
 			{
 				text: 'Global',
