@@ -37,7 +37,9 @@
 	{#each blogs as { title, created, tags, excerpt, id, thumbnail, alt } (id)}
 		<a class="card" href="/blogs/{id}" transition:slide>
 			{#if thumbnail}
-				{#await thumbnail() then optimized_image}
+				{#await thumbnail()}
+					<div class="card-thumbnail" />
+				{:then optimized_image}
 					<enhanced:img class="card-thumbnail" src={optimized_image.default} {alt} />
 				{/await}
 			{/if}
