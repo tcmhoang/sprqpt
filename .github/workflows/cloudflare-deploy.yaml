@@ -11,12 +11,12 @@ jobs:
       - name: 📚 Git Checkout
         uses: actions/checkout@v3
 
-      - name: ⚙️ Install pnde 
+      - name: ⚙️ Install pnode
         uses: actions/setup-node@v4
         with:
           node-version: '21.x'
 
-      - name: ✨ enable corepack with pnpm
+      - name: ✨ Enable corepack with pnpm
         run: |
           corepack enable
           corepack use pnpm@8.x
@@ -24,7 +24,7 @@ jobs:
       - name: 📦 Install dependencies
         run: pnpm i
 
-      - name: 👷 build
+      - name: 👷 Build
         env:
           BASE_PATH: '/sprqpt.com'
         run: |
