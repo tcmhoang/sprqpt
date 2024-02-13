@@ -6,4 +6,5 @@
 	export { default as Strong } from './Strong.svelte';
 	export { default as Hr } from './Hr.svelte';
 	export { default as Fence } from './Fence.svelte';
+	export { default as Link } from './Link.svelte';
 </script>

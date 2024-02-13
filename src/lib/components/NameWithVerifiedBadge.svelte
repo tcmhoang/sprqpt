@@ -19,6 +19,7 @@
 		display: block;
 		transition: transform 300ms ease, color 100ms ease-in;
 		position: relative;
+		padding-bottom: 0.5rem;
 
 		&::before,
 		&::after {
@@ -49,8 +50,7 @@
 	}
 	.badge {
 		display: inline-flex;
-		max-height: 80%;
-		min-height: 60%;
+		height: var(--badge, var(--step-4));
 		aspect-ratio: 1;
 	}
 </style>

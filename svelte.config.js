@@ -11,6 +11,7 @@ const root = dirname(fileURLToPath(import.meta.url));
 const node_path = join(root, './src/lib/nodes/Nodes.svelte');
 const layout_path = join(root, './src/lib/layouts');
 const tags_path = join(root, './src/lib/tags/');
+
 export default {
 	kit: {
 		adapter: adapter({

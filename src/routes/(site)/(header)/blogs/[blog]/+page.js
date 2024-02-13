@@ -30,7 +30,7 @@ export const load = async ({ params }) => {
 					icon: CalendarIcon
 				},
 				{
-					text: maybe_blog_metadata.frontmatter.tags?.join(' ,'),
+					text: maybe_blog_metadata.frontmatter.tags?.join(', '),
 					icon: TagIcon
 				}
 			],

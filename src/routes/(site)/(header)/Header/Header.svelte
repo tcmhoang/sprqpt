@@ -58,7 +58,7 @@
 				<span class="detail">
 					<span class="dcon"> <svelte:component this={icon} /></span>
 					{#if text.startsWith('/')}
-						<a href={text}>{text}</a>
+						<a href={text} title="Go to my {text.split('/').pop()}">{text}</a>
 					{:else}
 						{text}
 					{/if}
@@ -127,7 +127,7 @@
 	.summary {
 		line-height: 1.25;
 		& > * {
-			margin-bottom: 0.25rem;
+			margin-bottom: 0.5rem;
 		}
 	}
 
@@ -139,6 +139,7 @@
 	.summary-comp {
 		--text: var(--subtext);
 		--yellow: var(--peach);
+		--badge: var(--step-0);
 		font-size: var(--step-1);
 		padding-bottom: 0.5rem;
 	}
