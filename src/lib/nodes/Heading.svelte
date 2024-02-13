@@ -20,6 +20,7 @@
 	h4,
 	h5,
 	h6 {
+		clear: both;
 		font-weight: bold;
 		margin-bottom: 0.5rem;
 		display: flex;
