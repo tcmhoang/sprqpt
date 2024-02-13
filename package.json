@@ -35,5 +35,6 @@
 		"svelte-markdoc-preprocess": "^1.2.0",
 		"vite": "^5.1.1"
 	},
-	"type": "module"
+	"type": "module",
+	"packageManager": "pnpm@8.15.2+sha256.90bb5d6382cb2cb8b8d4959a076b3953d84d1d94121717097bcd41c71344fa14"
 }
