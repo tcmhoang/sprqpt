@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	root: true,
 	extends: [
 		'eslint:recommended',
@@ -6,6 +6,7 @@ module.exports = {
 		'plugin:svelte/recommended',
 		'prettier'
 	],
+	parser: 'svelte-eslint-parser',
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020,
