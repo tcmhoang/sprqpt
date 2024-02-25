@@ -59,7 +59,8 @@ export default {
 			layouts: {
 				default: join(layout_path, './Default.svelte'),
 				blog: join(layout_path, './Blog.svelte'),
-				cheep: join(layout_path, './Cheep/Cheep.svelte')
+				cheep: join(layout_path, './Cheep/Cheep.svelte'),
+				resume: join(layout_path, './Resume.svelte')
 			},
 			tags: join(tags_path, './Tags.svelte')
 		})

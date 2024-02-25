@@ -172,3 +172,9 @@ body {
 	line-height: inherit;
 	@include scrollbars;
 }
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		color: var(--heading-color, inherit);
+	}
+}

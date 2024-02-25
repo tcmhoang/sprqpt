@@ -3,15 +3,20 @@ title: "Tuan's Resumé"
 date: '2024-02-23'
 created: '2023-11-02'
 excerpt: 'Resumé'
+layout: resume
 ---
+
+{% cv %}
 
 # Tuan Hoang
 
-## Curriculum Vitae
+Curriculum Vitae
 
-Mobile : [+84 (929) 698-100](tel:+84929698100)
-Email: [workwithtuan@sprqpt.com](mailto:workwithtuan@sprqpt.com)
-Portfolio: [sprqpt.com](https://sprqpt.com)
+Mobile [+84 (929) 698-100](tel:+84929698100)
+Email [workwithtuan@sprqpt.com](mailto:workwithtuan@sprqpt.com)
+Portfolio [sprqpt.com](https://sprqpt.com)
+
+{% /cv %}
 
 ### Summary
 

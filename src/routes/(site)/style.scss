@@ -70,7 +70,7 @@ select {
 }
 
 ul ::marker {
-	color: var(--yellow);
+	color: var(--marker, var(--yellow));
 }
 
 @layer base {
