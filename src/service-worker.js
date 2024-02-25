@@ -1,6 +1,8 @@
 /// <reference types="@sveltejs/kit" />
 import { build, files, version } from '$service-worker';
 
+const sw = /** @type ServiceWorkerGlobalScope */ (/** @type unknown */ (self));
+
 // Create a unique cache name for this deployment
 const CACHE = `cache-${version}`;
 
@@ -17,6 +19,7 @@ self.addEventListener('install', (e) => {
 	async function addFilesToCache() {
 		const cache = await caches.open(CACHE);
 		await cache.addAll(ASSETS);
+		await sw.skipWaiting();
 	}
 
 	event.waitUntil(addFilesToCache());
@@ -29,6 +32,7 @@ self.addEventListener('activate', (e) => {
 		for (const key of await caches.keys()) {
 			if (key !== CACHE) await caches.delete(key);
 		}
+		await sw.clients.claim();
 	}
 
 	event.waitUntil(deleteOldCaches());
