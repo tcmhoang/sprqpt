@@ -53,8 +53,7 @@ Tailwind, Node.js, GCP, Github Actions.
   consulted on new system, and also stress test APIs
 - Assisted with CI/CD pipeline development.
 
-**Mobile Application Developer @
-[Guang Dong Kinlong Hardware Products Co., Ltd](https://en.kinlong.com)**
+**Mobile Application Developer @ [Guang Dong Kinlong Hardware Products Co., Ltd](https://en.kinlong.com)**
 | 2022 - 2023
 
 **Tech**: Flutter, Kotlin, JavaScript, HTML, SASS, GCP, SQL, Linux,
@@ -64,8 +63,7 @@ Circle CI, Go, Docker, K8s(Kind).
 - Deployed services on Kubernetes, assisted with Go web app and the web
   client app.
 
-**Intermodal System Analyst Intern @
-[Norfolk Southern Corporation](https://www.norfolksouthern.com)** | 2022
+**Intermodal System Analyst Intern @ [Norfolk Southern Corporation](https://www.norfolksouthern.com)** | 2022
 
 **Tech**: R, Scala, SQL, Apache Spark, Crystal Reports, IBM DB2, Spotfire.
 
@@ -74,8 +72,7 @@ Circle CI, Go, Docker, K8s(Kind).
   stakeholders.
 - Researched and documented technical solutions.
 
-**Software Engineer @
-[Leon System Development Co., Ltd.](https://leon-system.com)** | 2021 -
+**Software Engineer @ [Leon System Development Co., Ltd.](https://leon-system.com)** | 2021 -
 2022
 
 **Tech**: Java, Flutter, PHP, AWS, JavaScript, Dart, Python, Kotlin,
@@ -87,8 +84,7 @@ Netflix (Eureka, Hystrix).
 - Built mobile apps & microservices architecture, deploying with CI/CD
   pipelines.
 
-**IT Support Technician @
-[PhiDung Informatics - Electronic Company Limited](http://www.pdc.vn)**
+**IT Support Technician @ [PhiDung Informatics - Electronic Company Limited](http://www.pdc.vn)**
 | 2020
 
 - Supported troubleshooting efforts with customers to identify routine
