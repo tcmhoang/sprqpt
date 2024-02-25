@@ -10,7 +10,7 @@
 	const links = [
 		['Website', '/', WebsiteIcon],
 		['RSS', '/rss.xml', RssIcon],
-		['Resume', '/resume', ResumeIcon],
+		['Resumé', '/resume', ResumeIcon],
 		['Keybase', 'https://keybase.io/tcmhoang', KeybaseIcon],
 		['Github', 'https://github.com/tcmhoang', GithubIcon],
 		['Telegram', 'https://t.me/tcmhoang', TelegramIcon]

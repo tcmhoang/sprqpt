@@ -42,17 +42,32 @@ environment to grow and build something awesome.
 **Tech**: HTML, CSS, JavaScript, TypeScript, Vite, CSS, SASS, Vue.js,
 Tailwind, Node.js, GCP, Github Actions.
 
+- Developed and migrated systems with new architectures to reduce errors
+  on both client and server sides.
+- Implemented new functionality on the existing system, developed and
+  consulted on new system, and also stress test APIs
+- Assisted with CI/CD pipeline development.
+
 **Mobile Application Developer @
 [Guang Dong Kinlong Hardware Products Co., Ltd](https://en.kinlong.com)**
 | 2022 - 2023
 
 **Tech**: Flutter, Kotlin, JavaScript, HTML, SASS, GCP, SQL, Linux,
-Circle CI, Go, Docker, K8s.
+Circle CI, Go, Docker, K8s(Kind).
 
-**System Analyst @
+- Led agile team to build Flutter e-commerce app with Firebase.
+- Deployed services on Kubernetes, assisted with Go web app and the web
+  client app.
+
+**Intermodal System Analyst Intern @
 [Norfolk Southern Corporation](https://www.norfolksouthern.com)** | 2022
 
 **Tech**: R, Scala, SQL, Apache Spark, Crystal Reports, IBM DB2, Spotfire.
+
+- Analyzed intermodal data (operations, equipment, customers).
+- Developed queries, maintained databases, and created reports for
+  stakeholders.
+- Researched and documented technical solutions.
 
 **Software Engineer @
 [Leon System Development Co., Ltd.](https://leon-system.com)** | 2021 -
@@ -62,9 +77,17 @@ Circle CI, Go, Docker, K8s.
 Redux,js, Nix, GitHub actions, Jetkins, Linux, Graphic QL, Spring Cloud
 Netflix (Eureka, Hystrix).
 
+- Led a agile development team.
+- Developed, deployed, and migrated a cloud-based CRM.
+- Built mobile apps & microservices architecture, deploying with CI/CD
+  pipelines.
+
 **IT Support Technician @
 [PhiDung Informatics - Electronic Company Limited](http://www.pdc.vn)**
 | 2020
+
+- Supported troubleshooting efforts with customers to identify routine
+  computer-related problems.
 
 ### Education
 
