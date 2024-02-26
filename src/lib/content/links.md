@@ -1,6 +1,6 @@
 ---
 title: 'Links'
-date: '2024-01-01'
+date: '2024-02-25'
 created: '2024-01-01'
 excerpt: 'Links that you can find me'
 ---
@@ -10,5 +10,3 @@ excerpt: 'Links that you can find me'
 Needs something? Chances are they here
 
 {% linkme /%}
-
-

@@ -1,8 +1,10 @@
 <script>
 	import GithubIcon from '$lib/icons/GithubIcon.svelte';
 	import KeybaseIcon from '$lib/icons/KeybaseIcon.svelte';
+	import LinkedinIcon from '$lib/icons/LinkedinIcon.svelte';
 	import ResumeIcon from '$lib/icons/ResumeIcon.svelte';
 	import RssIcon from '$lib/icons/RssIcon.svelte';
+	import ScheduleIcon from '$lib/icons/ScheduleIcon.svelte';
 	import TelegramIcon from '$lib/icons/TelegramIcon.svelte';
 	import WebsiteIcon from '$lib/icons/WebsiteIcon.svelte';
 
@@ -13,7 +15,9 @@
 		['Resumé', '/resume', ResumeIcon],
 		['Keybase', 'https://keybase.io/tcmhoang', KeybaseIcon],
 		['Github', 'https://github.com/tcmhoang', GithubIcon],
-		['Telegram', 'https://t.me/tcmhoang', TelegramIcon]
+		['Telegram', 'https://t.me/tcmhoang', TelegramIcon],
+		['Linkedin', 'https://www.linkedin.com/in/tcmhoang', LinkedinIcon],
+		['Schedule a call', 'https://calendly.com/tcmhoang/30min', ScheduleIcon]
 	];
 </script>
 

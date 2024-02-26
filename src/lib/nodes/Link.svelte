@@ -10,6 +10,7 @@
 <style lang="scss">
 	a {
 		color: var(--yellow);
+		font-weight: bold;
 		&:hover {
 			text-decoration: underline 4px;
 			text-underline-offset: 2px;

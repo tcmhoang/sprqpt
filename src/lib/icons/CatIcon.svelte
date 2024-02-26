@@ -8,7 +8,6 @@
 	clip-rule="evenodd"
 	stroke-linejoin="round"
 	stroke-miterlimit="2"
-	id="cat"
 >
 	<path
 		style="stroke:var(--text, #4c4f69);fill:var(--text, #4c4f69)"
