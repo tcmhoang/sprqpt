@@ -14,7 +14,7 @@ jobs:
       - name: 📚 Git Checkout
         uses: actions/checkout@v3
 
-      - name: ⚙️ Install pnode
+      - name: ⚙️ Install node
         uses: actions/setup-node@v4
         with:
           node-version: '21.x'
@@ -28,8 +28,6 @@ jobs:
         run: pnpm i
 
       - name: 👷 Build
-        env:
-          BASE_PATH: '/sprqpt.com'
         run: |
           pnpm build
 
@@ -41,4 +39,3 @@ jobs:
           projectName: ${{ vars.CLOUDFLARE_PRJ_ID }}
           directory: 'build/'
           gitHubToken: ${{ secrets.GH_TOKEN }}
-          wranglerVersion: '3'
