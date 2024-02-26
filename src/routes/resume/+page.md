@@ -1,5 +1,5 @@
 ---
-title: "Tuan's Resumé"
+title: "Conrad's Resumé"
 date: '2024-02-23'
 created: '2023-11-02'
 excerpt: 'Resumé'
@@ -8,7 +8,7 @@ layout: resume
 
 {% cv %}
 
-# Tuan Hoang
+# Conrad Hoang
 
 Curriculum Vitae
 

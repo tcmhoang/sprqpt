@@ -134,6 +134,10 @@
 	a {
 		font-weight: bold;
 		color: var(--peach);
+		&:hover {
+			text-decoration: underline 4px;
+			text-underline-offset: 2px;
+		}
 	}
 
 	.summary-comp {
