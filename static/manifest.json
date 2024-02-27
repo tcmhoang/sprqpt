@@ -35,6 +35,7 @@
 	"scope": "/",
 	"theme_color": "#181825",
 	"background_color": "#11111b",
+	"display_override": ["fullscreen", "minimal-ui"],
 	"display": "standalone",
 	"screenshots": [
 		{
@@ -49,6 +50,13 @@
 			"sizes": "779x1038",
 			"type": "image/jpg",
 			"label": "Conrad's Hoang feed"
+		}
+	],
+
+	"protocol_handlers": [
+		{
+			"protocol": "web+tcmhoang",
+			"url": "/?type=%s"
 		}
 	],
 	"description": "Join me in my programming journey!"

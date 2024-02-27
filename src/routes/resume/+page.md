@@ -8,7 +8,7 @@ layout: resume
 
 {% cv %}
 
-# Conrad Hoang
+# Conrad (Tuan) Hoang
 
 Curriculum Vitae
 
