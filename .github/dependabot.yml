@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    versioning-strategy: 'increase'
+    target-branch: 'develop'
+    schedule:
+      interval: 'weekly'
+  - package-ecosystem: github-actions
+    directory: '/'
+    arget-branch: 'develop'
+    schedule:
+      interval: 'weekly'
