@@ -8,6 +8,6 @@ updates:
       interval: 'weekly'
   - package-ecosystem: github-actions
     directory: '/'
-    arget-branch: 'develop'
+    target-branch: 'develop'
     schedule:
       interval: 'weekly'
