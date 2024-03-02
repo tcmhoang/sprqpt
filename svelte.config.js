@@ -18,15 +18,22 @@ export default {
 			pages: 'build',
 			assets: 'build',
 			precompress: true,
-			strict: true
+			strict: true,
+			fallback: '404.html'
 		}),
 		csp: {
 			directives: {
 				'script-src': ['self']
 			}
 		},
+		prerender: {
+			concurrency: 10
+		},
 		paths: {
 			relative: false
+		},
+		vitePlugin: {
+			inspector: true
 		},
 		version: {
 			name: child_process.execSync('git rev-parse HEAD').toString().trim()
