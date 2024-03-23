@@ -8,7 +8,7 @@
 	let container;
 
 	/** @type number */
-	let x = 0.5;
+	let x = 0.3;
 	/** @type number */
 	let y = 0.5;
 

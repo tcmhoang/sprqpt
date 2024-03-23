@@ -4,7 +4,7 @@
 	import { preloadData } from '$app/navigation';
 
 	onMount(() => {
-		const preload_paths = ['/', '/about', '/links', '/demos/nyan-cat'];
+		const preload_paths = ['/', '/about', '/links'];
 		preload_paths.forEach(preloadData);
 	});
 </script>
