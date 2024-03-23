@@ -1,40 +1,38 @@
 <script>
-	import { spring } from 'svelte/motion';
-	import { onMount } from 'svelte';
 	import Cat from './Cat.svelte';
-	const coords = spring(
-		{ x: 0.25, y: 0.5 },
-		{
-			stiffness: 0.05,
-			damping: 0.3
-		}
-	);
+
+	/** @type number */
+	let timeout;
 
 	/** @type HTMLElement */
 	let container;
 
+	/** @type number */
+	let x = 0.5;
+	/** @type number */
+	let y = 0.5;
+
 	/** @function
 	 * @param {PointerEvent} e event fires when moving the pointer
-	 * @returns {Promise<void>}
+	 * @returns {void}
 	 */
+	const pointer_handler = (e) => {
+		if (timeout) {
+			window.cancelAnimationFrame(timeout);
+		}
 
-	const pointer_handler = (e) =>
-		coords.set({
-			x: e.clientX / container.clientWidth,
-			y: e.clientY / container.clientHeight
+		timeout = window.requestAnimationFrame(() => {
+			x = e.clientX / container.clientWidth;
+			y = e.clientY / container.clientHeight;
 		});
-
-	onMount(() => {
-		container.addEventListener('pointermove', pointer_handler);
-		return () => container.removeEventListener('pointermove', pointer_handler);
-	});
+	};
 </script>
 
 <div
 	class="scene"
 	bind:this={container}
-	style="--x: {$coords.x}; --y: {$coords.y};"
-	on:pointerleave={() => coords.update((t) => ({ x: t.x > 0.5 ? 0.5 : t.x, y: 0.5 }))}
+	style="--x: {x}; --y: {y};"
+	on:pointerdown={pointer_handler}
 >
 	<div class="rainbow" />
 	<div class="starfield">
@@ -78,7 +76,7 @@
 		position: relative;
 		margin: 0;
 		overflow: hidden;
-		--speed: calc(1 - var(--x));
+		--speed: clamp(0.3, calc(1 - var(--x)), 0.7);
 	}
 
 	.rainbow {
@@ -113,6 +111,7 @@
 				clamp(calc($sheight * -0.2), calc($sheight * (var(--y) - 0.5)), calc($sheight * 0.2))
 			)
 		);
+		transition: transform 300ms cubic-bezier(0.29, 1.54, 0.68, 0.05);
 		overflow: hidden;
 		&::after {
 			display: block;
@@ -311,6 +310,7 @@
 			clamp(-40vw, calc(100vw * var(--x) - 50vw), 30vw),
 			clamp(calc($sheight * -0.2), calc($sheight * (var(--y) - 0.5)), calc($sheight * 0.2))
 		);
+		transition: transform 300ms cubic-bezier(0.29, 1.54, 0.68, 0.05);
 		height: $cat_height;
 		aspect-ratio: 5/3;
 	}
