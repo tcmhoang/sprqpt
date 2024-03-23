@@ -1,6 +1,8 @@
 <script>
 	import { build_title } from '$lib/constants/page.js';
 	export let data;
+
+	const tweets = /** @type Component[] */ (data.tweets);
 </script>
 
 <svelte:head>
@@ -8,7 +10,7 @@
 	<meta name="description" content="Conrad Hoang's personal website" />
 </svelte:head>
 <div>
-	{#each data.tweets as tweet}
+	{#each tweets as tweet}
 		<svelte:component this={tweet} />
 	{/each}
 </div>
