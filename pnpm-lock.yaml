@@ -72,7 +72,7 @@ devDependencies:
     specifier: ^1.2.1
     version: 1.2.1
   vite:
-    specifier: ^5.2.4
+    specifier: ^5.2.3
     version: 5.2.4(sass@1.72.0)
 
 packages:

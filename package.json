@@ -34,7 +34,7 @@
 		"svelte-check": "^3.6.8",
 		"svelte-eslint-parser": "^0.33.1",
 		"svelte-markdoc-preprocess": "^1.2.1",
-		"vite": "^5.2.4"
+		"vite": "^5.2.3"
 	},
 	"type": "module",
 	"engines": {
