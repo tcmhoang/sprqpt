@@ -26,7 +26,6 @@
 
 	<div class="hidden" aria-hidden="true" itemtype="http://schema.org/Person">
 		<span itemprop="gender">Male</span>
-		<span itemprop="email">conrad@sprqpt.com</span>
 		<span itemprop="givenName">Tuan</span>
 		<span itemprop="familyName">Hoang</span>
 		<span itemprop="name">Tuan Minh Hoang</span>

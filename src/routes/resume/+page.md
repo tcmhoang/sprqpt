@@ -12,8 +12,8 @@ layout: resume
 
 Curriculum Vitae
 
-Mobile [+84 (929) 698-100](tel:+84929698100)
-Email [workwithtuan@sprqpt.com](mailto:workwithtuan@sprqpt.com)
+Mobile {% protectedlink title="+84 (929) 698-100" href="tel:+84929698100" /%}
+Email {% protectedlink title="workwithtuan@sprqpt.com" href="mailto:workwithtuan@sprqpt.com" /%}
 Portfolio [sprqpt.com](https://sprqpt.com)
 
 {% /cv %}

@@ -5,7 +5,6 @@ const url = 'https://sprqpt.com';
 const title = 'Conrad Hoang';
 const desc = 'The RSS feed for posts from Conrad Hoang';
 const author = 'Conrad Hoang';
-const email = 'conrad@sprqpt.com';
 const avatar = 'https://avatars.githubusercontent.com/u/51996720?v=4';
 
 export const GET = async () => {
@@ -61,7 +60,7 @@ const generate_entry = (title, url, date, author, description, tags) => `
 <item>
 	<title>${title}</title>
 	<link>${url}</link>
-	<author>${email} (${author})</author>
+	<author>${author}</author>
 	<description><![CDATA[${description}]]></description>
 	<guid isPermaLink="true">${url}</guid>
 	<pubDate>${new Date(date).toDateString()}</pubDate>
@@ -93,8 +92,8 @@ const render = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 		<docs>https://www.rssboard.org/rss-specification</docs>
 		<pubDate>${new Date().toDateString()}</pubDate>
 		<lastBuildDate>${new Date().toDateString()}</lastBuildDate>
-		<managingEditor>${email} (${author})</managingEditor>
-		<webMaster>${email} (${author})</webMaster>
+		<managingEditor>${author}</managingEditor>
+		<webMaster>${author}</webMaster>
 		<image>
 			<url>${url}${avatar}</url>
 			<title>${title}</title>

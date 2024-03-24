@@ -28,6 +28,8 @@
 
 <style>
 	div {
+		max-width: calc(var(--width) * 1.3);
+		margin: auto;
 		padding: 0 1rem;
 		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 		--marker: var(--mauve);

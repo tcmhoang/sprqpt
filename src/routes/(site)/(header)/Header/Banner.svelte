@@ -13,6 +13,12 @@
 	/** @type HTMLIFrameElement */
 	let iframe;
 
+	/** @type boolean */
+	let loaded = false;
+
+	/** @type number */
+	let g_id;
+
 	if (hero_css) {
 		/** @type {(function(): void) | null} */
 		let unsubscribe = null;
@@ -26,6 +32,7 @@
 
 					// If does not have children => not load completely
 					if (iframe_elem?.children.length ?? false) {
+						loaded = true;
 						unsubscribe = theme.subscribe((s) => {
 							switch (s) {
 								case 'light':
@@ -45,9 +52,17 @@
 
 		// A hack to set css in iframe at runtime
 		// onload on iframe not working as expected
-		onMount(() => {
-			requestAnimationFrame(on_iframe_load);
-		});
+
+		function on_banner_theme_change() {
+			if (loaded) {
+				cancelAnimationFrame(g_id);
+				return;
+			}
+			on_iframe_load();
+			g_id = requestAnimationFrame(on_banner_theme_change);
+		}
+
+		onMount(on_banner_theme_change);
 
 		onDestroy(() => (unsubscribe ? unsubscribe() : null));
 	}

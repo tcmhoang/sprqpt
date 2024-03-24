@@ -13,6 +13,8 @@
 	/** @type HTMLElement*/
 	let dd;
 
+	/** @type boolean */
+
 	onMount(() => {
 		const [name, cv_title, infos] = content.children;
 		/** @type HTMLElement */ (cv_title).style.fontSize = 'var(--step-3)';
@@ -63,11 +65,10 @@
 	};
 </script>
 
-<div bind:this={content}>
-	<slot />
-</div>
-
 <div class="cv_hero">
+	<div bind:this={content}>
+		<slot />
+	</div>
 	<div bind:this={cv_header} />
 	<dl bind:this={cv_info}>
 		<dt bind:this={dt} />
@@ -86,7 +87,7 @@
 		grid-column-gap: 0.75rem;
 	}
 
-	@media screen and (min-width: 720px) {
+	@media screen and (min-width: 730px) {
 		.cv_hero {
 			grid-template-columns: 1fr 1fr;
 		}
