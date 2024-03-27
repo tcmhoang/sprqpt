@@ -96,8 +96,7 @@
 
 <style lang="scss">
 	.banner {
-		width: 100%;
-		aspect-ratio: 3/1;
+		height: 100%;
 		background-color: var(--base);
 		& > * {
 			width: 100%;

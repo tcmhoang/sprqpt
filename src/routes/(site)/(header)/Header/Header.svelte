@@ -78,8 +78,8 @@
 
 	.bannerContainer {
 		border-radius: 13px;
+		aspect-ratio: 3/1;
 		overflow: hidden;
-		transform: translateZ(0px);
 	}
 
 	.overview {
