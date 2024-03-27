@@ -1,5 +1,5 @@
 <enhanced:img
-	src="$lib/assets/me.jpeg?w=125"
+	src="$lib/assets/me.png?w=125"
 	alt="Conrad"
 	loading="eager"
 	decoding="async"

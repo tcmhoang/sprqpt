@@ -4,8 +4,8 @@ const img_map = new Map([
 		'20240202-my-2024-setup',
 		[
 			'My 2021 Danang trip',
-			async () => import('$lib/assets/danang-2021.jpeg?enhanced&w=360'),
-			async () => import('$lib/assets/danang-2021.jpeg?enhanced&w=600;360')
+			async () => import('$lib/assets/danang-2021.png?enhanced&w=360'),
+			async () => import('$lib/assets/danang-2021.png?enhanced&w=600;360')
 		]
 	]
 ]);

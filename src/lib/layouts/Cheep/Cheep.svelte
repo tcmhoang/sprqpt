@@ -27,7 +27,7 @@
 	<div class="avatar">
 		<a href="/" aria-label="Conrad's Feed">
 			<enhanced:img
-				src="$lib/assets/me.jpeg?w=60"
+				src="$lib/assets/me.png?w=60"
 				alt="Author"
 				sizes="60px"
 				decoding="async"

@@ -39,16 +39,16 @@
 	"display": "standalone",
 	"screenshots": [
 		{
-			"src": "/images/screenshot.jpg",
+			"src": "/images/screenshot.png",
 			"sizes": "779x1038",
-			"type": "image/jpg",
+			"type": "image/png",
 			"form_factor": "wide",
 			"label": "Conrad's Hoang feed"
 		},
 		{
-			"src": "/images/screenshot.jpg",
+			"src": "/images/screenshot.png",
 			"sizes": "779x1038",
-			"type": "image/jpg",
+			"type": "image/png",
 			"label": "Conrad's Hoang feed"
 		}
 	],

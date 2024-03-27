@@ -1,11 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
 	import './styles.scss';
-	import { preloadData } from '$app/navigation';
+	import { preloadCode } from '$app/navigation';
 
 	onMount(() => {
 		const preload_paths = ['/', '/about', '/links'];
-		preload_paths.forEach(preloadData);
+		preload_paths.forEach(preloadCode);
 	});
 </script>
 
