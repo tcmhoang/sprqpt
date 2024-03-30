@@ -5,11 +5,11 @@
 	export let title;
 </script>
 
-<a {href} {title}><slot /></a>
+<a {href} {title} target="_blank"><slot /></a>
 
 <style lang="scss">
 	a {
-		color: var(--yellow);
+		color: color-mix(in hsl, var(--yellow), black 25%);
 		font-weight: bold;
 		&:hover {
 			text-decoration: underline 4px;

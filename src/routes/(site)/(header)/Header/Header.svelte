@@ -131,7 +131,7 @@
 
 	a {
 		font-weight: bold;
-		color: var(--peach);
+		color: color-mix(in hsl, var(--peach), black 20%);
 		&:hover {
 			text-decoration: underline 4px;
 			text-underline-offset: 2px;

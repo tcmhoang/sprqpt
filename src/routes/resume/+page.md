@@ -10,7 +10,7 @@ layout: resume
 
 # Conrad (Tuan) Hoang
 
-Curriculum Vitae
+## Curriculum Vitae
 
 Mobile {% protectedlink title="+84 (929) 698-100" href="tel:+84929698100" /%}
 Email {% protectedlink title="workwithtuan@sprqpt.com" href="mailto:workwithtuan@sprqpt.com" /%}

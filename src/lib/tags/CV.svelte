@@ -17,7 +17,9 @@
 
 	onMount(() => {
 		const [name, cv_title, infos] = content.children;
-		/** @type HTMLElement */ (cv_title).style.fontSize = 'var(--step-3)';
+		/** @type HTMLElement */ (cv_title).style.color = 'var(--subtext)';
+		/** @type HTMLElement */ (cv_title).style.fontWeight = 'normal';
+
 		content.remove();
 
 		cv_header.append(name, cv_title);
