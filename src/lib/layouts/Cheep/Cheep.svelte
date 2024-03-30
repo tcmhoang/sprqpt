@@ -1,7 +1,7 @@
 <script>
-	import NameWithVerifiedBadge from '$lib/components/NameWithVerifiedBadge.svelte';
 	import tweet from '$lib/content/tweet/tweet';
 	import LinkIcon from '$lib/icons/LinkIcon.svelte';
+	import PinIcon from '$lib/icons/PinIcon.svelte';
 	import Chip from './Chip.svelte';
 
 	/** @type string */
@@ -19,12 +19,20 @@
 	/** @type string | undefined */
 	export let author;
 
+	export let pinned = false;
+
 	author = author ?? 'Conrad';
 
 	const id = tweet.fetch_id(date, emo);
 </script>
 
 <article>
+	{#if pinned}
+		<span class="p-icon">
+			<PinIcon />
+		</span>
+		<span class="p-title">Pinned</span>
+	{/if}
 	<div class="avatar">
 		<a href="/" aria-label="Conrad's Feed">
 			<enhanced:img
@@ -123,19 +131,31 @@
 		align-items: center;
 		color: var(--subtext);
 		font-size: var(--step--1);
-		a {
-			color: var(--text);
-			font-weight: bold;
-			font-size: var(--step-0);
-			&:hover {
-				text-decoration: var(--peach) double underline 1px;
-				text-underline-offset: 2px;
-				text-decoration-skip: ink;
-			}
-		}
+	}
 
-		time {
-			font-size: var(--step--2);
+	a {
+		color: var(--text);
+		font-weight: bold;
+		font-size: var(--step-0);
+		&:hover {
+			text-decoration: var(--peach) double underline 1px;
+			text-underline-offset: 2px;
+			text-decoration-skip: ink;
 		}
+	}
+
+	time {
+		font-size: var(--step--2);
+	}
+
+	.p-icon {
+		width: 1rem;
+		height: 1rem;
+		justify-self: end;
+	}
+
+	.p-title {
+		color: var(--subtext);
+		font-size: var(--step--2);
 	}
 </style>

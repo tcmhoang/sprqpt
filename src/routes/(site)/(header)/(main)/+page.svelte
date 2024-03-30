@@ -1,5 +1,6 @@
 <script>
 	import { build_title } from '$lib/constants/page.js';
+	import Cheep from '$lib/layouts/Cheep/Cheep.svelte';
 	export let data;
 
 	const tweets = /** @type Component[] */ (data.tweets);
