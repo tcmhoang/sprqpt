@@ -105,20 +105,18 @@
 		}
 	}
 
-	.icon {
-		.toggler {
-			transition: transform var(--duration, 300ms) ease-out;
-			* {
-				transform-origin: center;
-				transition-timing-function: cubic-bezier(0, 0, 0.05, 1.15);
-				transition-property: opacity, transform, d;
-				transition-duration: calc(var(--duration, 500ms));
-			}
-			g {
-				path {
-					transition-duration: calc(var(--duration, 500ms) * 0.8);
-					transition-delay: calc(var(--duration, 500ms) * 0.2);
-				}
+	.toggler {
+		transition: transform var(--duration, 300ms) ease-out;
+		* {
+			transform-origin: center;
+			transition-timing-function: cubic-bezier(0, 0, 0.05, 1.15);
+			transition-property: opacity, transform, d;
+			transition-duration: calc(var(--duration, 500ms));
+		}
+		g {
+			path {
+				transition-duration: calc(var(--duration, 500ms) * 0.8);
+				transition-delay: calc(var(--duration, 500ms) * 0.2);
 			}
 		}
 	}

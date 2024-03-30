@@ -149,41 +149,41 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
+	}
 
-		$star_trails: (
-			(66%, 80%),
-			(70%, 54%),
-			(4%, 31%),
-			(49%, 20%),
-			(35%, 30%),
-			(48%, 29%),
-			(22%, 70%),
-			(56%, 67%),
-			(49%, 20%),
-			(9%, 92%),
-			(44%, 28%),
-			(6%, 25%)
-		);
+	$star_trails: (
+		(66%, 80%),
+		(70%, 54%),
+		(4%, 31%),
+		(49%, 20%),
+		(35%, 30%),
+		(48%, 29%),
+		(22%, 70%),
+		(56%, 67%),
+		(49%, 20%),
+		(9%, 92%),
+		(44%, 28%),
+		(6%, 25%)
+	);
 
-		@for $i from 1 through 12 {
-			$star_trail: nth($star_trails, $i);
-			.star:nth-child(#{$i}) {
-				left: calc(nth($star_trail, 1) + 30%);
-				top: nth($star_trail, 2);
-				animation: calc(var(--speed) * 0.5 * 2 * 1.3s) ease-in-out calc(1s / $i) infinite whoosh;
-				&::after {
-					animation-delay: calc(1s / $i);
-				}
+	@for $i from 1 through 12 {
+		$star_trail: nth($star_trails, $i);
+		.star:nth-child(#{$i}) {
+			left: calc(nth($star_trail, 1) + 30%);
+			top: nth($star_trail, 2);
+			animation: calc(var(--speed) * 0.5 * 2 * 1.3s) ease-in-out calc(1s / $i) infinite whoosh;
+			&::after {
+				animation-delay: calc(1s / $i);
 			}
 		}
+	}
 
-		@keyframes whoosh {
-			from {
-				transform: translate(0);
-			}
-			to {
-				transform: translateX(-350%);
-			}
+	@keyframes whoosh {
+		from {
+			transform: translate(0);
+		}
+		to {
+			transform: translateX(-350%);
 		}
 	}
 

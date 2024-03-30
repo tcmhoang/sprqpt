@@ -111,17 +111,15 @@
 		flex-wrap: wrap;
 		color: var(--subtext);
 		font-size: var(--step--1);
-
-		.detail {
-			display: flex;
-			align-items: center;
-			gap: 0.25rem;
-
-			.dcon {
-				width: 1.25rem;
-				height: 1.25rem;
-			}
-		}
+	}
+	.detail {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
+	.dcon {
+		width: 1.25rem;
+		height: 1.25rem;
 	}
 
 	.summary {

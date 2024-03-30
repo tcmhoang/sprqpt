@@ -40,10 +40,6 @@
 		stroke-width: 0.13rem;
 		fill: var(--base);
 		stroke: var(--mauve);
-		svg {
-			width: 1.5rem;
-			height: 1.5rem;
-		}
 
 		&:focus,
 		&:hover,
@@ -68,5 +64,10 @@
 				}
 			}
 		}
+	}
+
+	svg {
+		width: 1.5rem;
+		height: 1.5rem;
 	}
 </style>

@@ -75,7 +75,7 @@
 	}
 </script>
 
-<div class="banner">
+<div>
 	{#if !hero_css}
 		<enhanced:img
 			src={hero_url.default}
@@ -95,9 +95,10 @@
 </div>
 
 <style lang="scss">
-	.banner {
+	div {
 		height: 100%;
 		background-color: var(--base);
+
 		& > * {
 			width: 100%;
 			height: 100%;

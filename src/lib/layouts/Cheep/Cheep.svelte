@@ -1,4 +1,5 @@
 <script>
+	import NameWithVerifiedBadge from '$lib/components/NameWithVerifiedBadge.svelte';
 	import tweet from '$lib/content/tweet/tweet';
 	import LinkIcon from '$lib/icons/LinkIcon.svelte';
 	import Chip from './Chip.svelte';
@@ -76,31 +77,29 @@
 	h2 {
 		font-size: var(--step-2);
 	}
-	.avatar {
+
+	%firstGrid {
 		display: flex;
 		flex-flow: column nowrap;
 		gap: 0.5rem;
 		a {
 			width: 2.5rem;
 			height: 2.5rem;
+		}
+	}
 
-			.img-ava {
-				width: 100%;
-				height: auto;
-				border-radius: 2.5rem;
-			}
+	.avatar {
+		@extend %firstGrid;
+		.img-ava {
+			width: 100%;
+			height: auto;
+			border-radius: 2.5rem;
 		}
 	}
 
 	.actions {
-		display: flex;
-		justify-content: center;
-		align-content: center;
-		gap: 0.5rem;
-
+		@extend %firstGrid;
 		a {
-			width: 2.5rem;
-			height: 2.5rem;
 			border-radius: 0.25rem;
 			color: var(--text);
 			padding: 0.5rem;
