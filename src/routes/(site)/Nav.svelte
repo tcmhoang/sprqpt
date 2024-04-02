@@ -1,6 +1,13 @@
 <script>
 	import CatIcon from '$lib/icons/CatIcon.svelte';
-	import ThemeToggle from './ThemeToggle.svelte';
+	import { onMount } from 'svelte';
+
+	/** @type Component */
+	let theme_toggle;
+
+	onMount(async () => {
+		theme_toggle = (await import('./ThemeToggle.svelte')).default;
+	});
 </script>
 
 <nav>
@@ -8,7 +15,7 @@
 		<CatIcon />
 	</a>
 
-	<ThemeToggle />
+	<svelte:component this={theme_toggle} />
 </nav>
 
 <style lang="scss">
