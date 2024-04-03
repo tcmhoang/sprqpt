@@ -1,7 +1,7 @@
 <script>
+	import { onMount } from 'svelte';
 	import Avatar from './Avatar.svelte';
 	import Banner from './Banner.svelte';
-	import EmailSender from './EmailSender.svelte';
 
 	/** @type {string|Component} */
 	export let heading;
@@ -14,6 +14,13 @@
 
 	/**@type {string[]|Component} */
 	export let summary;
+
+	/** @type Component */
+	let emailer;
+
+	onMount(async () => {
+		emailer = (await import('./EmailSender.svelte')).default;
+	});
 
 	const cast_to_component = (/** @type {string|Component} */ val) => /** @type Component*/ (val);
 </script>
@@ -32,7 +39,8 @@
 			<div class="avatar-wrapper">
 				<Avatar />
 			</div>
-			<EmailSender />
+
+			<svelte:component this={emailer} />
 		</div>
 
 		<h1>

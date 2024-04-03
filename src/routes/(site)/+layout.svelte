@@ -2,7 +2,7 @@
 	import { onNavigate } from '$app/navigation';
 	import Nav from './Nav.svelte';
 	import './style.scss';
-	import Footer from './Footer.svelte';
+	import Footer from './Footer/Footer.svelte';
 	import Watermark from './Watermark.svelte';
 
 	onNavigate((navigation) => {

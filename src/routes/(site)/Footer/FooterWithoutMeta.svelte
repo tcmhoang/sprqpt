@@ -7,7 +7,7 @@
 		'ee6e28d659105cf2befecce76386682726aa6d7170af059b3d35033e26acad2e'.toUpperCase();
 </script>
 
-<footer class="w-content">
+<footer>
 	<div class="keys">
 		<a href="/keys/conradhoang.ssh.pub">
 			<span><TerminalIcon /></span>
@@ -23,16 +23,6 @@
 	<p>Vectors and icons by <a href="https://www.svgrepo.com" target="_blank">SVG Repo</a></p>
 
 	<small>tcmhoang © 2024</small>
-
-	<div class="hidden" aria-hidden="true" itemtype="http://schema.org/Person">
-		<span itemprop="gender">Male</span>
-		<span itemprop="givenName">Tuan</span>
-		<span itemprop="familyName">Hoang</span>
-		<span itemprop="name">Tuan Minh Hoang</span>
-		<span itemprop="additionalName">Conrad Hoang</span>
-		<span itemprop="jobTitle">Software Engineer</span>
-		<span itemprop="nationality">VN</span>
-	</div>
 </footer>
 
 <style lang="scss">
