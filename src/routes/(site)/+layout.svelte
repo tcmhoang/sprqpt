@@ -3,7 +3,13 @@
 	import Nav from './Nav.svelte';
 	import './style.scss';
 	import Footer from './Footer/Footer.svelte';
-	import Watermark from './Watermark.svelte';
+	import { onMount } from 'svelte';
+
+	/** @type Component */
+	let watermark;
+	onMount(async () => {
+		watermark = (await import('./Watermark.svelte')).default;
+	});
 
 	onNavigate((navigation) => {
 		const doc = /** @type {WTDocument} */ (document);
@@ -19,7 +25,7 @@
 	});
 </script>
 
-<Watermark />
+<svelte:component this={watermark} />
 
 <Nav />
 
