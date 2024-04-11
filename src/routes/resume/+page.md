@@ -92,4 +92,6 @@ Netflix (Eureka, Hystrix).
 
 ### Education
 
-**BEng Software Engineering Minor in Information System,** FPT University
+**BS Computer Science with concentration in Software Systems,** Duke University
+
+**BEng Software Engineering Minor in Information Systems** FPT University

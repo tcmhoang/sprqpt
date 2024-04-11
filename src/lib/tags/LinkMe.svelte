@@ -29,7 +29,7 @@
 				{content}
 			</a>
 		{:else}
-			<a href={link}>
+			<a href={link} target="_blank">
 				<svelte:component this={icon} />
 				{content}
 			</a>
