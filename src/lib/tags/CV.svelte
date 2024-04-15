@@ -57,7 +57,7 @@
 		const dd = document.createElement('dd');
 		const a = document.createElement('a');
 		a.textContent = node.textContent;
-		a.href = node.baseURI;
+		a.href = /** @type Element */ (node)?.getAttribute('href') ?? node.baseURI;
 		a.title = title;
 		const elem = /** @type Element */ (node);
 		a.className = elem.className;
