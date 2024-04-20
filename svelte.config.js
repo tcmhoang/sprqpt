@@ -22,6 +22,7 @@ export default {
 			strict: true,
 			fallback: '404.html'
 		}),
+		inlineStyleThreshold: 512,
 		csp: {
 			directives: {
 				'script-src': ['self']

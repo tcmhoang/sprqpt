@@ -2,34 +2,24 @@
   description = "A nix flake for building my blog";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
   outputs = {
     self,
     nixpkgs,
+    flake-utils,
     ...
-  }: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-    };
-  in
-    with pkgs; {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-
-      devShells.x86_64-linux.default = mkShell {
-	nativeBuildInputs = [nodejs_21];
-        buildInputs = [
-	corepack_21
-	nodePackages_latest.svelte-check
-	nodePackages.typescript-language-server
-	nodePackages_latest.svelte-language-server
-	vscode-langservers-extracted
-	fish
-	];
-	shellHook = ''
-		pnpm i
-		fish
-	'';
-      };
-    };
+  }:
+    flake-utils.lib.eachDefaultSystem (system: let
+	  pkgs = nixpkgs.legacyPackages.${system}; 
+    in
+      with pkgs; {
+        default = derivation {
+          inherit system src;
+          builder = with pkgs; "${fish}/bin/fish";
+        };
+        formatter = nixpkgs.legacyPackages.${system}.alejandra;
+        devShells.default =
+          import ./shell.nix {inherit pkgs ;};
+      });
 }
