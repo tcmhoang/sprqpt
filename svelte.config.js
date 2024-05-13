@@ -5,7 +5,7 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import * as child_process from 'node:child_process';
 import combineDuplicatedSelectors from 'postcss-combine-duplicated-selectors';
-import presetEnv from 'postcss-preset-env';
+import postcssPresetEnv from 'postcss-preset-env';
 import purgecss from '@fullhuman/postcss-purgecss';
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -36,10 +36,8 @@ export default {
 				'media-src': ['self', 'data:'],
 				'img-src': ['self', 'data:'],
 				'font-src': ['self', 'data:'],
-				'frame-src': ['self'],
 				'manifest-src': ['self'],
 				'worker-src': ['self'],
-				'connect-src': ['self'],
 				'form-action': ['self']
 			},
 			mode: 'hash'
@@ -61,25 +59,28 @@ export default {
 	extensions: ['.svelte', '.md'],
 	preprocess: [
 		vitePreprocess({
-			postcss: {
-				plugins: [
-					purgecss({
-						content: ['./**/*.html', '**/*.js', '**/*.md']
-					}),
-					presetEnv({
-						features: {
-							'nesting-rules': {
-								noIsPseudoSelector: false
-							}
-						},
-						minimumVendorImplementations: 2,
-						browsers: '> 1%, last 2 versions, not dead'
-					}),
-					combineDuplicatedSelectors({
-						removeDuplicatedProperties: true,
-						removeDuplicatedValues: true
-					})
-				]
+			style: {
+				css: {
+					postcss: {
+						plugins: [
+							purgecss({
+								content: ['./**/*.html', '**/*.js', '**/*.md']
+							}),
+							postcssPresetEnv({
+								features: {
+									'nesting-rules': {
+										noIsPseudoSelector: false
+									}
+								},
+								minimumVendorImplementations: 2,
+								browsers: '> 1%, last 2 versions, not dead'
+							}),
+							combineDuplicatedSelectors({
+								removeDuplicatedProperties: true
+							})
+						]
+					}
+				}
 			}
 		}),
 		markdoc({
