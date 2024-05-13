@@ -22,11 +22,30 @@ export default {
 			strict: true,
 			fallback: '404.html'
 		}),
-		inlineStyleThreshold: 512,
 		csp: {
 			directives: {
-				'script-src': ['self']
-			}
+				'default-src': ['none'],
+				'base-uri': ['self'],
+				'child-src': ['self'],
+				'connect-src': ['self'],
+				'script-src': ['strict-dynamic', 'self'],
+				'style-src': ['self', 'unsafe-inline'],
+				'frame-ancestors': ['self'],
+				'frame-src': ['self'],
+				'object-src': ['none'],
+				'media-src': ['self', 'data:'],
+				'img-src': ['self', 'data:'],
+				'font-src': ['self', 'data:'],
+				'frame-src': ['self'],
+				'manifest-src': ['self'],
+				'worker-src': ['self'],
+				'connect-src': ['self'],
+				'form-action': ['self']
+			},
+			mode: 'hash'
+		},
+		csrf: {
+			checkOrigin: true
 		},
 		prerender: {
 			concurrency: 10
