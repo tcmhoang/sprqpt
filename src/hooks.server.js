@@ -24,7 +24,7 @@ const minification_options = {
 const security_headers = {
 	'Cross-Origin-Embedder-Policy': 'require-corp',
 	'Cross-Origin-Opener-Policy': 'same-origin',
-	'X-XSS-Protection': '1',
+	'X-XSS-Protection': '1; mode=block',
 	'X-Frame-Options': 'SAMEORIGIN',
 	'X-Content-Type-Options': 'nosniff'
 };
