@@ -64,7 +64,7 @@ export default {
 					postcss: {
 						plugins: [
 							purgecss({
-								content: ['./**/*.html', '**/*.js', '**/*.md']
+								content: ['./**/*.css']
 							}),
 							postcssPresetEnv({
 								features: {
