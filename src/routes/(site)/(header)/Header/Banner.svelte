@@ -54,14 +54,14 @@
 		// A hack to set css in iframe at runtime
 		// onload on iframe not working as expected
 
-		function on_banner_theme_change() {
+		const on_banner_theme_change = () => {
 			if (loaded) {
 				cancelAnimationFrame(g_id);
 				return;
 			}
 			on_iframe_load();
 			g_id = requestAnimationFrame(on_banner_theme_change);
-		}
+		};
 
 		onMount(on_banner_theme_change);
 

@@ -19,7 +19,7 @@
 	/** @type string */
 	export let author;
 
-	/** @type string[]? */
+	/** @param {string[]=} [tags] */
 	export let tags;
 
 	tags = !tags ? ['Portfolio', 'Blog', 'Person'] : tags;

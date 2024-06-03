@@ -7,6 +7,7 @@ import * as child_process from 'node:child_process';
 import combineDuplicatedSelectors from 'postcss-combine-duplicated-selectors';
 import postcssPresetEnv from 'postcss-preset-env';
 import purgecss from '@fullhuman/postcss-purgecss';
+import cssnano from 'cssnano';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const node_path = join(root, './src/lib/nodes/Nodes.svelte');
@@ -39,8 +40,7 @@ export default {
 				'manifest-src': ['self'],
 				'worker-src': ['self'],
 				'form-action': ['self']
-			},
-			mode: 'hash'
+			}
 		},
 		csrf: {
 			checkOrigin: true
@@ -77,6 +77,9 @@ export default {
 							}),
 							combineDuplicatedSelectors({
 								removeDuplicatedProperties: true
+							}),
+							cssnano({
+								preset: 'default'
 							})
 						]
 					}
