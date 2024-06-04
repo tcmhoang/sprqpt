@@ -18,11 +18,6 @@
 
 	/** @type string */
 	export let author;
-
-	/** @param {string[]=} [tags] */
-	export let tags;
-
-	tags = !tags ? ['Portfolio', 'Blog', 'Person'] : tags;
 </script>
 
 <svelte:head>
@@ -36,7 +31,7 @@
 <Seo
 	title={build_title(title)}
 	description={excerpt}
-	keywords={tags.join()}
+	keywords={['Portfolio', 'Blog', 'Person'].join(', ')}
 	canonical={$page.url.href}
 	siteName="Spark Point"
 	imageURL={me}

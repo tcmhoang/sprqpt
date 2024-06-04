@@ -140,7 +140,7 @@
 		&:hover {
 			text-decoration: var(--peach) double underline 1px;
 			text-underline-offset: 2px;
-			text-decoration-skip: ink;
+			text-decoration-skip-ink: auto;
 		}
 	}
 

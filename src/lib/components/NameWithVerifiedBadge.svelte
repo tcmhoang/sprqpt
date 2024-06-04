@@ -17,7 +17,9 @@
 	}
 	.polarized {
 		display: block;
-		transition: transform 300ms ease, color 100ms ease-in;
+		transition:
+			transform 300ms ease,
+			color 100ms ease-in;
 		position: relative;
 		padding-bottom: 0.5rem;
 

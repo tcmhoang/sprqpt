@@ -22,7 +22,6 @@
 
 	onMount(() => {
 		mounted = true;
-		theme.init(localStorage, document);
 
 		mql_system_pref = window.matchMedia('(prefers-color-scheme: dark)');
 		pref_dark = mql_system_pref.matches;

@@ -1,13 +1,9 @@
 {
 	"root": true,
-	"extends": [
-		"eslint:recommended",
-		"plugin:markdown/recommended",
-		"plugin:svelte/recommended",
-		"prettier"
-	],
-	"parser": "svelte-eslint-parser",
+	"extends": ["eslint:recommended", "plugin:svelte/recommended", "prettier"],
 	"parserOptions": {
+		"project": "jsconfig.json",
+		"tsconfigRootDir": "functions",
 		"sourceType": "module",
 		"ecmaVersion": "latest",
 		"extraFileExtensions": [".svelte"]
@@ -15,6 +11,13 @@
 	"env": {
 		"browser": true,
 		"node": true,
-		"es2022": true
-	}
+		"es2021": true
+	},
+	"ignorePatterns": ["node_modules"],
+	"overrides": [
+		{
+			"files": ["*.svelte"],
+			"parser": "svelte-eslint-parser"
+		}
+	]
 }

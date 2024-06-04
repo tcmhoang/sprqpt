@@ -5,7 +5,7 @@
 	export let data;
 
 	/** @type {[string,boolean][]} */
-	let tags = data.tags.sort().map((v) => [v, true]) ?? [];
+	let tags = data.tags.sort().map((/** @type string**/ v) => [v, true]) ?? [];
 
 	const toggle_filter = (/** @type Event **/ event) =>
 		(tags = /** @type {[string,boolean][]} */ ([
@@ -18,8 +18,8 @@
 				])[1]
 			]
 		]).toSorted((a, b) => (a.at(0) + '').localeCompare(b.at(0) + '')));
-	$: blogs = data.blogs.filter((meta) =>
-		meta.tags?.some((t) => tags.some(([k, v]) => k == t && v))
+	$: blogs = data.blogs.filter((/** @type {{tags: string[] | undefined}} */ meta) =>
+		meta.tags?.some((/** @type string */ t) => tags.some(([k, v]) => k == t && v))
 	);
 </script>
 

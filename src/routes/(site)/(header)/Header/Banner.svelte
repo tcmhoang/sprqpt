@@ -34,7 +34,9 @@
 					if (iframe_elem?.children.length ?? false) {
 						loaded = true;
 						unsubscribe = theme.subscribe((s) => {
-							if (s == 'systen') return;
+							if (s == 'systen') {
+								return;
+							}
 							switch (s) {
 								case 'light':
 									return on_theme_change(hero_css?.light ?? '', iframe_elem);
@@ -72,7 +74,9 @@
 		/** @type {string} */ css,
 		/** @type {HTMLElement | null} */ iframe_elem
 	) {
-		if (iframe_elem) iframe_elem.style.cssText = css;
+		if (iframe_elem) {
+			iframe_elem.style.cssText = css;
+		}
 	}
 </script>
 
