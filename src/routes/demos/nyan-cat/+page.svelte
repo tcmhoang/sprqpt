@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import Cat from './Cat.svelte';
 
 	/** @type number */
@@ -12,27 +13,83 @@
 	/** @type number */
 	let y = 0.5;
 
+	/** @type number */
+	const k_max = 0.7;
+	/** @type number */
+	const k_min = 0.2;
+
 	/** @function
 	 * @param {PointerEvent} e event fires when moving the pointer
 	 * @returns {void}
 	 */
-	const pointer_handler = (e) => {
+
+	const handle_pointer = (e) => {
+		console.log(e);
 		if (timeout) {
 			window.cancelAnimationFrame(timeout);
 		}
 
 		timeout = window.requestAnimationFrame(() => {
-			x = e.clientX / container.clientWidth;
+			x = Math.min(Math.max(e.clientX / container.clientWidth, k_min), k_max);
 			y = e.clientY / container.clientHeight;
 		});
 	};
+
+	/** @function
+	 * @param {DeviceOrientationEvent} e
+	 * @returns {void}
+	 */
+
+	const handle_orientation = (e) => {
+		console.log(e);
+		const { beta, gamma } = e;
+		const is_landscape = window.matchMedia('(orientation: landscape)').matches;
+		if (timeout) {
+			window.cancelAnimationFrame(timeout);
+		}
+
+		timeout = window.requestAnimationFrame(() => {
+			x = Math.min(
+				Math.max(is_landscape ? Math.abs(beta ?? 0) : (Math.abs(gamma ?? 0) + 60) / 180, k_min),
+				k_max
+			);
+			y = Math.min(
+				Math.max(is_landscape ? Math.abs(gamma ?? 0) : Math.abs(beta ?? 0) / 180, k_min),
+				k_max
+			);
+			console.log(is_landscape);
+			console.log(x, y);
+			console.log(beta, gamma);
+		});
+	};
+
+	onMount(async () => {
+		const mb_ios_orientation_event = /** @type DeviceOrientationIOS*/ (
+			/** @type unknown*/ (window.DeviceOrientationEvent)
+		);
+		const is_ios =
+			'requestPermission' in window.DeviceOrientationEvent &&
+			typeof mb_ios_orientation_event.requestPermission == 'function';
+		let is_supported = !!window.DeviceOrientationEvent;
+		if (is_ios) {
+			const res = await mb_ios_orientation_event.requestPermission();
+			if (res == 'denied') {
+				is_supported = false;
+			}
+		}
+		if (is_supported) {
+			window.addEventListener('deviceorientation', handle_orientation, true);
+		}
+
+		return Promise.resolve(window.removeEventListener('deviceorientation', handle_orientation));
+	});
 </script>
 
 <div
 	class="scene"
 	bind:this={container}
 	style="--x: {x}; --y: {y};"
-	on:pointerdown={pointer_handler}
+	on:pointermove={handle_pointer}
 >
 	<div class="rainbow" />
 	<div class="starfield">

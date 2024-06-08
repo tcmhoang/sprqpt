@@ -43,3 +43,8 @@
  * @property {string} link
  * @property {Component} icon
  */
+
+/**
+ * @typedef DeviceOrientationIOS
+ * @property {() => Promise<'granted' | 'denied'>} requestPermission
+ */
