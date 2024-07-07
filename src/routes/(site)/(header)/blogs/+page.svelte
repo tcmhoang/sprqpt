@@ -42,6 +42,10 @@
 				{:then optimized_image}
 					<enhanced:img class="card-thumbnail" src={optimized_image.default} {alt} />
 				{/await}
+			{:else}
+				<div class="card-thumbnail fallback">
+					{title.split('').slice(0, 2).join('')}
+				</div>
 			{/if}
 			<dl class="card-content">
 				<dt class="card-title">
@@ -90,6 +94,16 @@
 		aspect-ratio: 3/2;
 		object-fit: cover;
 		border-radius: 13px;
+		font-size: var(--step-8);
+		font-weight: bold;
+		text-indent: 1.5rem;
+		letter-spacing: 1.5rem;
+		display: grid;
+		place-items: center;
+		text-transform: uppercase;
+		&.fallback {
+			background-color: var(--p-surface);
+		}
 	}
 
 	dl {
