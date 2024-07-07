@@ -1,3 +1,21 @@
+---
+created: '2024-06-30'
+date: '2024-07-07'
+title: 'Typescript type system sucks'
+excerpt: |
+  There's a reason why everybody hate Typescript
+layout: blog
+tags:
+  - Software
+---
+
+{% overview %}
+With the lunar new year is just around the corner, it got me thinking
+about all the things that help me stay productive and entertained
+throughout the year. So, I thought it'd fun to share my current setup
+that I used both for work and personal use.
+{% /overview %}
+
 # Typescript type system sucks
 
 For the past few months, I've worked with a large typescript mono

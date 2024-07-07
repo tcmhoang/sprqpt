@@ -16,14 +16,22 @@ export const load = async ({ params }) => {
 		({ frontmatter }) => blog.fetch_id(frontmatter.created, frontmatter.title) == id
 	);
 
-	const [alt, , bg] = blog.fetch_image(id);
+	const mb_image = blog.fetch_image(id);
+	let mb_banner_data = {};
 
-	if (maybe_blog_metadata) {
-		return {
+	if (mb_image) {
+		const [alt, , bg] = mb_image;
+		mb_banner_data = {
 			banner_data: {
 				hero_url: await bg(),
 				hero_alt: alt
-			},
+			}
+		};
+	}
+
+	if (maybe_blog_metadata) {
+		return {
+			...mb_banner_data,
 			deets: [
 				{
 					text: new Date(maybe_blog_metadata.frontmatter.date).toDateString(),
