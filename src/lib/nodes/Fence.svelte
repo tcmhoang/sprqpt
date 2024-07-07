@@ -29,9 +29,10 @@
 			break;
 	}
 
-	lang = lang.then(() => {
-		result = process ? hljs.highlight(content, { language: language ?? 'sh' }) : result;
-	});
+	if (language)
+		lang = lang.then(() => {
+			result = process ? hljs.highlight(content, { language: language }) : result;
+		});
 </script>
 
 {#await lang then}
