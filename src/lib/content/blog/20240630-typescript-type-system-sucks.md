@@ -1,23 +1,15 @@
 ---
 created: '2024-06-30'
 date: '2024-07-07'
-title: 'Typescript type system sucks'
+title: 'Typescript and its shenanigan'
 excerpt: |
   There's a reason why everybody hate Typescript
 layout: blog
 tags:
-  - Software
+  - Web development
 ---
 
 {% overview %}
-With the lunar new year is just around the corner, it got me thinking
-about all the things that help me stay productive and entertained
-throughout the year. So, I thought it'd fun to share my current setup
-that I used both for work and personal use.
-{% /overview %}
-
-# Typescript type system sucks
-
 For the past few months, I've worked with a large typescript mono
 repository code base. For me, who's only ever used pure JavaScript for
 web development.
@@ -25,15 +17,31 @@ web development.
 It's a good chance to get my hands dirty with real-world enterprise code.
 After messing it around for some time, I have to say, I do get why folks
 are so grumpy about Typescripts. In the post, I'll show you some quirks
-around Typescript and how I overcame them.
+around Typescript and how I overcame them. The truth is
+{% /overview %}
 
-The biggest beef I got with Typescript till now? It's the type system
-itself. Yup, you heard that right. The whole point of Typescript itself
-is the type inference and type safety. But in reality, it's a false
-dilemma.
+{% permalink %}
+
+# Typescript type system sucks
+
+{% /permalink %}
+
+Yup, you heard that right. It's the biggest beef I got with Typescript
+till now? The whole point of Typescript itself is the type inference and
+type safety. But in reality, it's a false dilemma.
+
+{% permalink %}
+
+## The problem with type
+
+{% /permalink %}
 
 Let's say we have a function that supposedly takes a number as an
 argument, for example.
+
+```ts
+let test = 0;
+```
 
 But is it always the same type?
 

@@ -64,9 +64,11 @@
 </div>
 
 <style lang="scss">
+	$card-gaps: 1.5rem;
 	.blogs {
 		display: grid;
 		gap: 0.75rem;
+		margin-bottom: calc(1.5rem * 2);
 	}
 	.card {
 		width: 100%;
@@ -76,7 +78,7 @@
 		display: grid;
 		padding: 1rem;
 		grid-template: auto / 50% 1fr;
-		gap: 1.5rem;
+		gap: $card-gaps;
 		&:hover {
 			background-color: var(--surface);
 		}

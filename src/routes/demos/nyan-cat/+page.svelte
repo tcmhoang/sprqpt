@@ -24,7 +24,6 @@
 	 */
 
 	const handle_pointer = (e) => {
-		console.log(e);
 		if (timeout) {
 			window.cancelAnimationFrame(timeout);
 		}
@@ -41,7 +40,6 @@
 	 */
 
 	const handle_orientation = (e) => {
-		console.log(e);
 		const { beta, gamma } = e;
 		const is_landscape = window.matchMedia('(orientation: landscape)').matches;
 		if (timeout) {
@@ -57,9 +55,6 @@
 				Math.max(is_landscape ? Math.abs(gamma ?? 0) : Math.abs(beta ?? 0) / 180, k_min),
 				k_max
 			);
-			console.log(is_landscape);
-			console.log(x, y);
-			console.log(beta, gamma);
 		});
 	};
 

@@ -3,6 +3,10 @@
  */
 
 /**
+ * @typedef {import('highlight.js').LanguageFn} HLLanguageFn
+ */
+
+/**
  * @typedef {Document & ViewTransitionAPI} WTDocument
  */
 
