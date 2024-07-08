@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import Cat from './Cat.svelte';
+	import { tweened } from 'svelte/motion';
+	import { cubicOut } from 'svelte/easing';
 
 	/** @type number */
 	let timeout;
@@ -8,15 +10,19 @@
 	/** @type HTMLElement */
 	let container;
 
-	/** @type number */
-	let x = 0.3;
+	/** @type import('svelte/motion').Tweened<number> */
+	let x = tweened(0.3, {
+		duration: 300,
+		easing: cubicOut
+	});
+
 	/** @type number */
 	let y = 0.5;
 
 	/** @type number */
-	const k_max = 0.7;
+	const k_max = 0.5;
 	/** @type number */
-	const k_min = 0.2;
+	const k_min = 0.3;
 
 	/** @function
 	 * @param {PointerEvent} e event fires when moving the pointer
@@ -29,7 +35,7 @@
 		}
 
 		timeout = window.requestAnimationFrame(() => {
-			x = Math.min(Math.max(e.clientX / container.clientWidth, k_min), k_max);
+			$x = Math.min(Math.max(e.clientX / container.clientWidth, k_min), k_max);
 			y = e.clientY / container.clientHeight;
 		});
 	};
@@ -47,14 +53,7 @@
 		}
 
 		timeout = window.requestAnimationFrame(() => {
-			x = Math.min(
-				Math.max(is_landscape ? Math.abs(beta ?? 0) : (Math.abs(gamma ?? 0) + 60) / 180, k_min),
-				k_max
-			);
-			y = Math.min(
-				Math.max(is_landscape ? Math.abs(gamma ?? 0) : Math.abs(beta ?? 0) / 180, k_min),
-				k_max
-			);
+			$x = Math.min(Math.max((is_landscape ? beta ?? 0 : gamma ?? 0) / 90 + 0.5, k_min), k_max);
 		});
 	};
 
@@ -83,7 +82,7 @@
 <div
 	class="scene"
 	bind:this={container}
-	style="--x: {x}; --y: {y};"
+	style="--x: {$x}; --y: {y};"
 	on:pointermove={handle_pointer}
 >
 	<div class="rainbow" />

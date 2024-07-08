@@ -5,7 +5,6 @@ emodesc: 'Feeling excited'
 title: 'Hello world!'
 layout: cheep
 description: 'My very first post'
-pinned: true
 ---
 
 Happy new year y'all.
