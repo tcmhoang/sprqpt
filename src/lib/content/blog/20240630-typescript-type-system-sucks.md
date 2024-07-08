@@ -78,7 +78,7 @@ function foo(a: number): string {
 ```
 
 The code will now sometimes throw `TypeError: a.toFixed is not a
-function` sometimes do not. It's actually weird, considering both the
+function` sometimes will not. It's actually weird, considering both the
 returned type we specified and the methods we invoked inside as they has
 no capability to throw an exception.
 

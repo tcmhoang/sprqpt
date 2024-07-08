@@ -68,7 +68,7 @@ Tailwind, Node.js, GCP, GitHub Actions, Linux.
 SASS, GCP, SQL, Linux, Circle CI, Go, Docker, K8s(Kind), melos, dartz,
 dio, riverpod, freezed.
 
-- Led agile team to build Flutter e-commerce app with Firebase.
+- Led an agile team to build Flutter e-commerce app with Firebase.
 - Deployed services on Kubernetes, assisted with Go back-end web app and
   the web client app.line
 - Created specifications, diagrams, charts for SRS documents
@@ -90,9 +90,9 @@ Crystal Reports, IBM DB2, Spotfire.
 composer, AWS, JavaScript, React, npm, statex, cypress, Python, pip, Kotlin, Redux.js,
 Nix, Jenkins, Linux, GraphicQL, Spring Cloud Netflix (Eureka, Hystrix).
 
-- Led a agile development team.
+- Led an agile development team.
 - Developed, deployed, and migrated a cloud-based CRM.
-- Built mobile apps & micro services architecture, deploying with CI/CD
+- Built mobile apps & micro-service architecture, deploying with CI/CD
   pipelines.
 
 **IT Support Technician @ [PhiDung Informatics - Electronic Company Limited](http://www.pdc.vn)**
