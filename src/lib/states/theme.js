@@ -12,7 +12,7 @@ const themes = ['system', 'dark', 'light'];
  *
  */
 
-const init_value = 'system';
+const init_value = 'dark';
 const init_state = () => {
 	const { subscribe, set, update } = writable(init_value);
 

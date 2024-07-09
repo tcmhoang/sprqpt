@@ -53,7 +53,7 @@
 		}
 
 		timeout = window.requestAnimationFrame(() => {
-			$x = Math.min(Math.max((is_landscape ? beta ?? 0 : gamma ?? 0) / 90 + 0.5, k_min), k_max);
+			$x = Math.min(Math.max((is_landscape ? gamma ?? 0 : beta ?? 0) / 90 + 0.5, k_min), k_max);
 		});
 	};
 
