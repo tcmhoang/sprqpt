@@ -8,7 +8,7 @@
 		"lib": ["DOM", "DOM.Iterable", "WebWorker", "ESNext.Array", "DOM", "ESNext"],
 		"types": ["vite/client"],
 		"module": "ESNext",
-		"moduleResolution": "Bundler",
+		"moduleResolution": "NodeNext",
 		"resolveJsonModule": true,
 		"verbatimModuleSyntax": true,
 		"skipLibCheck": true,
@@ -17,6 +17,6 @@
 		"importsNotUsedAsValues": "remove",
 		"target": "es2022"
 	},
-	"include": ["src/**/*", "./svelte.config.js", "./vite.config.js"],
+	"include": ["src/**/*", "./svelte.config.js", "./vite.config.js", "src/**/*.d.ts"],
 	"exclude": ["node_modules/*", "build/*"]
 }
